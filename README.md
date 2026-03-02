@@ -1,1 +1,9 @@
-Ide jön a leírás
+# Hókotró
+
+## Authors:
+
+- Albitz Csanád
+- Bácsi Miklós
+- Fülöp Bence
+- Simon Dániel
+- Taska Richárd
