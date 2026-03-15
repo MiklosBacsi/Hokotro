@@ -1,0 +1,45 @@
+@startuml
+skinparam maxMessageSize 150
+title Vehicle állapotdiagram
+
+skinparam state {
+    BackgroundColor White
+    BorderColor Black
+    FontSize 12
+}
+skinparam ArrowFontSize 11
+
+[*] --> NORMAL : <<create>> [Auto or Bus]
+[*] --> CANTSLIDE : <<create>> [SnowPlower]
+
+' ── Jeges sávra lép ──
+NORMAL --> SLIDE : [iceThickness > 0]
+
+' ── Elhagyja a jeges sávot (nem ütközött) ──
+SLIDE --> NORMAL : [elhagyja a jeges savot nem volt ütközés]
+
+' ── Két Auto ütközik ──
+SLIDE --> CRASHED : [két SLIDE Auto\nvan a sávon]
+
+' ── Auto + Bus ütközik ──
+SLIDE --> CRASHED : [SLIDE Auto + SLIDE Bus\nvan a sávon]\n(csak Auto)
+
+SLIDE --> WAIT : [SLIDE Auto + SLIDE Bus\nvan a sávon]\n(csak Bus)
+
+' ── Két Bus ütközik ──
+SLIDE --> WAIT : [két SLIDE Bus\nvan a sávon]
+
+' ── CRASHED helyreállás ──
+CRASHED --> NORMAL : [isPassable = true]
+
+' ── WAIT: saját waitTicks lejár ──
+WAIT --> WAIT : [waitTicks > 0]\n/ waitTicks--
+
+WAIT --> NORMAL : [waitTicks == 0]\n/ resumeRoute()
+
+' ── Hóban elakad (csak Auto) ──
+NORMAL --> STUCK : [getPassableNeighbour == null\nés snowThickness > küszöb] (csak autó)
+
+STUCK --> NORMAL : [getPassableNeighbour != null]\n/ setLane(l2)
+
+@enduml

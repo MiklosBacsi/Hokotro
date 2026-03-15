@@ -1,0 +1,25 @@
+@startuml
+skinparam maxMessageSize 200
+title Lane állapotdiagram
+
+
+
+[*] --> Járható
+
+Járható --> Járható
+
+Járható --> JárhatatlanÜtközés : [két SLIDE Auto]\n/ a1.state = CRASHED\n  a2.state = CRASHED\n  isPassable = false
+
+Járható --> JárhatatlanÜtközés : [SLIDE Bus + SLIDE Auto]\n/ b.state = WAIT\n  a.state = CRASHED\n  isPassable = false
+
+Járható --> JárhatatlanÜtközés : [SLIDE Bus + SLIDE Bus]\n/ b1.state = WAIT\nb2.state = WAIT\n isPassable = false
+
+Járható --> JárhatatlanElakadás : [snowThickness > elakadási küszöb && 1 auto]\n/ auto.state = STUCK \n isPassable = false
+
+JárhatatlanÜtközés --> Járható : [SnowPlower]\n/ isPassable = true
+
+JárhatatlanÜtközés --> Járható : [Bus1 elhagyja az utat Bus2-vel valo utkozes utan]\n/Bus2.state = NORMAL \n isPassable = true
+
+JárhatatlanElakadás --> Járható : [SnowPlower]\n/ isPassable = true
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+skinparam maxMessageSize 200
+title SurfaceCondition állapotdiagram
+
+skinparam state {
+    BackgroundColor White
+    BorderColor Black
+    FontSize 11
+}
+skinparam ArrowFontSize 10
+skinparam nodesep 80
+skinparam ranksep 100
+
+[*] --> Clean
+
+' ── Havazás ──
+Clean --> Snowy : [amount > 0]\n/ snowThickness += amount
+Snowy --> Snowy : snowThickness += amount
+
+' ── Hó tömörödés -> Jég ──
+Snowy --> Icy : [driveCount >= küszöb]\n/ iceThickness = snowThickness * faktor\n  snowThickness = 0
+
+' ── Hó takarítás ──
+Snowy --> Clean : [Blower / Dragon]\n/ snowThickness = 0
+
+' ── Sweeper: hó ki ──
+Snowy --> Clean : [Sweeper, aktuális sáv]\n/ snowThickness = 0
+
+' ── Sweeper: hó be ──
+Clean --> Snowy : [Sweeper, másik sávról]\n/ snowThickness += szomszéd
+
+' ── Sózás ──
+Snowy --> Salted : [SaltSpreader]\n/ isSalted = true
+Clean --> Salted : [SaltSpreader]\n/ isSalted = true
+Salted --> Salted : snowThickness--\niceThickness--\n(min is 0)
+
+' ── Jég takarítás ──
+Icy --> Clean : [Dragon]\n/ iceThickness = 0
+Icy --> Salted: [SaltSpreader] \n / isSalted = true
+
+' Jegtores
+Icy --> Snowy : [IceBreaker]\n / snowThickness = iceThickness \n iceThickness = 0
+
+@enduml
