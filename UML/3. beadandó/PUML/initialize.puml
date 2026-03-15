@@ -1,0 +1,94 @@
+@startuml
+title Initialize
+
+actor "User" as user
+participant "director :GameDirector" as gd
+participant "roadNetwork :RoadNetwork" as rn
+participant "crossing :Crossing" as cr
+participant "road :Road" as r
+participant "l :Lane" as l
+participant "sc :SurfaceCondition" as sc
+participant "timer :Timer" as timer
+participant "economy :Economy" as e
+participant "cleaner :Cleaner" as cleaner
+participant "diver :BusDriver" as driver
+
+user -> gd : initializeGame(CleanerAmount: Integer, BusDriverAmount: Integer)
+activate gd
+
+gd -> rn ** : <<create>> \n setupRoadNetwork() 
+activate rn
+
+
+loop crossingAmount
+    rn -> cr ** : <<create>> \n GenerateCrossing()
+    cr-->rn
+end
+
+loop roadAmount
+    rn -> r ** : <<create>> \n GenerateRoad(c1: Crossing, c2: Crossing, length: Int, lane1Amount: Integer, lane2Amount: Integer)
+    activate r
+    loop lane1Amount
+        r -> l ** : <<create>> \n GenerateLane(c1,c2)
+        activate l
+        l -> sc ** : <<create>> \n SurfaceCondition()
+        sc-->l
+        l --> r
+        deactivate l
+    end
+    loop lane1Amount
+        r -> l ** : <<create>> \n GenerateLane(c2,c1)
+        activate l
+        l -> sc ** : <<create>> \n SurfaceCondition()
+        sc-->l
+        l --> r
+        deactivate l
+    end
+    r-->rn
+    deactivate r
+end
+
+rn --> gd: roadNetwork:RoadNetwork
+deactivate rn
+
+gd -> timer ** : <<create>> \n Timer()
+timer --> gd : timer: Timer
+
+gd -> e ** : <<create>> \n Economy()
+e--> gd : economy: Economy
+
+loop CleanerAmount
+    gd -> cleaner ** : <<create>> \n Cleaner()
+    activate cleaner
+    cleaner-->gd:Cleaner
+
+    gd->cleaner: GetVehicle(0)
+    cleaner-->gd: vehicle:Vehicle
+    gd->rn:addVehicleToRandomCrossing(vehicle:Vehicle)
+    rn->rn:GetRandomCrossign()
+    rn->cr: AddVehicle(vehicle:Vehicle)
+    cr-->rn
+    rn-->gd
+    deactivate cleaner
+end
+
+loop BusDriverAmount
+    gd -> driver ** : <<create>> \n BusDriver()
+    activate driver
+    driver-->gd:Driver
+
+    gd->driver: GetVehicle(0)
+    driver-->gd: vehicle:Vehicle
+    gd->rn:addVehicleToRandomCrossing(vehicle:Vehicle)
+    rn->rn:GetRandomCrossign()
+    rn->cr: AddVehicle(vehicle:Vehicle)
+    cr-->rn
+    rn-->gd
+    deactivate driver
+end
+
+
+
+deactivate gd
+
+@enduml

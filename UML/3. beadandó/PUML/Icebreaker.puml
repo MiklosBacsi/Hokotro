@@ -1,0 +1,38 @@
+@startuml
+skinparam maxMessageSize 150
+
+participant "i: Icebreaker" as i
+participant "sc: SurfaceCondition" as sc
+
+activate i
+i -> sc : getIce()
+deactivate i
+
+activate sc
+sc --> i : int iceThickness
+deactivate sc
+
+activate i
+i -> sc : getBrokenIce()
+deactivate i
+
+activate sc
+sc --> i : int brokentIceThickness
+deactivate sc
+
+activate i
+i -> sc : setBrokenIce(brokenIceThickness+iceThickness)
+deactivate i
+
+activate sc
+sc --> i
+deactivate sc
+
+activate i
+i -> sc : setIce(0)
+deactivate i
+
+activate sc
+sc --> i
+deactivate s
+@enduml

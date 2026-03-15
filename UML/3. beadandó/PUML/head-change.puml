@@ -1,0 +1,18 @@
+@startuml
+skinparam maxMessageSize 150
+title HeadChange
+participant "c: Cleaner" as c
+participant "sp: SnowPlower" as sp
+
+activate c
+
+c -> sp : changeHead(Head h)
+activate sp
+
+sp -> sp : currentHead = h
+
+sp --> c
+deactivate sp
+deactivate c
+
+@enduml

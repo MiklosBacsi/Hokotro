@@ -1,0 +1,18 @@
+@startuml
+skinparam maxMessageSize 150
+
+participant "timer: Timer" as timer
+participant "l: Lane" as l
+participant "sc: SurfaceCondition" as sc
+
+timer -> l : <<event>> tick()
+activate l
+
+alt isSalted
+    l -> sc : meltSnow()
+     activate sc
+    sc --> l
+    deactivate sc
+end
+        
+@enduml

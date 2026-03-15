@@ -1,0 +1,66 @@
+@startuml
+skinparam maxMessageSize 150
+
+participant "timer: Timer" as timer
+participant "a: Auto" as a
+participant "l: Lane" as l
+participant "lL: Lane" as lL
+participant "lR: Lane" as lR
+participant "r: Road" as r
+
+title Auto atsorolasa masik savra
+
+timer ->> a : <<event>> \n tick()
+
+a -> l : isPassable()
+activate a
+l --> a : passable: Boolean
+
+alt current lane is passable
+    a -> a : setState(NORMAL)
+    a -> l : setPassable(true)
+    l --> a
+else current lane is NOT passable
+    alt right is passable
+        a -> l : getRoad()
+        l --> a : road: Road
+
+        a -> r : getRightLane()
+        r --> a : rightLane: Lane
+
+        a -> lR : isPassable()
+        lR --> a : true
+
+        a -> l : removeVehicle(a: Vehicle)
+        l --> a
+
+        a -> lR : addVehicle(a: Vehicle)
+        lR -> a : setLane(lR: Lane)
+        activate a
+        a --> lR
+        deactivate a
+        lR --> a
+    else left is passable but right is not
+        a -> l : getRoad()
+        l --> a : road: Road
+
+        a -> r : getLeftLane()
+        r --> a : leftLane: Lane
+
+        a -> lL : isPassable()
+        lL --> a : true
+
+        a -> l : removeVehicle(a: Vehicle)
+        l --> a
+
+        a -> lL : addVehicle(a: Vehicle)
+        lL -> a : setLane(lL: Lane)
+        activate a
+        a --> lL
+        deactivate a
+        lL --> a
+    end
+end
+
+deactivate a
+@enduml

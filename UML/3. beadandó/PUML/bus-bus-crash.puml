@@ -1,0 +1,40 @@
+@startuml
+skinparam maxMessageSize 150
+title Bus-bus crash
+
+participant "timer: Timer" as timer
+participant "b1: Bus1" as b1
+participant "l: Lane (jeges)" as l
+participant "sc: SurfaceCondition" as sc
+participant "b2: Bus2" as b2
+
+timer -> b1 : <<event>> tick()
+
+activate b1
+b1 -> l : addVehicle(b1)
+deactivate b1
+
+activate l
+l -> sc : hasIce()
+activate sc
+sc --> l : true
+deactivate sc
+
+l -> b1 : setState(SLIDE)
+activate b1
+b1 -> l : handleTraffic()
+deactivate b1
+
+l -> b1 : setState(WAIT)
+activate b1
+b1 --> l
+deactivate b1
+
+l -> b2 : setState(WAIT)
+activate b2
+b2 --> l
+deactivate b2
+
+l --> b1
+
+@enduml

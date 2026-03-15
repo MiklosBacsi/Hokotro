@@ -1,0 +1,22 @@
+@startuml
+skinparam maxMessageSize 150
+title Destination reached for buses
+
+participant "b: Bus" as b
+participant "bd: BusDriver" as bd
+
+activate b
+b -> b : checkArrival()
+
+alt cr == destination
+    b -> bd : addPoints(amount)
+    activate bd
+    bd --> b
+    deactivate bd
+
+    b -> b : changeDestination()
+end
+
+deactivate b
+
+@enduml

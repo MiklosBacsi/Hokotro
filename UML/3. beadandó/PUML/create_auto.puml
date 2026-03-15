@@ -1,0 +1,35 @@
+@startuml
+skinparam maxMessageSize 150
+title AutoCreation
+participant "a1: Auto1" as a1
+participant "a2: Auto2" as a2
+participant "g: GameDirector" as g
+participant "rn: RoadNetwork" as rn
+
+activate a1
+a1 -> a1 :checkArrival()
+a1 -> g : createAuto()
+deactivate a1
+
+g -> a2
+activate a2
+a2 -> g : getRoadNetwork()
+deactivate a2
+
+activate g
+g --> a2 : roadNetwork
+deactivate g
+
+activate a2
+a2 -> rn : planPath(currentCrossing, destination)
+deactivate a2
+
+activate rn
+rn --> a2 : setCurrentPath(List<Road> path)
+deactivate rn
+
+activate a2
+a2 --> a1
+deactivate a2
+
+@enduml

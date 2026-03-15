@@ -1,0 +1,18 @@
+@startuml
+skinparam maxMessageSize 150
+title Car-car crash cleanup
+
+participant "timer: Timer" as timer
+participant "a1: Auto" as a1
+participant "l: Lane" as l
+
+timer -> a1 : <<event> tick()
+activate a1
+a1 -> l : isPassable()
+activate l
+l --> a1 : true
+deactivate l
+a1 -> a1 : setState(NORMAL)
+deactivate a1
+
+@enduml

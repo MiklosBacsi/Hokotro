@@ -1,0 +1,88 @@
+@startuml
+skinparam maxMessageSize 150
+participant "s: Sweeper" as s
+participant "r: Road" as r
+participant "l1: CurrentLane" as l1
+participant "rl: rightLane" as rl
+participant "cs: CurrentSurfaceCondition" as cs
+participant "rs: RightSurfaceCondition" as rc
+
+s -> l1 : getRoad()
+
+activate l1
+l1 --> s : road
+deactivate l1
+
+activate s
+s -> r : getRightLane()
+deactivate s
+
+activate r
+r -> s : rightLane
+deactivate r
+
+activate s
+s -> rl : getRightLaneSurficeCondition()
+deactivate s
+
+activate rl
+rl --> s : rightLaneSurfaceCondition
+deactivate rl
+
+activate s
+s -> l1 : getCurrentLaneSurficeCondition()
+deactivate s
+
+activate l1
+l1 --> s : currentLaneSurfaceCondition
+deactivate l1
+
+activate s
+s -> cs : getSnowThickness()
+deactivate s
+
+activate cs
+cs --> s : csSnowThickness
+deactivate cs
+
+activate s
+s -> rc : addSnowThickness(csSnowThickness)
+deactivate s
+
+activate rc
+rc --> s
+deactivate rc
+
+activate s
+s -> cs : getBrokenIceThickness()
+deactivate s
+
+activate cs
+cs --> s : csBrokenIceThickness
+deactivate cs
+
+activate s
+s -> rc : addBrokenIceThickness(csBrokenIceThickness)
+deactivate s
+
+activate rc
+rc --> s
+deactivate rc
+
+activate s
+s -> cs : setBrokenIceThickness(0)
+deactivate s
+
+activate cs
+cs --> s
+deactivate cs
+
+activate s
+s -> cs : setSnowThickness(0)
+deactivate s
+
+activate cs
+cs --> s
+deactivate cs
+
+@enduml

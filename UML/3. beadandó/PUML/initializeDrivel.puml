@@ -1,0 +1,12 @@
+@startuml
+title Initialize bus drivers
+participant "director :GameDirector" as gd
+participant "driver :Driver" as driver
+participant "bus :Bus" as bus
+    gd -> driver ** : <<create>> BusDriver()
+    activate driver
+    driver ->bus  ** : <<create>> Bus()
+    bus -->driver:Bus
+    driver-->gd:Driver
+    deactivate driver
+@enduml

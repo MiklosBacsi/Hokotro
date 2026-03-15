@@ -1,0 +1,35 @@
+@startuml
+skinparam maxMessageSize 150
+title SnowFall
+
+participant "timer: Timer" as timer
+participant "rn: RoadNetwork" as rn
+participant "r: Road" as r
+participant "l: Lane" as l
+participant "sc: SurfaceCondition" as sc
+
+timer -> rn : tick()
+activate rn
+
+loop 
+    rn -> r : letItSnow(amount)
+    activate r
+
+    loop 
+        r -> l : letItSnow(amount)
+        activate l
+        l -> sc : addSnowThickness(amount)
+        activate sc
+        sc --> l
+        deactivate sc
+        l --> r
+        deactivate l
+    end
+
+    r --> rn
+    deactivate r
+end
+
+deactivate rn
+
+@enduml

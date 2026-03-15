@@ -1,0 +1,43 @@
+@startuml
+skinparam maxMessageSize 150
+title Car-car crash
+
+participant "timer: Timer" as timer
+participant "a1: Auto" as a1
+participant "l: Lane (jeges)" as l
+participant "sc: SurfaceCondition" as sc
+participant "a2: Auto" as a2
+
+timer -> a1 : <<event>> tick()
+activate a1
+
+a1 -> l : addVehicle(a1)
+deactivate a1
+activate l
+
+l -> sc : hasIce()
+activate sc
+sc --> l : true
+deactivate sc
+l -> a1 : setState(Slide)
+
+activate a1
+a1 -> l : handleTraffic()
+deactivate a1
+
+l -> l : isPassable = false
+l -> a1 : setState(Crashed)
+
+activate a1
+a1 --> l
+deactivate a1
+
+l -> a2 : setState(Crashed)
+
+activate a2
+a2 --> l
+deactivate a2
+
+l --> a1
+deactivate l
+@enduml

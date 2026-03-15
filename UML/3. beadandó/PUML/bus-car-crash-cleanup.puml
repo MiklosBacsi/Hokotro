@@ -1,0 +1,19 @@
+@startuml
+skinparam maxMessageSize 150
+title Bus-car crash cleanup
+
+participant "timer: Timer" as timer
+participant "b: Bus" as b
+
+
+timer -> b : <<event>> tick()
+activate b
+
+b -> b : waitTicks--
+
+alt waitTicks == 0
+    b -> b : setState(NORMAL)
+end
+
+
+@enduml

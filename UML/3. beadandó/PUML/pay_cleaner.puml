@@ -1,0 +1,21 @@
+@startuml
+skinparam maxMessageSize 150
+
+participant "sp: SnowPlower" as sp
+participant "e: Economy" as e
+participant "c: Cleaner" as c
+
+sp -> e : payForWork(snowPlower)
+
+activate e
+e -> c : addMoney(amount)
+deactivate e
+
+activate c
+c --> e
+deactivate c
+
+activate e
+e --> sp
+deactivate e
+@enduml
