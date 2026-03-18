@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Cleaner as C
+actor Economy as E
+
+rectangle "Buying a new snowplower" {
+    (Purchase SnowPlower)   as ps
+    (Check Balance)   as cb
+    (Create SnowPlower) as cs
+
+    ps .left.> cb : <<include>>
+    ps .left.> cs : <<include>>
+}
+
+C --> ps
+C -- cb
+ps -down-> E
+
+@enduml

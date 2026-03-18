@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+actor Cleaner as C
+actor Economy as E
+
+rectangle "Buying a new snowplower" {
+    (Purchase SnowPlower)   as ps
+    (Check Balance)   as cb
+    (Create SnowPlower) as cs
+
+    ps .left.> cb : <<include>>
+    ps .left.> cs : <<include>>
+}
+
+C --> ps
+C -- cb
+ps -down-> E
+
+
+@enduml
+
+
+itt egy pelda kod
+az egesz geci coursed modon van
+- nem lehet elsodleges/masodlagos actort beallitani, o helyezi le ahova akarja, altalaban, hogy minel rovidebbek legyenek a nyilak, valamennyire lehet befolyasolni
+- mivel left to right direction van, ezert fejben forgass el minden iranyt oramutatoval ellentetesen 90 fokkal
+- a ps -down-> cb eseten azert lesz a cb jobbra a ps-tol mert a left to right direction miatt igy 'lesz' alatta
+- igy tudjuk nagyjabol helyezni az actorokat es use case-eket, de van amikor egyaltalan nem ugy mukodik, mint amire szamitanal
+- ha akarsz relativ poziciot beallitani egymashoz, de vonalat nem akarsz, akkor a -[hidden]-> -t ird be, vagy valami ilyesmit
+
+
+feladtam, szar az egesz
+ha atirjatok a ps .left.> cb : <<include>> sorban a left-et right-ra (ami logikus lenne, mivel jobbra van tole), akkor teljesen atbassza az egeszet, veletlen csak megneztem hatha left-tel jo lesz es mukodott
+szoval nem jottem ra a mukodesi elvere
