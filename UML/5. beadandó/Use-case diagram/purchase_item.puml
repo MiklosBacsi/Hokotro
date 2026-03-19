@@ -1,4 +1,5 @@
 @startuml
+rectangle {
 left to right direction
 
 actor Cleaner as C
@@ -13,5 +14,5 @@ C --> pi
 pi --> E
 pi .left.> cb : <<include>>
 C -- cb
-
+}
 @enduml

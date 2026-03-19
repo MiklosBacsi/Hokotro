@@ -1,4 +1,5 @@
 @startuml
+rectangle {
 left to right direction
 
 actor Cleaner as C
@@ -16,5 +17,5 @@ rectangle "Buying a new snowplower" {
 C --> ps
 ps -down-> E
 C -- cb
-
+}
 @enduml
