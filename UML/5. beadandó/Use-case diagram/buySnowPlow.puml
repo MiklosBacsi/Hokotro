@@ -2,6 +2,7 @@
 rectangle {
 left to right direction
 
+
 actor Cleaner as C
 actor Economy as E
 
@@ -11,11 +12,11 @@ rectangle "Buying a new snowplower" {
     (Create SnowPlower) as cs
 
     ps .left.> cb : <<include>>
-    ps .left.> cs : <<include>>
+    ps .right.> cs : <<include>>
 }
 
-C --> ps
-ps -down-> E
+C -- ps
+ps -down- E
 C -- cb
 }
 @enduml
