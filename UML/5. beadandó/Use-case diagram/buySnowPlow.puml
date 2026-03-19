@@ -11,7 +11,7 @@ rectangle "Buying a new snowplower" {
     (Create SnowPlower) as cs
 
     ps .left.> cb : <<include>>
-    ps .left.> cs : <<include>>
+    ps .right.> cs : <<include>>
 }
 
 C --> ps
