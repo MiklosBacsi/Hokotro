@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+
+actor Cleaner as C
+
+rectangle "Changing the snowplowers head" {
+    (Changing the head)   as cth
+}
+
+C --> cth
+
+@enduml

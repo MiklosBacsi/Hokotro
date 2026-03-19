@@ -14,7 +14,7 @@ rectangle "Buying a new snowplower" {
 }
 
 C --> ps
-C -- cb
 ps -down-> E
+C -- cb
 
 @enduml
