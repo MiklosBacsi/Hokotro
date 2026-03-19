@@ -1,0 +1,30 @@
+@startuml
+rectangle {
+left to right direction
+
+:Auto: --|> :Vehicle: 
+:Bus: --|> :Vehicle:
+:SnowPlower: --|> :Vehicle:
+
+
+rectangle "Enter a Lane" {
+    (enter a lane) as arrive
+    (get stuck) as stuck
+    (start to slide) as slide
+    (request path) as request
+}
+
+Vehicle -- arrive
+arrive <.. stuck : <<extends>>
+arrive <.. slide : <<extends>>
+
+stuck -- :Surface Condition:
+slide -- :Surface Condition:
+arrive -- :Lane:
+stuck -[hidden]- :Lane:
+Auto -- request
+request -[hidden]left- stuck
+request -down- :Road Network:
+
+}
+@enduml
