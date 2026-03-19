@@ -1,4 +1,5 @@
 @startuml
+rectangle {
 left to right direction
 
 actor Cleaner as C
@@ -8,5 +9,5 @@ rectangle "Changing the snowplowers head" {
 }
 
 C --> cth
-
+}
 @enduml

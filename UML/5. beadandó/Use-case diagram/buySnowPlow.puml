@@ -2,6 +2,7 @@
 rectangle {
 left to right direction
 
+
 actor Cleaner as C
 actor Economy as E
 
@@ -14,8 +15,8 @@ rectangle "Buying a new snowplower" {
     ps .right.> cs : <<include>>
 }
 
-C --> ps
-ps -down-> E
+C -- ps
+ps -down- E
 C -- cb
 }
 @enduml

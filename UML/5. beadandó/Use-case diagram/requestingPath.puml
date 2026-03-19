@@ -1,0 +1,14 @@
+@startuml
+rectangle {
+left to right direction
+
+rectangle "Requesting a path" {
+    (Requesting a path) as usecase1
+}
+
+Auto -- usecase1
+usecase1 -- RoadNetwork
+
+
+}
+@enduml

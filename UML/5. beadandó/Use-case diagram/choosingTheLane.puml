@@ -5,11 +5,11 @@ left to right direction
 :Cleaner: --|> :Player: 
 :BusDriver: --|> :Player:
 
-rectangle "Changing the lane" {
-    (Changing the lane) as usecase1
+rectangle "Choosing the lane in a crossing" {
+    (Choosing the lane) as usecase1
 }
 
-Player --> usecase1
+Player -- usecase1
 
 }
 @enduml

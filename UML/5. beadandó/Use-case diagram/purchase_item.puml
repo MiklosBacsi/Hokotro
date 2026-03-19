@@ -10,8 +10,8 @@ rectangle "Purchasing an item" {
     (Check Balance)   as cb
 }
 
-C --> pi
-pi --> E
+C -- pi
+pi -- E
 pi .left.> cb : <<include>>
 C -- cb
 }
