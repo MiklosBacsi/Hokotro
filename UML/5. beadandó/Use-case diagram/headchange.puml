@@ -4,7 +4,7 @@ left to right direction
 
 actor Cleaner as C
 
-rectangle "Changing the snowplowers head" {
+rectangle "Changing the snowplower's head" {
     (Changing the head)    as cth
 }
 

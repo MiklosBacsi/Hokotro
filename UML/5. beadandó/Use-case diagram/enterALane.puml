@@ -2,7 +2,7 @@
 rectangle {
 left to right direction
 
-:Auto: --|> :Vehicle: 
+:Car: --|> :Vehicle: 
 :Bus: --|> :Vehicle:
 :SnowPlower: --|> :Vehicle:
 
@@ -22,7 +22,7 @@ stuck -- :Surface Condition:
 slide -- :Surface Condition:
 arrive -- :Lane:
 stuck -[hidden]- :Lane:
-Auto -- request
+Car -- request
 request -[hidden]left- stuck
 request -down- :Road Network:
 
