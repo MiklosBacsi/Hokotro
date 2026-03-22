@@ -6,10 +6,11 @@ left to right direction
 :BusDriver: --|> :Player:
 
 rectangle "Choosing the lane in a crossing" {
-    (Choosing the lane) as usecase1
+    (Choosing the lane) as choose
 }
 
-Player -- usecase1
+Player -- choose
+choose -- :Lane:
 
 }
 @enduml

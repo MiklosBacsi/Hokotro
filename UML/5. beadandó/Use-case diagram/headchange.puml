@@ -8,6 +8,7 @@ rectangle "Changing the snowplower's head" {
     (Changing the head)    as cth
 }
 
-C --> cth
+C -- cth
+cth -- :SnowPlower:
 }
 @enduml
