@@ -1,3 +1,6 @@
+/**
+ * enum osztály, ami a vásárolható eszközöket és erőforrásokat tartalmazza
+ */
 public enum ItemType {
     SALT,
     KEROSINE,
