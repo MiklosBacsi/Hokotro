@@ -1,5 +1,9 @@
 import java.util.List;
 
+/* 
+ * A játék által irányított jármű, 2 csomópon között közlekedik a legrövidebb úton
+ * ha eléri a célállomást, megszűnik
+ */
 public class Auto extends Vehicle {
     /* 
     private List<Road> currentPath;
@@ -28,12 +32,10 @@ public class Auto extends Vehicle {
 
     /**
      * Kereszteződésbe érve ellenőrizni, hogy a jármű végállomásba érkezett-e be
-     * @return true, ha a végállomásba érkezett, egyébként false
      */
-    public boolean checkArrival(){
+    public void checkArrival(){
         System.out.println("checkArrival()");
         System.out.println("return checkArrival()");
-        return false;
     }
 
     /**
