@@ -1,5 +1,7 @@
 import java.util.Set;
-
+/**
+ * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.
+ */
 public class SnowPlower extends Vehicle{
   //private Set<Head> heads;
   //private Head currentHead;
@@ -7,5 +9,12 @@ public class SnowPlower extends Vehicle{
   //private int kerosin;
   //private Cleaner owner;
 
-    public void changeHead(Head newHead){}
+  /**
+   * Fejcserét valósítja meg.
+   * @param newHead
+   */  
+  public void changeHead(Head newHead){
+      System.out.println("SnowPlower.changeHead() called");
+      System.out.println("SnowPlower.changeHead() returned");
+    }
 }

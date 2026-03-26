@@ -5,14 +5,29 @@ public abstract class Vehicle {/*
     private VehicleState state;
     private int lanePosition;
 */
+    /**
+     * Beállítja az autó éppen aktuális sávját, és nullázza az aktuális crossingot.
+     *
+     * @param lane az aktuális sáv
+     */
     public void setLane(Lane lane){
         System.out.println("Vehicle.setLane() called");
         System.out.println("Vehicle.setLane() returned");
     }
+    /**
+     * A mozgás megvalósítása.
+     *
+     * @param lane a sáv, amelyben a mozgás történik
+     */
     public void move(Lane lane){
         System.out.println("Vehicle.move() called");
         System.out.println("Vehicle.move() returned");
     }
+    /**
+     * Beállítja az autó éppen aktuális csomópontját, és nullázza az aktuális sávot.
+     *
+     * @param crossing az aktuális csomópont
+     */
     public void setCrossing(Crossing crossing){
         System.out.println("Vehicle.setCrossing() called");
         System.out.println("Vehicle.setCrossing() returned");
