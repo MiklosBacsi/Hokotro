@@ -132,7 +132,7 @@ public class Skeleton {
     }
 
     private static void testCase1(){
-        System.out.println("\nStarting testcase 1...");
+        System.out.println("\n*** Starting testcase 1 ***");
 
         initialize();
 
@@ -152,7 +152,7 @@ public class Skeleton {
     }
 
     private static void testCase5(){
-        System.out.println("\nStarting testcase 5...");
+        System.out.println("\n*** Starting testcase 5 ***");
 
         initialize();
 
