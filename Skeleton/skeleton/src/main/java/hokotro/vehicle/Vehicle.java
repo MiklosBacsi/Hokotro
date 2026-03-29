@@ -21,7 +21,7 @@ public abstract class Vehicle {
     public void setLane(Lane lane){
         Skeleton.increaseIndentation("Vehicle.setLane()");
 
-        Skeleton.print("Vehicle lane set");
+        Skeleton.print("Vehicle lane set!");
 
         Skeleton.decreaseIndentation("Vehicle.setLane()");
     }
