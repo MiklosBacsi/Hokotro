@@ -146,6 +146,35 @@ public class Skeleton {
     }
 
     private static void testCase3(){
+        System.out.println("\n*** Starting testcase 3 ***");
+
+        initialize();
+
+        Economy e = (Economy) objects.get("e");
+        Cleaner c = (Cleaner) objects.get("c");
+
+        SnowPlower s = (SnowPlower) objects.get("s");
+
+        int option = readNumber("1: SALT,\n" +
+                        "2: KEROSINE,\n" +
+                        "3: HEAD_SWEEPER,\n" +
+                        "4: HEAD_BLOWER,\n" +
+                        "5: HEAD_ICEBREAKER,\n" +
+                        "6: HEAD_SALTSPREADER,\n" +
+                        "7: HEAD_DRAGON,\n",
+                        1, 7);
+        if (option<=2) {
+            switch (option) {
+                case 1:
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        
+        e.processPurchase(s, null, );
     }
 
     private static void testCase4(){
@@ -189,6 +218,19 @@ public class Skeleton {
 
             if (choiceStr.equals("y")) { choice = true; isValid = true; }
             else if (choiceStr.equals("n")) { choice = false; isValid = true; }
+        } while (!isValid);
+
+        return choice;
+    }
+
+    public static int readNumber(String question,int min,int max) {
+        boolean isValid = false;
+        int choice = 0;
+
+        do {
+            System.out.print(question + " (" + min+" - "+max+")");
+            choice = scanner.nextInt();
+            if (choice>=min&&choice<=min) isValid = true; 
         } while (!isValid);
 
         return choice;
