@@ -1,5 +1,6 @@
 package hokotro;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -143,6 +144,14 @@ public class Skeleton {
     }
 
     private static void testCase2(){
+        System.out.println("\n*** Starting testcase 2 ***");
+
+        initialize();
+
+        BusDriver bd = (BusDriver) objects.get("bd");
+        Crossing cr1 = (Crossing) objects.get("cr1");
+
+        List<Road> roads = cr1.getRoads();
     }
 
     private static void testCase3(){
