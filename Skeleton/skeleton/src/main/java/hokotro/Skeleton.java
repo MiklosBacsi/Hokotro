@@ -173,13 +173,13 @@ public class Skeleton {
 
         SnowPlower s = (SnowPlower) objects.get("s");
 
-        int option = readNumber("1: SALT,\n" +
-                        "2: KEROSINE,\n" +
-                        "3: HEAD_SWEEPER,\n" +
-                        "4: HEAD_BLOWER,\n" +
-                        "5: HEAD_ICEBREAKER,\n" +
-                        "6: HEAD_SALTSPREADER,\n" +
-                        "7: HEAD_DRAGON,\n",
+        int option = readNumber("1: SALT\n" +
+                        "2: KEROSINE\n" +
+                        "3: HEAD_SWEEPER\n" +
+                        "4: HEAD_BLOWER\n" +
+                        "5: HEAD_ICEBREAKER\n" +
+                        "6: HEAD_SALTSPREADER\n" +
+                        "7: HEAD_DRAGON\n",
                         1, 7);
         
         int amount = 1;
@@ -280,9 +280,12 @@ public class Skeleton {
         int choice = 0;
 
         do {
-            System.out.print(question + " (" + min+" - "+max+")");
+            System.out.print(question + "(" + min+"-"+max+")  ");
             choice = scanner.nextInt();
-            if (choice>=min&&choice<=min) isValid = true; 
+
+            if (choice >= min && choice <= max) {
+                isValid = true;
+            }
         } while (!isValid);
 
         return choice;
