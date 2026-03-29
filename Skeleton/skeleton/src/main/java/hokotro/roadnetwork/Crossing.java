@@ -1,6 +1,10 @@
 package hokotro.roadnetwork;
 
+import hokotro.Skeleton;
 import hokotro.vehicle.Vehicle;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -50,4 +54,11 @@ public class Crossing {
         System.out.println("return removeVehicle()");
     }
 
+    public List<Road> getRoads() {
+        Skeleton.increaseIndentation("Crossing.getRoads()");
+
+        Skeleton.decreaseIndentation("Crossing.getRoads()");
+
+        return new ArrayList<>();
+    }
 }

@@ -1,5 +1,6 @@
 package hokotro;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -144,6 +145,22 @@ public class Skeleton {
     }
 
     private static void testCase2(){
+        System.out.println("\n*** Starting testcase 2 ***");
+
+        initialize();
+
+        BusDriver bd = (BusDriver) objects.get("bd");
+        Bus b = (Bus) objects.get("b");
+        Crossing cr1 = (Crossing) objects.get("cr1");
+        Road r1 = (Road) objects.get("r1");
+        Lane l1 = (Lane) objects.get("l1");
+
+        List<Road> roads = cr1.getRoads();
+
+        Skeleton.readBool("Would you like to choose road 1 instead of road 2?");
+        r1.getLanes(cr1);
+        Skeleton.readBool("Would you like to choose lane 1 instead of lane 2?");
+        l1.addVehicle(b);
     }
 
     private static void testCase3(){
