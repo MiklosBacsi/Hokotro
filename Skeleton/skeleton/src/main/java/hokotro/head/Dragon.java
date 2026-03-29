@@ -11,7 +11,7 @@ public class Dragon extends Head {
      * @param lane A sáv, amin a takarítást meg kell valósítsa
      */
     @Override
-    public void ApplyEffect(Lane lane){
+    public void applyEffect(Lane lane){
         System.out.println("dragon.ApplyEffect()");
         System.out.println("return dragon.ApplyEffect()");
     }

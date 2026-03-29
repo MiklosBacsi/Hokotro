@@ -1,3 +1,5 @@
+package hokotro.player;
+
 import hokotro.player.Player;
 
 /**

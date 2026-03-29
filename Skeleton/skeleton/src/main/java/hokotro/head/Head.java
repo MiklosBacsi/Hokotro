@@ -9,5 +9,5 @@ public abstract class Head {
      * absztrakt osztály, a takarítás megvalósítása
      * @param lane A sáv, amin a takarítást meg kell valósítsa
       */
-    public void ApplyEffect(Lane lane){}
+    public void applyEffect(Lane lane){}
 }
