@@ -1,3 +1,5 @@
+package hokotro.system;
+
 /**
  * Adott időközönként jelzést ad a rendszernek.
  */

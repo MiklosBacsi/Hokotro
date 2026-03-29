@@ -1,4 +1,6 @@
-/* 
+package hokotro.vehicle;
+
+/*
  * A buszvezetők által irányított jármű, célja, hogy minél többször megforduljon a 2 csomópontja között
  */
 

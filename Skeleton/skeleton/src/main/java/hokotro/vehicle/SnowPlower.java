@@ -1,4 +1,9 @@
+package hokotro.vehicle;
+
+import hokotro.head.Head;
+
 import java.util.Set;
+
 /**
  * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.
  */

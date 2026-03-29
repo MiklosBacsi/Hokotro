@@ -1,3 +1,7 @@
+package hokotro.roadnetwork;
+
+import hokotro.head.Head;
+
 /**
  * interfész a takarítás megvalósítására
  */

@@ -1,5 +1,8 @@
+package hokotro.roadnetwork;
+
 import java.util.List;
 import java.util.Set;
+
 /**
  * Csomópontokat köt össze, sávokból áll
  * Továbbítja a havazás mértékét a sávoknak. Visszaadja a szomszédos sávot és a járhatóságot.

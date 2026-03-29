@@ -1,6 +1,9 @@
-import java.util.Set;
+package hokotro.player;
 
-/* 
+import hokotro.system.ItemType;
+import hokotro.vehicle.SnowPlower;
+
+/**
  * A hókotrókat vezető játékos, tárolja a pénzt és a hókotróit
  */
 public class Cleaner extends Player {

@@ -1,4 +1,6 @@
-/* 
+import hokotro.player.Player;
+
+/**
  * A buszokat irányító játékos, tárolja a pontokat
  */
 public class BusDriver extends Player {

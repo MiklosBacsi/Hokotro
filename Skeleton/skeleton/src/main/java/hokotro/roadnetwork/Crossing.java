@@ -1,3 +1,6 @@
+package hokotro.roadnetwork;
+
+import hokotro.vehicle.Vehicle;
 import java.util.Set;
 
 /**

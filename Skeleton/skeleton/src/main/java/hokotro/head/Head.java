@@ -1,3 +1,7 @@
+package hokotro.head;
+
+import hokotro.roadnetwork.Lane;
+
 public abstract class Head {
     /* private SnowPlower snowPlower; */
 

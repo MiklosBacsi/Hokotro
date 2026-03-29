@@ -1,3 +1,7 @@
+package hokotro.vehicle;
+
+import hokotro.roadnetwork.Road;
+
 import java.util.List;
 
 /* 
@@ -20,7 +24,6 @@ public class Auto extends Vehicle {
         System.out.println("checkLaneChange()");
         System.out.println("return checkLaneChange()");
     }
-
 
     /**
      * Amennyiben beér egy kereszteződésbe és a legrövidebb út nem járható, a hívásával kér új legrövidebb útvonalat a célállomásáig

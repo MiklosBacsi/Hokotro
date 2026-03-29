@@ -1,9 +1,15 @@
+package hokotro.player;
+
+import hokotro.roadnetwork.Lane;
+import hokotro.vehicle.Vehicle;
+
 /**
  * Absztrakt ősosztály minden játékostípushoz.
  */
 public abstract class Player {
     
     //private int id;
+
     /**
      * Visszaadja a játékos azonosítóját.
      * @return a játékos azonosítója
@@ -11,7 +17,9 @@ public abstract class Player {
     public int getId(){ 
         System.out.println("Player.getId() called");
         System.out.println("Player.getId() returned");
-        return 0;}
+        return 0;
+    }
+
     /**
      * A mozgás későbbi megvalósítására.
      * @param vehicle a mozgó jármű

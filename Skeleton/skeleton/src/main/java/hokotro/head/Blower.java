@@ -1,7 +1,10 @@
-/* 
+package hokotro.head;
+
+import hokotro.roadnetwork.Lane;
+
+/**
  * A hókotró egyik fejtípusa, letakarítja a sávról az összes havat és feltört jeget
  */
-
 public class Blower extends Head {
     /**
      *Felülíja az ősosztály metódusát, eltünteti a sávról a havat és feltört jeget

@@ -1,5 +1,8 @@
+package hokotro.roadnetwork;
+
 import java.util.List;
 import java.util.Set;
+
 /**
  * Birtokolja a csomópontokat, utakat, alagutakat.
 *Felelősség: Autók útvonaltervezése, a havazás mértékének továbbítása az utaknak.
@@ -16,6 +19,7 @@ public class RoadNetwork {
         System.out.println("RoadNetwork.letItSnow() called");
         System.out.println("RoadNetwork.letItSnow() returned");
     }
+
     /**
      *  Kiszámolja az autóknak a két csomópont közötti legrövidebb utat.
      * @param start a kiindulási csomópont
@@ -27,6 +31,4 @@ public class RoadNetwork {
         System.out.println("RoadNetwork.planPath() returned");
         return null;
     }
-
-
 }

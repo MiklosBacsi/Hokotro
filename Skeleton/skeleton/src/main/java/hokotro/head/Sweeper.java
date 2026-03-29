@@ -1,3 +1,7 @@
+package hokotro.head;
+
+import hokotro.roadnetwork.Lane;
+
 /**
  * A havat és feltört jeget átteszi a jobb oldali sávba.
  */

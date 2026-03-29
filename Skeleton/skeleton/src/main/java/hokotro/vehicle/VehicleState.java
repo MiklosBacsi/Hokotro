@@ -1,3 +1,5 @@
+package hokotro.vehicle;
+
 public enum VehicleState {
     NORMAL,
     SLIDE,

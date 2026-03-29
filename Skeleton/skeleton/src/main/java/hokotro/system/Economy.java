@@ -1,4 +1,9 @@
-import java.util.HashMap;
+package hokotro.system;
+
+import hokotro.player.Cleaner;
+import hokotro.system.ItemType;
+import hokotro.vehicle.SnowPlower;
+
 /**
  * osztály a vásárlás megvalósítására
   */

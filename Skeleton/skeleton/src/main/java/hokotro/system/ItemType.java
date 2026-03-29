@@ -1,3 +1,5 @@
+package hokotro.system;
+
 /**
  * enum osztály, ami a vásárolható eszközöket és erőforrásokat tartalmazza
  */

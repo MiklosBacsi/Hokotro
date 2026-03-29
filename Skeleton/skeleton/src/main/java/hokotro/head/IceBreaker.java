@@ -1,7 +1,10 @@
-/* 
+package hokotro.head;
+
+import hokotro.roadnetwork.Lane;
+
+/**
  * A hókotró egyik fejtípusa, feltöri a sávon a jeget
  */
-
 public class IceBreaker extends Head {
     /**
      *Felülíja az ősosztály metódusát, feltöri a sávon a jeget

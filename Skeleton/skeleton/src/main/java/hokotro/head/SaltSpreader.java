@@ -1,3 +1,7 @@
+package hokotro.head;
+
+import hokotro.roadnetwork.Lane;
+
 /**
  * Felsózza az adott sávot.
  */
