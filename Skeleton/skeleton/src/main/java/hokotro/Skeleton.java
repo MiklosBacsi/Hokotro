@@ -152,6 +152,14 @@ public class Skeleton {
     }
 
     private static void testCase5(){
+        System.out.println("\nStarting testcase 5...");
+
+        initialize();
+
+        SnowPlower sp = (SnowPlower) objects.get("s");
+        IceBreaker ib = new IceBreaker();
+
+        sp.changeHead(ib);
     }
 
     public static void increaseIndentation(String funcName) {

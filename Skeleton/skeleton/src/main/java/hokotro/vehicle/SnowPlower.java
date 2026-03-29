@@ -1,5 +1,6 @@
 package hokotro.vehicle;
 
+import hokotro.Skeleton;
 import hokotro.head.Head;
 
 import java.util.Set;
@@ -19,7 +20,8 @@ public class SnowPlower extends Vehicle{
    * @param newHead
    */  
   public void changeHead(Head newHead){
-      System.out.println("SnowPlower.changeHead() called");
-      System.out.println("SnowPlower.changeHead() returned");
+      Skeleton.increaseIndentation("SnowPlower.changeHead()");
+      Skeleton.print("The SnowPlower's head changed!");
+      Skeleton.decreaseIndentation("SnowPlower.changeHead()");
     }
 }
