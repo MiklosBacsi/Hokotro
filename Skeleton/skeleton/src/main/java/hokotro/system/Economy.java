@@ -91,9 +91,18 @@ public class Economy {
      * @param c a takarító, aki vásárol
      * @return a hókotró referenciája, ha nem volt rá fedezett akkor null
      */
-    public SnowPlower buyNewSnowPlow(Cleaner c){
-        System.out.println("buyNewSnowPlow()");
-        System.out.println("return buyNewSnowPlow()");
+    public SnowPlower buyNewSnowPlower(Cleaner cleaner){
+        Skeleton.increaseIndentation("Economy.buyNewSnowPlower()");
+
+        int money = cleaner.getMoney();
+        if (money>=100) {
+            cleaner.decreaseMoney(100);
+            Skeleton.decreaseIndentation("Economy.buyNewSnowPlower()");
+            return new SnowPlower();
+        }
+
+        Skeleton.print("Not enough money");
+        Skeleton.decreaseIndentation("Economy.buyNewSnowPlower()");
         return null;
     }
 }

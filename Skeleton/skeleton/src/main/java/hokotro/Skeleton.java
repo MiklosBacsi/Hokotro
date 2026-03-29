@@ -222,6 +222,14 @@ public class Skeleton {
     }
 
     private static void testCase4(){
+        System.out.println("\n*** Starting testcase 4 ***");
+
+        initialize();
+
+        Cleaner c = (Cleaner) objects.get("c");
+        Economy e = (Economy) objects.get("e");
+
+        e.buyNewSnowPlower(c);
     }
 
     private static void testCase5(){
