@@ -96,9 +96,19 @@ public class Economy {
 
         int money = cleaner.getMoney();
         if (money>=100) {
+            int headNumber =Skeleton.readNumber("1. Sweeper\n2. IceBreaker\n", 1, 2);
             cleaner.decreaseMoney(100);
-            Skeleton.decreaseIndentation("Economy.buyNewSnowPlower()");
-            return new SnowPlower();
+            if (headNumber == 1) {
+                SnowPlower sp = new SnowPlower();
+                sp.addHead(new Sweeper());
+                Skeleton.decreaseIndentation("Economy.buyNewSnowPlower()");
+                return sp;
+            } else {
+                SnowPlower sp = new SnowPlower();
+                sp.addHead(new IceBreaker());
+                Skeleton.decreaseIndentation("Economy.buyNewSnowPlower()");
+                return sp;
+            }
         }
 
         Skeleton.print("Not enough money");
