@@ -1,5 +1,12 @@
 package hokotro.system;
 
+import hokotro.Skeleton;
+import hokotro.head.Blower;
+import hokotro.head.Dragon;
+import hokotro.head.Head;
+import hokotro.head.IceBreaker;
+import hokotro.head.SaltSpreader;
+import hokotro.head.Sweeper;
 import hokotro.player.Cleaner;
 import hokotro.system.ItemType;
 import hokotro.vehicle.SnowPlower;
@@ -27,10 +34,56 @@ public class Economy {
      * @param count amennyit vásárol
      * @return true, ha volt rá fedezete a takarítónak, egyébként false
      */
-    public boolean processPurchase(SnowPlower snowPlower, ItemType item, int count){
-        System.out.println("processPurchase()");
-        System.out.println("return processPurchase()");
-        return true;
+    public boolean processPurchase(SnowPlower snowPlower, ItemType item, int count,Cleaner cleaner){
+        Skeleton.increaseIndentation("Economy.processPurchase()");
+
+        int money = cleaner.getMoney();
+        if (money>=5*count) {
+            cleaner.decreaseMoney(5*count);
+            switch (item) {
+                case ItemType.SALT:
+                    snowPlower.increaseSalt(count);
+                break;
+                case ItemType.KEROSINE:
+                    snowPlower.increaseKerosine(count);
+                break;
+                default:
+                    Head head = null;
+                    switch (item) {
+                        case HEAD_SWEEPER:
+                            head = new Sweeper();
+                            break;
+
+                        case HEAD_BLOWER:
+                            head = new Blower();
+                            break;
+
+                        case HEAD_ICEBREAKER:
+                            head = new IceBreaker();
+                            break;
+
+                        case HEAD_SALTSPREADER:
+                            head = new SaltSpreader();
+                            break;
+
+                        case HEAD_DRAGON:
+                            head = new Dragon();
+                            break;
+                        default:
+                            break;
+                    }
+                    snowPlower.addHead(head);
+                    break;
+            }
+            Skeleton.decreaseIndentation("Economy.processPurchase()");
+            return true;
+        }else{
+            Skeleton.print("Not enough money");
+            Skeleton.decreaseIndentation("Economy.processPurchase()");
+            return false;
+        }
+
+
     }
 
     /**

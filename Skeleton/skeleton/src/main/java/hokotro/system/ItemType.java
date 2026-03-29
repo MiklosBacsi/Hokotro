@@ -11,5 +11,5 @@ public enum ItemType {
     HEAD_ICEBREAKER,
     HEAD_SALTSPREADER,
     HEAD_DRAGON,
-    NEW_SNOWPLOW
+    NEW_SNOWPLOWER
 }

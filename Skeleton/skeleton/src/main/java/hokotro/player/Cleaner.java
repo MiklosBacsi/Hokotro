@@ -1,5 +1,7 @@
 package hokotro.player;
 
+import hokotro.Skeleton;
+
 import hokotro.system.ItemType;
 import hokotro.vehicle.SnowPlower;
 
@@ -14,9 +16,10 @@ public class Cleaner extends Player {
      * beállítja a takarító pénzmennyiségét
      * @param amount Az érték, amire be lesz állítva
      */
-    public void setMoney(int amount) {
-        System.out.println("setMoney()");
-        System.out.println("return setMoney()");
+    public void decreaseMoney(int amount) {
+        Skeleton.increaseIndentation("decreaseMoney()");
+        Skeleton.print("Money decreased");
+        Skeleton.decreaseIndentation("decreaseMoney()");
     }
 
     /**
@@ -24,9 +27,10 @@ public class Cleaner extends Player {
      * @return money Az aktuális pénzmennyisége a takarítónak
      */
     public int getMoney(){
-        System.out.println("getMoney()");
-        System.out.println("return getMoney()");
-        return 0;
+        Skeleton.increaseIndentation("Cleaner.getMoney()");
+        int money = Skeleton.readNumber("Money: ", 0, 100000);
+        Skeleton.decreaseIndentation("Cleaner.getMoney()");
+        return money;
     }
 
     /**

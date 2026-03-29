@@ -12,6 +12,7 @@ import hokotro.roadnetwork.RoadNetwork;
 import hokotro.roadnetwork.SurfaceCondition;
 import hokotro.system.Economy;
 import hokotro.system.GameDirector;
+import hokotro.system.ItemType;
 import hokotro.vehicle.Bus;
 import hokotro.vehicle.Car;
 import hokotro.vehicle.SnowPlower;
@@ -163,18 +164,44 @@ public class Skeleton {
                         "6: HEAD_SALTSPREADER,\n" +
                         "7: HEAD_DRAGON,\n",
                         1, 7);
+        
+        int amount = 1;
+        
         if (option<=2) {
-            switch (option) {
-                case 1:
-                    
-                    break;
-            
-                default:
-                    break;
-            }
+            amount = readNumber("", 1, 100000);
         }
         
-        e.processPurchase(s, null, );
+        switch (option) {
+            case 1:
+                e.processPurchase(s, ItemType.SALT, amount,c);
+                break;
+            case 2:
+                e.processPurchase(s, ItemType.KEROSINE, amount,c);
+                break;
+            
+            case 3:
+                e.processPurchase(s, ItemType.HEAD_SWEEPER, amount,c);
+                break;
+            case 4:
+                e.processPurchase(s, ItemType.HEAD_BLOWER, amount,c);
+                break;
+            
+            case 5:
+                e.processPurchase(s, ItemType.HEAD_ICEBREAKER, amount,c);
+                break;
+
+            case 6:
+                e.processPurchase(s, ItemType.HEAD_SALTSPREADER, amount,c);
+                break;
+            
+            case 7:
+                e.processPurchase(s, ItemType.HEAD_DRAGON, amount,c);
+                break;
+
+            default:
+                break;
+        }
+        
     }
 
     private static void testCase4(){
