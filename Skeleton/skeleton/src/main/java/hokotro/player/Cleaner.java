@@ -1,4 +1,6 @@
-/*
+import java.util.Set;
+
+/* 
  * A hókotrókat vezető játékos, tárolja a pénzt és a hókotróit
  */
 public class Cleaner extends Player {

@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /**
  * osztály a vásárlás megvalósítására
   */
