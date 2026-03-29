@@ -11,7 +11,8 @@ public class Sweeper extends Head {
      *
      * @param lane a sáv, amelyben a hatás érvényesül
      */
-    void applyEffect(Lane lane){
+    @Override
+    public void applyEffect(Lane lane){
         System.out.println("Sweeper.applyEffect() called");
         System.out.println("Sweeper.applyEffect() returned");
     }

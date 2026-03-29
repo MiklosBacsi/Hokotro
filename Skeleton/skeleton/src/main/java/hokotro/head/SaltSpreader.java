@@ -11,7 +11,8 @@ public class SaltSpreader extends Head {
      *
      * @param lane a sáv, amelyben a hatás érvényesül
      */
-    void applyEffect(Lane lane){
+    @Override
+    public void applyEffect(Lane lane){
         System.out.println("SaltSpreader.applyEffect() called");
         System.out.println("SaltSpreader.applyEffect() returned");
     }
