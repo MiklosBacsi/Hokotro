@@ -1,7 +1,8 @@
 package hokotro.roadnetwork;
 
+import hokotro.Skeleton;
 import hokotro.vehicle.Vehicle;
-import java.util.List;
+import hokotro.vehicle.VehicleState;
 
 /**
  * Kezeli az összecsúszásokat és utóhatásaikat.
@@ -26,8 +27,19 @@ public class Lane {
      * @param vehicle a hozzáadandó jármű
      */
     public void addVehicle(Vehicle vehicle){
-        System.out.println("Lane.addVehicle() called");
-        System.out.println("Lane.addVehicle() returned");
+        Skeleton.increaseIndentation("Lane.addVehicle()");
+
+        if (Skeleton.readBool("Is the vehicle stuck?")) {
+            vehicle.setState(VehicleState.STUCK);
+        }
+
+        else if (Skeleton.readBool("Is the lane icy?")) {
+            vehicle.setState(VehicleState.SLIDE);
+        }
+
+        vehicle.setLane(this);
+
+        Skeleton.decreaseIndentation("Lane.addVehicle()");
     }
 
     /**
@@ -35,8 +47,11 @@ public class Lane {
      * @param vehicle a eltávolítandó jármű
      */
     public void removeVehicle(Vehicle vehicle){
-        System.out.println("Lane.removeVehicle() called");
-        System.out.println("Lane.removeVehicle() returned");
+        Skeleton.increaseIndentation("Lane.removeVehicle()");
+
+        // xd
+
+        Skeleton.decreaseIndentation("Lane.removeVehicle()");
     }
 
     /**
@@ -44,8 +59,12 @@ public class Lane {
      * @return a sáv állapota
      */
     public SurfaceCondition getSurfaceCondition(){
-        System.out.println("Lane.getSurfaceCondition() called");
-        System.out.println("Lane.getSurfaceCondition() returned");
+        Skeleton.increaseIndentation("Lane.getSurfaceCondition()");
+
+        // xd
+
+        Skeleton.decreaseIndentation("Lane.getSurfaceCondition()");
+
         return null;
     }
 

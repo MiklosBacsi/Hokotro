@@ -1,5 +1,6 @@
 package hokotro.vehicle;
 
+import hokotro.Skeleton;
 import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Lane;
 
@@ -18,8 +19,19 @@ public abstract class Vehicle {
      * @param lane az aktuális sáv
      */
     public void setLane(Lane lane){
-        System.out.println("Vehicle.setLane() called");
-        System.out.println("Vehicle.setLane() returned");
+        Skeleton.increaseIndentation("Vehicle.setLane()");
+
+        Skeleton.print("Vehicle lane set");
+
+        Skeleton.decreaseIndentation("Vehicle.setLane()");
+    }
+
+    public  void setState(VehicleState state) {
+        Skeleton.increaseIndentation("Vehicle.setState()");
+
+        Skeleton.print("Vehicle state set to " + state.toString());
+
+        Skeleton.decreaseIndentation("Vehicle.setState()");
     }
 
     /**

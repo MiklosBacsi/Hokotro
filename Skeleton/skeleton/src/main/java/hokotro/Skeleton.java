@@ -19,10 +19,15 @@ import hokotro.system.Timer;
 import hokotro.head.*;
 
 public class Skeleton {
+
+    private static int indentationCounter;
+
+    public static Scanner scanner;
+
     private static Map<String, Object> objects = new HashMap<>();
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         initialize();
 
         int testCase = -1;
@@ -59,7 +64,8 @@ public class Skeleton {
     }
 
     private static void initialize() {
-        System.out.println("--- Initializing Object Graph ---");
+        objects.clear();
+        indentationCounter = 0;
 
         // 1: create GameDirector
         GameDirector gd = new GameDirector();
@@ -69,9 +75,11 @@ public class Skeleton {
         RoadNetwork rn = new RoadNetwork();
         objects.put("rn", rn);
 
+
         // 1.1.1 & 1.1.2: Crossings
         objects.put("cr1", new Crossing());
         objects.put("cr2", new Crossing());
+
 
         // 1.1.3: Road 1 and its hierarchy
         Road r1 = new Road();
@@ -85,6 +93,7 @@ public class Skeleton {
         objects.put("l2", l2);
         objects.put("sc2", new SurfaceCondition()); // 1.1.3.2.1
 
+
         // 1.1.4: Road 2 and its hierarchy
         Road r2 = new Road();
         objects.put("r2", r2);
@@ -93,6 +102,7 @@ public class Skeleton {
         objects.put("l3", l3);
         objects.put("sc3", new SurfaceCondition()); // 1.1.4.1.1
 
+
         // 1.2: Cleaner and SnowPlower hierarchy
         Cleaner c = new Cleaner();
         objects.put("c", c);
@@ -100,8 +110,9 @@ public class Skeleton {
         SnowPlower s = new SnowPlower();
         objects.put("s", s);
         
-        Sweeper h = new Sweeper();
-        objects.put("h", h);
+        Sweeper sh = new Sweeper();
+        objects.put("sh", sh);
+
 
         // 1.3: BusDriver and Bus
         BusDriver bd = new BusDriver();
@@ -112,16 +123,23 @@ public class Skeleton {
         objects.put("c1", new Car());
         objects.put("c2", new Car());
 
+
         // 1.6: Timer
         objects.put("t", new Timer());
 
         // 1.7: Economy
         objects.put("e", new Economy());
-
-        System.out.println("Initialization complete. " + objects.size() + " objects created.");
     }
 
     private static void testCase1(){
+        System.out.println("\nStarting testcase 1...");
+
+        initialize();
+
+        Car c1 = (Car) objects.get("c1");
+        Lane l1 = (Lane) objects.get("l1");
+
+        l1.addVehicle(c1);
     }
 
     private static void testCase2(){
@@ -134,5 +152,37 @@ public class Skeleton {
     }
 
     private static void testCase5(){
+    }
+
+    public static void increaseIndentation(String funcName) {
+        indentationCounter++;
+        Skeleton.print(funcName + " called");
+    }
+
+    public static void decreaseIndentation(String funcName) {
+        Skeleton.print(funcName + " returned");
+        indentationCounter--;
+    }
+
+    public static void print(String printable) {
+        for (int i = 1; i < indentationCounter; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(printable);
+    }
+
+    public static boolean readBool(String question) {
+        boolean isValid = false;
+        boolean choice = false;
+
+        do {
+            System.out.print(question + " (y/n):  ");
+            String choiceStr = scanner.next();
+
+            if (choiceStr.equals("y")) { choice = true; isValid = true; }
+            else if (choiceStr.equals("n")) { choice = false; isValid = true; }
+        } while (!isValid);
+
+        return choice;
     }
 }
