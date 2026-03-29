@@ -18,9 +18,40 @@ public class Skeleton {
 
             if (scanner.hasNextInt()){
                 testCase = scanner.nextInt();
-            }
 
+                switch (testCase) {
+                    case 1 -> testCase1();
+                    case 2 -> testCase2();
+                    case 3 -> testCase3();
+                    case 4 -> testCase4();
+                    case 5 -> testCase5();
+                    case 0 -> System.out.println("Exiting...");
+                    default -> System.out.println("Invalid choice, try again.");
+                }
+            }
         } while (testCase != 0);
         scanner.close();
+    }
+
+    private static void initialize(){}
+
+    private static void testCase1(){
+        initialize();
+    }
+
+    private static void testCase2(){
+        initialize();
+    }
+
+    private static void testCase3(){
+        initialize();
+    }
+
+    private static void testCase4(){
+        initialize();
+    }
+
+    private static void testCase5(){
+        initialize();
     }
 }
