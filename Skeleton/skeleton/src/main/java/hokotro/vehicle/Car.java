@@ -4,11 +4,11 @@ import hokotro.roadnetwork.Road;
 
 import java.util.List;
 
-/* 
+/**
  * A játék által irányított jármű, 2 csomópon között közlekedik a legrövidebb úton
  * ha eléri a célállomást, megszűnik
  */
-public class Auto extends Vehicle {
+public class Car extends Vehicle {
     /* 
     private List<Road> currentPath;
     private Crossing origin;
