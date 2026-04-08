@@ -71,8 +71,8 @@ run_test() {
 # ======================  YOUR TESTS  ======================
 
 run_test 1 \
-    "Buys item" 5 \
-    "Hero dies" 2
+    "Buys item" 0 \
+    "Hero dies" 0
 
 # Uncomment and adjust when you add more tests:
 # run_test 2 \
