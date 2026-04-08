@@ -1,5 +1,5 @@
 #!/bin/bash
-set -uo pipefail  # Strict mode (but without -e so we can continue on errors)
+set -uo pipefail
 
 echo "=== Building Prototype ==="
 mvn clean compile --batch-mode --no-transfer-progress
@@ -18,19 +18,33 @@ run_test() {
 
     echo "→ Running Test ${test_num}..."
 
-    # Run the Java program (input from tests/, output captured to out/)
+    # Check if input file exists
+    if [ ! -f "tests/${test_num}.txt" ]; then
+        echo "   ❌  Test ${test_num} FAILED: Input file tests/${test_num}.txt not found!"
+        FAILED=$((FAILED + 1))
+        echo ""
+        return
+    fi
+
+    # Run the Java program and capture output
     cat "tests/${test_num}.txt" | java -cp target/classes Prototype > "out/${test_num}.txt" 2>&1
 
     local test_failed=0
 
-    # Process all assertions for this test
+    # Process all pattern/expected pairs
     while [[ $# -gt 0 ]]; do
         local pattern="$1"
-        local expected=$2
+        local expected="$2"
         shift 2
 
+        # Clean count: remove any whitespace or newlines
         local actual
-        actual=$(grep -c "$pattern" "out/${test_num}.txt" || echo 0)
+        actual=$(grep -c "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+
+        # Convert to number safely
+        if ! [[ "$actual" =~ ^[0-9]+$ ]]; then
+            actual=0
+        fi
 
         if [ "$actual" -ne "$expected" ]; then
             echo "   ❌  Expected '$pattern' to appear $expected time(s), but got $actual"
@@ -42,9 +56,9 @@ run_test() {
 
     if [ $test_failed -eq 1 ]; then
         echo "   Test ${test_num} FAILED"
-        echo "   → Output preview:"
+        echo "   → Output preview (first 30 lines):"
         echo "   --------------------------------------------------"
-        cat "out/${test_num}.txt" | head -n 30
+        head -n 30 "out/${test_num}.txt"
         echo "   --------------------------------------------------"
         FAILED=$((FAILED + 1))
     else
@@ -54,31 +68,27 @@ run_test() {
     echo ""
 }
 
-# ======================  YOUR TESTS GO HERE  ======================
+# ======================  YOUR TESTS  ======================
 
 run_test 1 \
     "Buys item" 5 \
     "Hero dies" 2
 
-run_test 2 \
-    "Rides" 4 \
-    "Cuts" 3
+# Uncomment and adjust when you add more tests:
+# run_test 2 \
+#     "Rides" 4 \
+#     "Cuts" 3
 
-# Add more tests easily:
 # run_test 3 \
 #     "Makes food" 5 \
 #     "Eats" 8
 
-# run_test 4 \
-#     "Some other string" 10 \
-#     "Another string" 0
-
-# =================================================================
+# =========================================================
 
 echo "========================================"
 echo "Test Summary:"
-echo "   Total tests:  $TOTAL"
-echo "   Failed:       $FAILED"
+echo "   Total tests run:  $TOTAL"
+echo "   Failed:           $FAILED"
 
 if [ $FAILED -gt 0 ]; then
     echo "❌  Some tests failed!"
