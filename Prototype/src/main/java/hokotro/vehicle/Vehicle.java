@@ -5,13 +5,13 @@ import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Lane;
 
 public abstract class Vehicle {
-    /*
+    
     private Lane lane;
     private Crossing crossing;
     private int id;
     private VehicleState state;
     private int lanePosition;
-    */
+    
     
     /**
      * Beállítja az autó éppen aktuális sávját, és nullázza az aktuális crossingot.

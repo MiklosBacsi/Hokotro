@@ -6,10 +6,10 @@ package hokotro.vehicle;
 
 public class Bus extends Vehicle {
     
-    /* private int waitTicks;
+    private int waitTicks;
     private Crossing origin;
     private Crossing destination;
-    private BusDriver owner; */
+    private BusDriver owner; 
 
     /* 
      * Várakozó állapotba teszi magát, amíg le nem jár a várakozási ideje

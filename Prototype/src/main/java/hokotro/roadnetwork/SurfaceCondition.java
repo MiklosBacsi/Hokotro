@@ -8,7 +8,9 @@ public class SurfaceCondition {
     private int snowThickness;
     private int driveCount;
     private int iceThickness;
+    private int rockHeight;
     private boolean isSalted;
+    private boolean isRocky;
 
     /**
      * Havat szór az útra, növelve a hóvastagságot.

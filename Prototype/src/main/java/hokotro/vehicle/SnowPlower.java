@@ -7,11 +7,12 @@ import hokotro.head.Head;
  * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.
  */
 public class SnowPlower extends Vehicle{
-    //private Set<Head> heads;
-    //private Head currentHead;
-    //private int salt;
-    //private int kerosin;
-    //private Cleaner owner;
+    private Set<Head> heads;
+    private Head currentHead;
+    private int salt;
+    private int kerosin;
+    private int stone;
+    private Cleaner owner;
 
     /**
      * Fejcserét valósítja meg.

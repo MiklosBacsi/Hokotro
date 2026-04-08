@@ -9,11 +9,11 @@ import java.util.List;
  * ha eléri a célállomást, megszűnik
  */
 public class Car extends Vehicle {
-    /* 
+    
     private List<Road> currentPath;
     private Crossing origin;
     private Crossing destination;
-    */
+    
 
     /**
      * Ellenőrzi, hogy az autó át tud-e sorolni egy szomszédos sávba, 
