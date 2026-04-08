@@ -15,7 +15,7 @@ import hokotro.vehicle.SnowPlower;
   */
 public class Economy {
 
-    /* private HashMap<ItemType,Integer> prices; */
+    private HashMap<ItemType,Integer> prices;
 
     /**
      * kifizeti a hókotró munkáját

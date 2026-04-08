@@ -9,8 +9,8 @@ import hokotro.vehicle.SnowPlower;
  * A hókotrókat vezető játékos, tárolja a pénzt és a hókotróit
  */
 public class Cleaner extends Player {
-    /* private Set<SnowPlower> snowplows;
-    private int money; */
+    private Set<SnowPlower> snowplows;
+    private int money;
 
     /**
      * beállítja a takarító pénzmennyiségét
