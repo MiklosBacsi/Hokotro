@@ -5,10 +5,10 @@ package hokotro.roadnetwork;
  * A sávok állapotát tárolja.
  */
 public class SurfaceCondition {
-    /* private int snowThickness;
+    private int snowThickness;
     private int driveCount;
     private int iceThickness;
-    private boolean isSalted; */
+    private boolean isSalted;
 
     /**
      * Havat szór az útra, növelve a hóvastagságot.

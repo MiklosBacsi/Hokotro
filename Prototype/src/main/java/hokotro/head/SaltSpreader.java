@@ -6,6 +6,7 @@ import hokotro.roadnetwork.Lane;
  * Felsózza az adott sávot.
  */
 public class SaltSpreader extends Head {
+    static int consume;
     /**
      * Felsózza az adott sávot.
      *

@@ -10,8 +10,8 @@ import java.util.List;
  * Egy csomópont, tárolja az éppen ott tartózkodó járművek és a  hozzá befutó utakat
  */
 public class Crossing {
-    /* private Set<Road> roads;
-    private Set<Vehicle> vehicles; */
+    private Set<Road> roads;
+    private Set<Vehicle> vehicles;
 
     /**
      * megvizsgálja, hogy van-e járható sávja egy adott útnak adott irányba

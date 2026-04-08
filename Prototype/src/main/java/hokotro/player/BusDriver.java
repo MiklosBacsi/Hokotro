@@ -6,9 +6,8 @@ import hokotro.player.Player;
  * A buszokat irányító játékos, tárolja a pontokat
  */
 public class BusDriver extends Player {
-    /* private int points;
+    private int points;
     private Bus ownBus;
-    */
 
     /**
      * Növeli a buszvezető pontjait

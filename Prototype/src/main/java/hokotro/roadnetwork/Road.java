@@ -10,9 +10,9 @@ import java.util.List;
  * Továbbítja a havazás mértékét a sávoknak. Visszaadja a szomszédos sávot és a járhatóságot.
  */
 public class Road {
-  /* private List<Lane> lanes1;
+  private List<Lane> lanes1;
   private List<Lane> lanes2; 
-  private int length; */
+  private int length;
 
     /**
      * Továbbítja a havazást a sávoknak.

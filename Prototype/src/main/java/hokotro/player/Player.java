@@ -8,7 +8,7 @@ import hokotro.vehicle.Vehicle;
  */
 public abstract class Player {
     
-    //private int id;
+    private int id;
 
     /**
      * Visszaadja a játékos azonosítóját.

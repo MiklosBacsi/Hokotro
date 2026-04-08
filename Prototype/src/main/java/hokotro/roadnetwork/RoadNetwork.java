@@ -8,8 +8,8 @@ import java.util.Set;
 *Felelősség: Autók útvonaltervezése, a havazás mértékének továbbítása az utaknak.
  */
 public class RoadNetwork {
-    /* private Set<Road> roads;
-    private Set<Crossing> crossings; */
+    private Set<Road> roads;
+    private Set<Crossing> crossings;
 
     /**
      * Továbbítja a havazást az utaknak.
