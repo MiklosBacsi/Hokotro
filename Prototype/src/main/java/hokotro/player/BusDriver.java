@@ -1,6 +1,7 @@
 package hokotro.player;
 
 import hokotro.player.Player;
+import hokotro.vehicle.Bus;
 
 /**
  * A buszokat irányító játékos, tárolja a pontokat

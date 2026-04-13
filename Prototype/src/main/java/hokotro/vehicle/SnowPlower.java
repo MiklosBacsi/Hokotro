@@ -2,6 +2,9 @@ package hokotro.vehicle;
 
 import hokotro.Prototype;
 import hokotro.head.Head;
+import hokotro.player.Cleaner;
+
+import java.util.Set;
 
 /**
  * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.

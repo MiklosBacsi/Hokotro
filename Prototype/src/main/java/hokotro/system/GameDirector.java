@@ -1,5 +1,9 @@
 package hokotro.system;
 
+import hokotro.player.Player;
+import hokotro.roadnetwork.RoadNetwork;
+import hokotro.vehicle.Car;
+
 import java.util.Set;
 
 /**
@@ -9,7 +13,7 @@ public class GameDirector {
     private RoadNetwork roadNetwork;
     private Timer timer;
     private Set<Player> players;
-    private Set<Auto> autos;
+    private Set<Car> cars;
 
     /**
      * inicalizálja a játékteret

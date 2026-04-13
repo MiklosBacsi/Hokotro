@@ -10,6 +10,8 @@ import hokotro.head.Sweeper;
 import hokotro.player.Cleaner;
 import hokotro.vehicle.SnowPlower;
 
+import java.util.HashMap;
+
 /**
  * osztály a vásárlás megvalósítására
   */

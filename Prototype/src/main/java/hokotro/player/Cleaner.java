@@ -5,6 +5,8 @@ import hokotro.Prototype;
 import hokotro.system.ItemType;
 import hokotro.vehicle.SnowPlower;
 
+import java.util.Set;
+
 /**
  * A hókotrókat vezető játékos, tárolja a pénzt és a hókotróit
  */

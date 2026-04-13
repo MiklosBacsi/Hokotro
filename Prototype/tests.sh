@@ -13,12 +13,11 @@ TOTAL=0
 
 run_test() {
     local test_num=$1
-    shift
     TOTAL=$((TOTAL + 1))
 
     echo "→ Running Test ${test_num}..."
 
-    # Check if input file exists
+    # Check input file
     if [ ! -f "tests/${test_num}.txt" ]; then
         echo "   ❌  Test ${test_num} FAILED: Input file tests/${test_num}.txt not found!"
         FAILED=$((FAILED + 1))
@@ -26,39 +25,56 @@ run_test() {
         return
     fi
 
-    # Run the Java program and capture output
-    cat "tests/${test_num}.txt" | java -cp target/classes Prototype > "out/${test_num}.txt" 2>&1
+    # Check requirement file
+    local req_file="test-requirements/${test_num}.txt"
+    if [ ! -f "$req_file" ]; then
+        echo "   ❌  Test ${test_num} FAILED: Requirement file ${req_file} not found!"
+        FAILED=$((FAILED + 1))
+        echo ""
+        return
+    fi
+
+    # Run the Java program (with correct package)
+    cat "tests/${test_num}.txt" | java -cp target/classes hokotro.Prototype > "out/${test_num}.txt" 2>&1
 
     local test_failed=0
 
-    # Process all pattern/expected pairs
-    while [[ $# -gt 0 ]]; do
-        local pattern="$1"
-        local expected="$2"
-        shift 2
+    echo "   Checking requirements:"
 
-        # Clean count: remove any whitespace or newlines
-        local actual
-        actual=$(grep -c "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+    # Read each line from the requirement file
+    while IFS= read -r line || [ -n "$line" ]; do
+        # Skip empty lines and comments
+        [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
 
-        # Convert to number safely
-        if ! [[ "$actual" =~ ^[0-9]+$ ]]; then
-            actual=0
+        # Parse "pattern":expected
+        if [[ "$line" =~ ^[[:space:]]*\"([^\"]+)\"[[:space:]]*:[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+            local pattern="${BASH_REMATCH[1]}"
+            local expected="${BASH_REMATCH[2]}"
+        else
+            echo "   ❌  Invalid requirement format in ${req_file}: '${line}'"
+            echo "       Expected format: \"Pattern\":123"
+            test_failed=1
+            continue
         fi
+
+        # Count occurrences (exact match)
+        local actual
+        actual=$(grep -c -F "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+        actual=${actual:-0}
 
         if [ "$actual" -ne "$expected" ]; then
-            echo "   ❌  Expected '$pattern' to appear $expected time(s), but got $actual"
+            echo "   ❌  Expected \"$pattern\" to appear $expected time(s), but got $actual"
             test_failed=1
         else
-            echo "   ✅  '$pattern' count is correct ($actual)"
+            echo "   ✅  \"$pattern\" count is correct ($actual)"
         fi
-    done
+    done < "$req_file"
 
     if [ $test_failed -eq 1 ]; then
         echo "   Test ${test_num} FAILED"
-        echo "   → Output preview (first 30 lines):"
+        echo "   → Output preview (first 40 lines):"
         echo "   --------------------------------------------------"
-        head -n 30 "out/${test_num}.txt"
+        head -n 40 "out/${test_num}.txt"
         echo "   --------------------------------------------------"
         FAILED=$((FAILED + 1))
     else
@@ -68,27 +84,29 @@ run_test() {
     echo ""
 }
 
-# ======================  YOUR TESTS  ======================
+# ======================  AUTOMATIC TEST DISCOVERY  ======================
 
-run_test 1 \
-    "Buys item" 0 \
-    "Hero dies" 0
+echo "Discovering tests in 'tests/' folder..."
 
-# Uncomment and adjust when you add more tests:
-# run_test 2 \
-#     "Rides" 4 \
-#     "Cuts" 3
+# Find all files like 1.txt, 2.txt, 10.txt, etc. and sort them numerically
+for test_file in tests/*.txt; do
+    if [ -f "$test_file" ]; then
+        # Extract number from filename (e.g. tests/5.txt → 5)
+        test_num=$(basename "$test_file" .txt)
+        
+        # Only run if it's a positive integer
+        if [[ "$test_num" =~ ^[0-9]+$ ]] && [ "$test_num" -gt 0 ]; then
+            run_test "$test_num"
+        fi
+    fi
+done
 
-# run_test 3 \
-#     "Makes food" 5 \
-#     "Eats" 8
-
-# =========================================================
+# =======================================================================
 
 echo "========================================"
 echo "Test Summary:"
-echo "   Total tests run:  $TOTAL"
-echo "   Failed:           $FAILED"
+echo "   Total tests run:   $TOTAL"
+echo "   Tests failed:      $FAILED"
 
 if [ $FAILED -gt 0 ]; then
     echo "❌  Some tests failed!"

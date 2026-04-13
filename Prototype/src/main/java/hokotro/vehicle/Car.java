@@ -1,5 +1,6 @@
 package hokotro.vehicle;
 
+import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Road;
 
 import java.util.List;

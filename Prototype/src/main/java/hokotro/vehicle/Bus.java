@@ -4,6 +4,9 @@ package hokotro.vehicle;
  * A buszvezetők által irányított jármű, célja, hogy minél többször megforduljon a 2 csomópontja között
  */
 
+import hokotro.player.BusDriver;
+import hokotro.roadnetwork.Crossing;
+
 public class Bus extends Vehicle {
     
     private int waitTicks;

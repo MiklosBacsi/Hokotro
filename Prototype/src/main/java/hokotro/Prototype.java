@@ -13,7 +13,18 @@ public class Prototype {
     private static Map<String, Object> objects = new HashMap<>();
 
     public static void main(String[] args) {
+
+        Scanner scannerIn = new Scanner(System.in);
+        while (scannerIn.hasNextLine()) {
+            String command = scannerIn.nextLine();
+            System.out.println(command);
+        }
+
         System.out.println("Hello world!");
+
+        for (int i=0; i<138; i++) {
+            System.out.println("narancsos bukta");
+        }
     }
 
     public static void increaseIndentation(String s) {

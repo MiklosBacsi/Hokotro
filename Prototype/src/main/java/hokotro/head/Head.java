@@ -1,6 +1,7 @@
 package hokotro.head;
 
 import hokotro.roadnetwork.Lane;
+import hokotro.vehicle.SnowPlower;
 
 public abstract class Head {
     private SnowPlower snowPlower;

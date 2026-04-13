@@ -5,6 +5,7 @@ import hokotro.vehicle.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Egy csomópont, tárolja az éppen ott tartózkodó járművek és a  hozzá befutó utakat
