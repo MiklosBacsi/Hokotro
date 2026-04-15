@@ -1,2 +1,0 @@
-OK lane: l1 | snowThickness: 0
-OK lane: l2 | snowThickness: 30

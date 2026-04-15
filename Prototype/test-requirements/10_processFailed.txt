@@ -1,0 +1,2 @@
+"Prototype has exited successfully":1
+"ERROR not enough money":1

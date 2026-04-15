@@ -1,2 +1,0 @@
-OK lane: l1 | isSalty: true
-OK snowplower: sp1 | salt: 0

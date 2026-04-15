@@ -1,0 +1,4 @@
+"ERROR":0
+"Prototype has exited successfully":1
+"OK snowplower: sp1 | head: sweeper | salt: 10":1
+"OK cleaner: c1 | money: 80":1

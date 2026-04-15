@@ -1,2 +1,0 @@
-OK snowplower: sp1 | head: sweeper | heads: sweeper blower
-OK cleaner: c1 | money: 80
