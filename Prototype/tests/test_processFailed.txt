@@ -1,0 +1,4 @@
+create cleaner c1
+create snowplower sp1 sweeper
+set money c1 1
+buy salt sp1 1000

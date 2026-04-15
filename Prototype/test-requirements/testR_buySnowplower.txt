@@ -1,0 +1,1 @@
+OK cleaner: c1 | money: 100 | snowplower: sp1 | head: sweeper | snowplower: sp2 | head: icebreaker

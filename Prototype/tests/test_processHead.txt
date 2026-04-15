@@ -1,0 +1,8 @@
+create cleaner c1
+create snowplower sp1 sweeper
+set money c1 100
+buy blower sp1 1
+get heads sp1
+equip sp1 blower
+list snowplower sp1
+list cleaner c1
