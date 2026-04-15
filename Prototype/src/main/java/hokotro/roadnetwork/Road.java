@@ -52,11 +52,11 @@ public class Road {
     }
 
     public List<Lane> getLanes(Crossing crossing) {
-        Prototype.increaseIndentation("Road.getLanes()");
+//        Prototype.increaseIndentation("Road.getLanes()");
 
         // xd
 
-        Prototype.decreaseIndentation("Road.getLanes()");
+//        Prototype.decreaseIndentation("Road.getLanes()");
 
         return new ArrayList<>();
     }

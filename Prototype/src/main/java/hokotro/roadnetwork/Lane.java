@@ -29,19 +29,19 @@ public class Lane {
      * @param vehicle a hozzáadandó jármű
      */
     public void addVehicle(Vehicle vehicle){
-        Prototype.increaseIndentation("Lane.addVehicle()");
-
-        if (Prototype.readBool("Is the vehicle stuck?")) {
-            vehicle.setState(VehicleState.STUCK);
-        }
-
-        else if (Prototype.readBool("Is the lane icy?")) {
-            vehicle.setState(VehicleState.SLIDE);
-        }
+//        Prototype.increaseIndentation("Lane.addVehicle()");
+//
+//        if (Prototype.readBool("Is the vehicle stuck?")) {
+//            vehicle.setState(VehicleState.STUCK);
+//        }
+//
+//        else if (Prototype.readBool("Is the lane icy?")) {
+//            vehicle.setState(VehicleState.SLIDE);
+//        }
 
         vehicle.setLane(this);
 
-        Prototype.decreaseIndentation("Lane.addVehicle()");
+//        Prototype.decreaseIndentation("Lane.addVehicle()");
     }
 
     /**
@@ -49,11 +49,11 @@ public class Lane {
      * @param vehicle a eltávolítandó jármű
      */
     public void removeVehicle(Vehicle vehicle){
-        Prototype.increaseIndentation("Lane.removeVehicle()");
-
-        // xd
-
-        Prototype.decreaseIndentation("Lane.removeVehicle()");
+//        Prototype.increaseIndentation("Lane.removeVehicle()");
+//
+//        // xd
+//
+//        Prototype.decreaseIndentation("Lane.removeVehicle()");
     }
 
     /**
@@ -61,11 +61,11 @@ public class Lane {
      * @return a sáv állapota
      */
     public SurfaceCondition getSurfaceCondition(){
-        Prototype.increaseIndentation("Lane.getSurfaceCondition()");
-
-        // xd
-
-        Prototype.decreaseIndentation("Lane.getSurfaceCondition()");
+//        Prototype.increaseIndentation("Lane.getSurfaceCondition()");
+//
+//        // xd
+//
+//        Prototype.decreaseIndentation("Lane.getSurfaceCondition()");
 
         return null;
     }

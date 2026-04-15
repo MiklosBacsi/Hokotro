@@ -36,7 +36,7 @@ public class Economy {
      * @return true, ha volt rá fedezete a takarítónak, egyébként false
      */
     public boolean processPurchase(SnowPlower snowPlower, ItemType item, int count,Cleaner cleaner){
-        Prototype.increaseIndentation("Economy.processPurchase()");
+//        Prototype.increaseIndentation("Economy.processPurchase()");
 
         int money = cleaner.getMoney();
         if (money>=5*count) {
@@ -76,11 +76,11 @@ public class Economy {
                     snowPlower.addHead(head);
                     break;
             }
-            Prototype.decreaseIndentation("Economy.processPurchase()");
+//            Prototype.decreaseIndentation("Economy.processPurchase()");
             return true;
         }else{
-            Prototype.print("Not enough money");
-            Prototype.decreaseIndentation("Economy.processPurchase()");
+//            Prototype.print("Not enough money");
+//            Prototype.decreaseIndentation("Economy.processPurchase()");
             return false;
         }
 
@@ -89,31 +89,31 @@ public class Economy {
 
     /**
      * az új hókotró vásárlását valósítja meg
-     * @param c a takarító, aki vásárol
+     * @param cleaner a takarító, aki vásárol
      * @return a hókotró referenciája, ha nem volt rá fedezett akkor null
      */
     public SnowPlower buyNewSnowPlower(Cleaner cleaner){
-        Prototype.increaseIndentation("Economy.buyNewSnowPlower()");
+//        Prototype.increaseIndentation("Economy.buyNewSnowPlower()");
 
-        int money = cleaner.getMoney();
-        if (money>=100) {
-            int headNumber = Prototype.readNumber("1. Sweeper\n2. IceBreaker\n", 1, 2);
+//        int money = cleaner.getMoney();
+//        if (money>=100) {
+//            int headNumber = Prototype.readNumber("1. Sweeper\n2. IceBreaker\n", 1, 2);
             cleaner.decreaseMoney(100);
-            if (headNumber == 1) {
-                SnowPlower sp = new SnowPlower();
-                sp.addHead(new Sweeper());
-                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
-                return sp;
-            } else {
-                SnowPlower sp = new SnowPlower();
-                sp.addHead(new IceBreaker());
-                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
-                return sp;
-            }
-        }
+//            if (headNumber == 1) {
+//                SnowPlower sp = new SnowPlower();
+//                sp.addHead(new Sweeper());
+//                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
+//                return sp;
+//            } else {
+//                SnowPlower sp = new SnowPlower();
+//                sp.addHead(new IceBreaker());
+//                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
+//                return sp;
+//            }
+//        }
 
-        Prototype.print("Not enough money");
-        Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
+//        Prototype.print("Not enough money");
+//        Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
         return null;
     }
 }

@@ -19,9 +19,9 @@ public class Cleaner extends Player {
      * @param amount Az érték, amire be lesz állítva
      */
     public void decreaseMoney(int amount) {
-        Prototype.increaseIndentation("decreaseMoney()");
-        Prototype.print("Money decreased");
-        Prototype.decreaseIndentation("decreaseMoney()");
+//        Prototype.increaseIndentation("decreaseMoney()");
+//        Prototype.print("Money decreased");
+//        Prototype.decreaseIndentation("decreaseMoney()");
     }
 
     /**
@@ -29,9 +29,9 @@ public class Cleaner extends Player {
      * @return money Az aktuális pénzmennyisége a takarítónak
      */
     public int getMoney(){
-        Prototype.increaseIndentation("Cleaner.getMoney()");
-        int money = Prototype.readNumber("Money: ", 0, 100000);
-        Prototype.decreaseIndentation("Cleaner.getMoney()");
+//        Prototype.increaseIndentation("Cleaner.getMoney()");
+//        int money = Prototype.readNumber("Money: ", 0, 100000);
+//        Prototype.decreaseIndentation("Cleaner.getMoney()");
         return money;
     }
 

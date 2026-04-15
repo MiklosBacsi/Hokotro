@@ -1,4 +1,4 @@
-"halandzsa":1
 "ERROR":0
-"Error":0
+"Prototype has exited successfully":1
+"halandzsa":1
 "narancsos bukta":138

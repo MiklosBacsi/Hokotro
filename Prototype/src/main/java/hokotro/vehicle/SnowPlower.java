@@ -22,25 +22,25 @@ public class SnowPlower extends Vehicle{
      * @param newHead
      */
     public void changeHead(Head newHead){
-        Prototype.increaseIndentation("SnowPlower.changeHead()");
-        Prototype.print("The SnowPlower's head changed!");
-        Prototype.decreaseIndentation("SnowPlower.changeHead()");
+//        Prototype.increaseIndentation("SnowPlower.changeHead()");
+//        Prototype.print("The SnowPlower's head changed!");
+//        Prototype.decreaseIndentation("SnowPlower.changeHead()");
     }
 
     public void increaseKerosine(int amount){
-        Prototype.increaseIndentation("SnowPlower.increaseKerosine()");
-        Prototype.print("Kerosine amount increased!");
-        Prototype.decreaseIndentation("SnowPlower.increaseKerosine()");
+//        Prototype.increaseIndentation("SnowPlower.increaseKerosine()");
+//        Prototype.print("Kerosine amount increased!");
+//        Prototype.decreaseIndentation("SnowPlower.increaseKerosine()");
     }
     public void increaseSalt(int amount){
-        Prototype.increaseIndentation("SnowPlower.increaseSalt()");
-        Prototype.print("Salt amount increased by " + amount);
-        Prototype.decreaseIndentation("SnowPlower.increaseSalt()");
+//        Prototype.increaseIndentation("SnowPlower.increaseSalt()");
+//        Prototype.print("Salt amount increased by " + amount);
+//        Prototype.decreaseIndentation("SnowPlower.increaseSalt()");
     }
 
     public void addHead(Head head){
-        Prototype.increaseIndentation("SnowPlower.addHead()");
-        Prototype.print("new Head added!");
-        Prototype.decreaseIndentation("SnowPlower.addHead()");
+//        Prototype.increaseIndentation("SnowPlower.addHead()");
+//        Prototype.print("new Head added!");
+//        Prototype.decreaseIndentation("SnowPlower.addHead()");
     }
 }

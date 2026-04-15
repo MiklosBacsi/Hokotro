@@ -55,9 +55,9 @@ public class Crossing {
     }
 
     public List<Road> getRoads() {
-        Prototype.increaseIndentation("Crossing.getRoads()");
-
-        Prototype.decreaseIndentation("Crossing.getRoads()");
+//        Prototype.increaseIndentation("Crossing.getRoads()");
+//
+//        Prototype.decreaseIndentation("Crossing.getRoads()");
 
         return new ArrayList<>();
     }

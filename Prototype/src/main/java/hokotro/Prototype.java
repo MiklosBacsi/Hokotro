@@ -17,7 +17,10 @@ public class Prototype {
         Scanner scannerIn = new Scanner(System.in);
         while (scannerIn.hasNextLine()) {
             String command = scannerIn.nextLine();
-            System.out.println(command);
+
+            if (!command.isBlank()) {
+                executeCommand(command);
+            }
         }
 
         System.out.println("Hello world!");
@@ -25,22 +28,24 @@ public class Prototype {
         for (int i=0; i<138; i++) {
             System.out.println("narancsos bukta");
         }
+
+        logExit();
     }
 
-    public static void increaseIndentation(String s) {
+    public static void logOK(String log) {
+        System.out.println("OK " + log);
     }
 
-    public static void print(String s) {
+    public static void logERROR(String message) {
+        System.out.println("ERROR " + message);
     }
 
-    public static void decreaseIndentation(String s) {
+    private static void logExit() {
+        System.out.println("Prototype has exited successfully");
     }
 
-    public static boolean readBool(String s) {
-        return true;
-    }
-
-    public static int readNumber(String s, int i, int i1) {
-        return 0;
+    private static void executeCommand(String command) {
+        // TODO
+        System.out.println(command);
     }
 }

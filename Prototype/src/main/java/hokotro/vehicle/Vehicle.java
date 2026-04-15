@@ -19,19 +19,19 @@ public abstract class Vehicle {
      * @param lane az aktuális sáv
      */
     public void setLane(Lane lane){
-        Prototype.increaseIndentation("Vehicle.setLane()");
-
-        Prototype.print("Vehicle lane set!");
-
-        Prototype.decreaseIndentation("Vehicle.setLane()");
+//        Prototype.increaseIndentation("Vehicle.setLane()");
+//
+//        Prototype.print("Vehicle lane set!");
+//
+//        Prototype.decreaseIndentation("Vehicle.setLane()");
     }
 
     public  void setState(VehicleState state) {
-        Prototype.increaseIndentation("Vehicle.setState()");
-
-        Prototype.print("Vehicle state set to " + state.toString());
-
-        Prototype.decreaseIndentation("Vehicle.setState()");
+//        Prototype.increaseIndentation("Vehicle.setState()");
+//
+//        Prototype.print("Vehicle state set to " + state.toString());
+//
+//        Prototype.decreaseIndentation("Vehicle.setState()");
     }
 
     /**
