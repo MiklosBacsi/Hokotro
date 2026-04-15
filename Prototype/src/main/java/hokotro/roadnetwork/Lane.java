@@ -14,7 +14,7 @@ public class Lane {
     private List<Crossing> crossings;
     private List<Vehicle> vehicles;
     private boolean isPassable;
-    //private SurfaceCondition condition;
+    private SurfaceCondition condition;
 
     /**
      * a sávra érkező járműveket kezeli, lépteti a már rajta lévőket.
