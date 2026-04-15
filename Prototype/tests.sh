@@ -13,20 +13,22 @@ TOTAL=0
 
 run_test() {
     local test_num=$1
+    local test_name=$2
     TOTAL=$((TOTAL + 1))
 
-    echo "→ Running Test ${test_num}..."
+    echo "→ Running Test ${test_num} (${test_name})..."
 
     # Check input file
-    if [ ! -f "tests/${test_num}.txt" ]; then
-        echo "   ❌  Test ${test_num} FAILED: Input file tests/${test_num}.txt not found!"
+    local input_file="tests/${test_num}_${test_name}.txt"
+    if [ ! -f "$input_file" ]; then
+        echo "   ❌  Test ${test_num} FAILED: Input file ${input_file} not found!"
         FAILED=$((FAILED + 1))
         echo ""
         return
     fi
 
-    # Check requirement file
-    local req_file="test-requirements/${test_num}.txt"
+    # Check requirement file (same naming format)
+    local req_file="test-requirements/${test_num}_${test_name}.txt"
     if [ ! -f "$req_file" ]; then
         echo "   ❌  Test ${test_num} FAILED: Requirement file ${req_file} not found!"
         FAILED=$((FAILED + 1))
@@ -34,8 +36,8 @@ run_test() {
         return
     fi
 
-    # Run the Java program (with correct package)
-    cat "tests/${test_num}.txt" | java -cp target/classes hokotro.Prototype > "out/${test_num}.txt" 2>&1
+    # Run the Java program
+    cat "$input_file" | java -cp target/classes hokotro.Prototype > "out/${test_num}.txt" 2>&1
 
     local test_failed=0
 
@@ -88,15 +90,19 @@ run_test() {
 
 echo "Discovering tests in 'tests/' folder..."
 
-# Find all files like 1.txt, 2.txt, 10.txt, etc. and sort them numerically
+# Find files like: 1_name.txt, 2_otherName.txt, 10_bigTest_something.txt
 for test_file in tests/*.txt; do
     if [ -f "$test_file" ]; then
-        # Extract number from filename (e.g. tests/5.txt → 5)
-        test_num=$(basename "$test_file" .txt)
-        
-        # Only run if it's a positive integer
-        if [[ "$test_num" =~ ^[0-9]+$ ]] && [ "$test_num" -gt 0 ]; then
-            run_test "$test_num"
+        filename=$(basename "$test_file")
+
+        # Extract number and name: 1_name.txt → num=1, name=name
+        if [[ "$filename" =~ ^([0-9]+)_(.+)\.txt$ ]]; then
+            test_num="${BASH_REMATCH[1]}"
+            test_name="${BASH_REMATCH[2]}"
+
+            if [ "$test_num" -gt 0 ]; then
+                run_test "$test_num" "$test_name"
+            fi
         fi
     fi
 done

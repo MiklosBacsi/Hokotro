@@ -1,2 +1,0 @@
-OK lane: l1 | snowThickness: 30 | iceThickness: 3
-OK snowplower: sp1 | kerosin: 3

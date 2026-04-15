@@ -23,12 +23,6 @@ public class Prototype {
             }
         }
 
-        System.out.println("Hello world!");
-
-        for (int i=0; i<138; i++) {
-            System.out.println("narancsos bukta");
-        }
-
         logExit();
     }
 

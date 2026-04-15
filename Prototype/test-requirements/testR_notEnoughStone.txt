@@ -1,2 +1,0 @@
-OK lane: l1 | isRocky: false
-OK snowplower: sp1 | stone: 3
