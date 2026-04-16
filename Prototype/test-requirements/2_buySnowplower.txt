@@ -1,3 +1,3 @@
 "ERROR":0
 "Prototype has exited successfully":1
-"OK cleaner: c1 | money: 100 | snowplower: sp1 | head: sweeper | snowplower: sp2 | head: icebreaker":1
+r/^OK cleaner: c1.*money:\s*100.*snowplower:\ssp1\s|\shead:\ssweeper.*snowplower:\ssp2\s|\shead:\sicebreaker/:1

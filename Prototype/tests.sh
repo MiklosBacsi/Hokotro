@@ -18,8 +18,9 @@ run_test() {
 
     echo "→ Running Test ${test_num} (${test_name})..."
 
-    # Check input file
     local input_file="tests/${test_num}_${test_name}.txt"
+    local req_file="test-requirements/${test_num}_${test_name}.txt"
+
     if [ ! -f "$input_file" ]; then
         echo "   ❌  Test ${test_num} FAILED: Input file ${input_file} not found!"
         FAILED=$((FAILED + 1))
@@ -27,8 +28,6 @@ run_test() {
         return
     fi
 
-    # Check requirement file (same naming format)
-    local req_file="test-requirements/${test_num}_${test_name}.txt"
     if [ ! -f "$req_file" ]; then
         echo "   ❌  Test ${test_num} FAILED: Requirement file ${req_file} not found!"
         FAILED=$((FAILED + 1))
@@ -43,32 +42,48 @@ run_test() {
 
     echo "   Checking requirements:"
 
-    # Read each line from the requirement file
     while IFS= read -r line || [ -n "$line" ]; do
-        # Skip empty lines and comments
         [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
 
-        # Parse "pattern":expected
+        local pattern
+        local expected
+        local is_regex=false
+
+        # Exact match: "text":number
         if [[ "$line" =~ ^[[:space:]]*\"([^\"]+)\"[[:space:]]*:[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
-            local pattern="${BASH_REMATCH[1]}"
-            local expected="${BASH_REMATCH[2]}"
+            pattern="${BASH_REMATCH[1]}"
+            expected="${BASH_REMATCH[2]}"
+
+        # Regex match: r/regex/:number
+        elif [[ "$line" =~ ^[[:space:]]*r/(.+?)/[[:space:]]*:[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+            pattern="${BASH_REMATCH[1]}"
+            expected="${BASH_REMATCH[2]}"
+            is_regex=true
         else
-            echo "   ❌  Invalid requirement format in ${req_file}: '${line}'"
-            echo "       Expected format: \"Pattern\":123"
+            echo "   ❌  Invalid format in ${req_file}: '${line}'"
+            echo "       Use: \"exact text\":123   or   r/regex/:123"
             test_failed=1
             continue
         fi
 
-        # Count occurrences (exact match)
+        # Count occurrences
         local actual
-        actual=$(grep -c -F "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+        if [ "$is_regex" = true ]; then
+            actual=$(grep -c -E "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+        else
+            actual=$(grep -c -F "$pattern" "out/${test_num}.txt" | tr -d '[:space:]')
+        fi
         actual=${actual:-0}
 
         if [ "$actual" -ne "$expected" ]; then
-            echo "   ❌  Expected \"$pattern\" to appear $expected time(s), but got $actual"
+            local type="Exact"
+            [ "$is_regex" = true ] && type="Regex"
+            echo "   ❌  [$type] Expected \"$pattern\" to appear $expected time(s), but got $actual"
             test_failed=1
         else
-            echo "   ✅  \"$pattern\" count is correct ($actual)"
+            local type="Exact"
+            [ "$is_regex" = true ] && type="Regex"
+            echo "   ✅  [$type] \"$pattern\" count is correct ($actual)"
         fi
     done < "$req_file"
 
@@ -86,25 +101,37 @@ run_test() {
     echo ""
 }
 
-# ======================  AUTOMATIC TEST DISCOVERY  ======================
+# ======================  AUTOMATIC TEST DISCOVERY (Numerical Order)  ======================
 
 echo "Discovering tests in 'tests/' folder..."
 
-# Find files like: 1_name.txt, 2_otherName.txt, 10_bigTest_something.txt
-for test_file in tests/*.txt; do
+# Collect all valid test numbers first, then sort them numerically
+mapfile -t test_files < <(ls tests/*.txt 2>/dev/null)
+
+tests_to_run=()
+
+for test_file in "${test_files[@]}"; do
     if [ -f "$test_file" ]; then
         filename=$(basename "$test_file")
-
-        # Extract number and name: 1_name.txt → num=1, name=name
         if [[ "$filename" =~ ^([0-9]+)_(.+)\.txt$ ]]; then
             test_num="${BASH_REMATCH[1]}"
             test_name="${BASH_REMATCH[2]}"
-
             if [ "$test_num" -gt 0 ]; then
-                run_test "$test_num" "$test_name"
+                tests_to_run+=("$test_num:$test_name")
             fi
         fi
     fi
+done
+
+# Sort tests numerically by test number
+IFS=$'\n' sorted_tests=($(sort -t: -k1,1n <<<"${tests_to_run[*]}"))
+unset IFS
+
+# Run tests in correct numerical order
+for entry in "${sorted_tests[@]}"; do
+    test_num="${entry%%:*}"
+    test_name="${entry#*:}"
+    run_test "$test_num" "$test_name"
 done
 
 # =======================================================================
