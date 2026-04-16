@@ -43,4 +43,15 @@ public class SnowPlower extends Vehicle{
 //        Prototype.print("new Head added!");
 //        Prototype.decreaseIndentation("SnowPlower.addHead()");
     }
+
+    @Override
+    public String toString() {
+        return Prototype.getId(this);   // TODO: Finish the simple
+    }
+
+    @Override
+    public void list(boolean verbose) {
+        Prototype.logOK(this.toString());
+        // TODO: Finish the
+    }
 }

@@ -2,6 +2,7 @@ package hokotro.roadnetwork;
 
 import java.util.List;
 
+import hokotro.IListable;
 import hokotro.Prototype;
 import hokotro.vehicle.Vehicle;
 import hokotro.vehicle.VehicleState;
@@ -9,7 +10,7 @@ import hokotro.vehicle.VehicleState;
 /**
  * Kezeli az összecsúszásokat és utóhatásaikat.
  */
-public class Lane {
+public class Lane implements IListable {
     private Road road;
     private List<Crossing> crossings;
     private List<Vehicle> vehicles;
@@ -78,5 +79,54 @@ public class Lane {
         System.out.println("Lane.getRoadLength() called");
         System.out.println("Lane.getRoadLength() returned");
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "line: " + Prototype.getId(this) +
+                    " | start: " + Prototype.getId(crossings.getFirst()) +
+                    " | end: " + Prototype.getId(crossings.getLast()) +
+                    " | road: " + Prototype.getId(road);
+        } catch (Exception e) {
+            Prototype.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void list(boolean verbose) {
+        StringBuilder line;
+
+        try {
+            // Standard output
+            line = new StringBuilder(this.toString());
+
+            // Add verbose output
+            if (verbose) {
+                StringBuilder vehiclesStr = new StringBuilder();
+                vehiclesStr.append("[");
+                for (Vehicle vehicle: vehicles) {
+                    vehiclesStr.append(vehicle).append(",");
+                }
+                vehiclesStr.append("]");
+
+                line.append(" | lane-no: ")  // TODO: lane number
+                    .append(" | passable: ").append(isPassable)
+                    .append(" | snow: ") // condition.getTopSnowHeight()
+                    .append(" | ice: ") // condition.getIceHeight()
+                    .append(" | salted: ") // condition.isSalted()
+                    .append(" | rocky: ") // condition.isRocky()
+                    .append(" | rock: ") // condition.getRockHeight()
+                    .append(" | drive-count: ") // condition.getDriveCount()
+                    .append(" | vehicles: ").append(vehiclesStr.toString())
+                ;
+            }
+        } catch (Exception e) {
+            Prototype.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+        Prototype.logOK(line.toString());
     }
 }

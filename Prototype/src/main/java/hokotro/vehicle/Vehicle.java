@@ -1,10 +1,11 @@
 package hokotro.vehicle;
 
+import hokotro.IListable;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Lane;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements IListable {
     
     private Lane lane;
     private Crossing crossing;

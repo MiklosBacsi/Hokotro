@@ -1,5 +1,6 @@
 package hokotro.vehicle;
 
+import hokotro.Prototype;
 import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Road;
 
@@ -49,5 +50,16 @@ public class Car extends Vehicle {
     public void setCurrentPath(List<Road> path){
         System.out.println("setCurrentPath()");
         System.out.println("return setCurrentPath()");
+    }
+
+    @Override
+    public String toString() {
+        return Prototype.getId(this);   // TODO: Finish the simple
+    }
+
+    @Override
+    public void list(boolean verbose) {
+        Prototype.logOK(this.toString());
+        // TODO: Finish the
     }
 }

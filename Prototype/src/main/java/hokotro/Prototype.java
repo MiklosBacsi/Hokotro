@@ -1,6 +1,5 @@
 package hokotro;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -10,7 +9,9 @@ public class Prototype {
 
     public static Scanner scanner;
 
-    private static Map<String, Object> objects = new HashMap<>();
+    // To support bi-directionality: ID -> Object AND Object -> ID
+    private static final Map<String, Object> idToObject = new HashMap<>();
+    private static final Map<Object, String> objectToId = new HashMap<>();
 
     public static void main(String[] args) {
 
@@ -24,6 +25,46 @@ public class Prototype {
         }
 
         logExit();
+    }
+
+    // Add Object to both HashMaps
+    public static void add(String key, Object value) {
+        if (value == null) {
+            throw new NullPointerException("Value cannot be null");
+        }
+        // Enforce uniqueness of values (for true bidirectionality)
+        if (objectToId.containsKey(value)) {
+            throw new IllegalArgumentException("Duplicate value not allowed: " + value);
+        }
+
+        idToObject.put(key, value);
+        objectToId.put(value, key);
+    }
+
+    // Get Object from ID
+    public static Object getObject(String key) {
+        return idToObject.get(key);
+    }
+
+    // Get ID from Object
+    public static String getId(Object value) {
+        return objectToId.get(value);
+    }
+
+    // Remove by ID
+    public static void remove(String key) {
+        Object value = idToObject.remove(key);
+        if (value != null) {
+            objectToId.remove(value);
+        }
+    }
+
+    // Remove by Object
+    public static void remove(Object value) {
+        String key = objectToId.remove(value);
+        if (key != null) {
+            idToObject.remove(key);
+        }
     }
 
     public static void logOK(String log) {

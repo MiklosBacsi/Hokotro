@@ -4,6 +4,7 @@ package hokotro.vehicle;
  * A buszvezetők által irányított jármű, célja, hogy minél többször megforduljon a 2 csomópontja között
  */
 
+import hokotro.Prototype;
 import hokotro.player.BusDriver;
 import hokotro.roadnetwork.Crossing;
 
@@ -45,5 +46,16 @@ public class Bus extends Vehicle {
     public void setWaitTicks(int t){
         System.out.println("setWaitTicks()");
         System.out.println("return setWaitTicks()");
+    }
+
+    @Override
+    public String toString() {
+        return Prototype.getId(this);   // TODO: Finish the simple
+    }
+
+    @Override
+    public void list(boolean verbose) {
+        Prototype.logOK(this.toString());
+        // TODO: Finish the
     }
 }
