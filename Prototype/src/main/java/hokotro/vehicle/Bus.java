@@ -54,7 +54,7 @@ public class Bus extends Vehicle {
     }
 
     @Override
-    public void list(boolean verbose) {
+    public void log(boolean verbose) {
         Prototype.logOK(this.toString());
         // TODO: Finish the
     }

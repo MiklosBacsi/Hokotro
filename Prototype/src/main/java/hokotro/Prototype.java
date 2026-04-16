@@ -82,5 +82,7 @@ public class Prototype {
     private static void executeCommand(String command) {
         // TODO
         System.out.println(command);
+
+        // TODO: list: object.log()
     }
 }

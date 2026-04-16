@@ -2,15 +2,14 @@ package hokotro.roadnetwork;
 
 import java.util.List;
 
-import hokotro.IListable;
+import hokotro.ILogable;
 import hokotro.Prototype;
 import hokotro.vehicle.Vehicle;
-import hokotro.vehicle.VehicleState;
 
 /**
  * Kezeli az összecsúszásokat és utóhatásaikat.
  */
-public class Lane implements IListable {
+public class Lane implements ILogable {
     private Road road;
     private List<Crossing> crossings;
     private List<Vehicle> vehicles;
@@ -95,7 +94,7 @@ public class Lane implements IListable {
     }
 
     @Override
-    public void list(boolean verbose) {
+    public void log(boolean verbose) {
         StringBuilder line;
 
         try {
