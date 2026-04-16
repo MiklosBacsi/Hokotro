@@ -26,8 +26,8 @@ public class GameDirector {
     /**
      * létrehoz új autókat
      */
-    public void createAuto(){
-        System.out.println("createAuto()");
+    public void createCar(){
+        System.out.println("createCar()");
         System.out.println("return createAuto()");
     }
 }

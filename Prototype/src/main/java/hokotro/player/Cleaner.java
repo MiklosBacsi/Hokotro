@@ -15,13 +15,19 @@ public class Cleaner extends Player {
     private int money;
 
     /**
-     * beállítja a takarító pénzmennyiségét
-     * @param amount Az érték, amire be lesz állítva
+     * csökkenti a takarító pénzmennyiségét
+     * @param amount Az érték, amivel csökkentve lesz
      */
     public void decreaseMoney(int amount) {
 //        Prototype.increaseIndentation("decreaseMoney()");
 //        Prototype.print("Money decreased");
 //        Prototype.decreaseIndentation("decreaseMoney()");
+    }
+
+    public void increaseMoney(int amount) {
+//        Prototype.increaseIndentation("increaseMoney()");
+//        Prototype.print("Money incereased");
+//        Prototype.decreaseIndentation("increaseMoney()");
     }
 
     /**
@@ -33,6 +39,14 @@ public class Cleaner extends Player {
 //        int money = Prototype.readNumber("Money: ", 0, 100000);
 //        Prototype.decreaseIndentation("Cleaner.getMoney()");
         return money;
+    }
+
+    /**
+     * visszaadja a takarító hókotróit tartalmazó listát
+     * @return a takarító hókotróit tartalmazó lista
+     */
+    public Set<SnowPlower> getSnowplows(){
+        return snowplows;
     }
 
     /**
