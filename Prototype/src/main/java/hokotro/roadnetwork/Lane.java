@@ -84,7 +84,7 @@ public class Lane implements ILogable {
     @Override
     public String toString() {
         try {
-            return "line: " + Prototype.getId(this) +
+            return "lane: " + Prototype.getId(this) +
                 " | start: " + Prototype.getId(crossings.getFirst()) +
                 " | end: " + Prototype.getId(crossings.getLast()) +
                 " | road: " + Prototype.getId(road)
@@ -107,14 +107,8 @@ public class Lane implements ILogable {
             if (verbose) {
                 line.append(" | lane-no: ")  // TODO: lane number
                     .append(" | passable: ").append(isPassable)
-                    .append(" | snow: ") // condition.getTopSnowHeight()
-                    .append(" | ice: ") // condition.getIceHeight()
-                    .append(" | salted: ") // condition.isSalted()
-                    .append(" | rocky: ") // condition.isRocky()
-                    .append(" | rock: ") // condition.getRockHeight()
-                    .append(" | drive-count: ") // condition.getDriveCount()
-                    .append(" | vehicles: ")
-                        .append(Logger.buildStringFromCollection(vehicles, '[', ']', ";"))
+                    .append(" | ").append(condition)
+                    .append(" | vehicles: ").append(Logger.buildStringFromCollection(vehicles, '[', ']', ";"))
                 ;
             }
         } catch (Exception e) {

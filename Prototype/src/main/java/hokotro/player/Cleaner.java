@@ -3,6 +3,7 @@ package hokotro.player;
 import hokotro.Prototype;
 
 import hokotro.system.ItemType;
+import hokotro.util.Logger;
 import hokotro.vehicle.SnowPlower;
 
 import java.util.Set;
@@ -60,4 +61,25 @@ public class Cleaner extends Player {
         System.out.println("return purchase()");
     }
 
+    @Override
+    public String toString() {
+        try {
+            return "cleaner: " + Prototype.getId(this) +
+                " | money: " + money +
+                " | snowplows: " + snowplows.size()
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void log(boolean verbose) {
+        Logger.logOK(
+            "cleaner: " + Prototype.getId(this) +
+            " | money: " + money +
+            " | snowplows: " + Logger.buildStringFromCollection(snowplows, '{', '}', ";")
+        );
+    }
 }

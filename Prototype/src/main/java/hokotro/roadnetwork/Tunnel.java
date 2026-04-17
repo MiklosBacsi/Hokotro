@@ -1,5 +1,9 @@
 package hokotro.roadnetwork;
 
+import hokotro.Prototype;
+import hokotro.util.ILogable;
+import hokotro.util.Logger;
+
 /**
  * Az út egy típusa, amely nem továbbítja a sávjai felé a havazást.
     * Ez a típusú út nem továbbítja a havazást a sávjai felé, így azok nem lesznek járhatatlanok.
@@ -14,5 +18,24 @@ public class Tunnel extends Road {
     public void letItSnow(int amount){
             System.out.println("Tunnel.letItSnow() called");
             System.out.println("Tunnel.letItSnow() returned");
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "tunnel: " + Prototype.getId(this) +
+                    " | lanes1: " + Logger.buildStringFromCollection(lanes1, '[', ']', ";") +
+                    " | lanes2: " + Logger.buildStringFromCollection(lanes2, '[', ']', ";")
+                    ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void log(boolean verbose) {
+        Logger.logOK(this.toString());
+        // TODO: Finish the
     }
 }

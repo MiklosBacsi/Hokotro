@@ -1,6 +1,8 @@
 package hokotro.player;
 
+import hokotro.Prototype;
 import hokotro.player.Player;
+import hokotro.util.Logger;
 import hokotro.vehicle.Bus;
 
 /**
@@ -17,5 +19,22 @@ public class BusDriver extends Player {
     public void addPoints(int amount){
         System.out.println("addPoints()");
         System.out.println("return addPoints()");
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "bus-driver: " + Prototype.getId(this) +
+                " | points: " + points
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void log(boolean verbose) {
+        Logger.logOK(this + " | " + ownBus);
     }
 }

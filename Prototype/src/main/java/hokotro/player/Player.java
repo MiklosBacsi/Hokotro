@@ -1,12 +1,13 @@
 package hokotro.player;
 
 import hokotro.roadnetwork.Lane;
+import hokotro.util.ILogable;
 import hokotro.vehicle.Vehicle;
 
 /**
  * Absztrakt ősosztály minden játékostípushoz.
  */
-public abstract class Player {
+public abstract class Player implements ILogable {
     
     private int id;
 

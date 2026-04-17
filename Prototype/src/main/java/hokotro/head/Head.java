@@ -1,10 +1,11 @@
 package hokotro.head;
 
 import hokotro.roadnetwork.Lane;
+import hokotro.util.ILogable;
 import hokotro.vehicle.SnowPlower;
 
-public abstract class Head {
-    private SnowPlower snowPlower;
+public abstract class Head implements ILogable {
+    protected SnowPlower snowPlower;
 
     /**
      * absztrakt osztály, a takarítás megvalósítása
