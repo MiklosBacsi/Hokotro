@@ -7,6 +7,7 @@ package hokotro.vehicle;
 import hokotro.Prototype;
 import hokotro.player.BusDriver;
 import hokotro.roadnetwork.Crossing;
+import hokotro.util.Logger;
 
 public class Bus extends Vehicle {
     
@@ -50,12 +51,19 @@ public class Bus extends Vehicle {
 
     @Override
     public String toString() {
-        return Prototype.getId(this);   // TODO: Finish the simple
+        try {
+            return "bus: " + Prototype.getId(this) +
+                " | state: " + state
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void log(boolean verbose) {
-        Prototype.logOK(this.toString());
+        Logger.logOK(this.toString());
         // TODO: Finish the
     }
 }

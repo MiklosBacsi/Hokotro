@@ -3,6 +3,7 @@ package hokotro.vehicle;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Road;
+import hokotro.util.Logger;
 
 import java.util.List;
 
@@ -54,12 +55,19 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return Prototype.getId(this);   // TODO: Finish the simple
+        try {
+            return "car: " + Prototype.getId(this) +
+                " | state: " + state
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void log(boolean verbose) {
-        Prototype.logOK(this.toString());
+        Logger.logOK(this.toString());
         // TODO: Finish the
     }
 }

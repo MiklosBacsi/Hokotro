@@ -2,8 +2,9 @@ package hokotro.roadnetwork;
 
 import java.util.List;
 
-import hokotro.ILogable;
+import hokotro.util.ILogable;
 import hokotro.Prototype;
+import hokotro.util.Logger;
 import hokotro.vehicle.Vehicle;
 
 /**
@@ -84,11 +85,12 @@ public class Lane implements ILogable {
     public String toString() {
         try {
             return "line: " + Prototype.getId(this) +
-                    " | start: " + Prototype.getId(crossings.getFirst()) +
-                    " | end: " + Prototype.getId(crossings.getLast()) +
-                    " | road: " + Prototype.getId(road);
+                " | start: " + Prototype.getId(crossings.getFirst()) +
+                " | end: " + Prototype.getId(crossings.getLast()) +
+                " | road: " + Prototype.getId(road)
+            ;
         } catch (Exception e) {
-            Prototype.logERROR(e.getMessage());
+            Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -103,13 +105,6 @@ public class Lane implements ILogable {
 
             // Add verbose output
             if (verbose) {
-                StringBuilder vehiclesStr = new StringBuilder();
-                vehiclesStr.append("[");
-                for (Vehicle vehicle: vehicles) {
-                    vehiclesStr.append(vehicle).append(",");
-                }
-                vehiclesStr.append("]");
-
                 line.append(" | lane-no: ")  // TODO: lane number
                     .append(" | passable: ").append(isPassable)
                     .append(" | snow: ") // condition.getTopSnowHeight()
@@ -118,14 +113,15 @@ public class Lane implements ILogable {
                     .append(" | rocky: ") // condition.isRocky()
                     .append(" | rock: ") // condition.getRockHeight()
                     .append(" | drive-count: ") // condition.getDriveCount()
-                    .append(" | vehicles: ").append(vehiclesStr.toString())
+                    .append(" | vehicles: ")
+                        .append(Logger.buildStringFromCollection(vehicles, '[', ']', ";"))
                 ;
             }
         } catch (Exception e) {
-            Prototype.logERROR(e.getMessage());
+            Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
         }
 
-        Prototype.logOK(line.toString());
+        Logger.logOK(line.toString());
     }
 }

@@ -1,16 +1,16 @@
 package hokotro.vehicle;
 
-import hokotro.ILogable;
+import hokotro.util.ILogable;
 import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.Lane;
 
 public abstract class Vehicle implements ILogable {
     
-    private Lane lane;
-    private Crossing crossing;
-    private int id;
-    private VehicleState state;
-    private int lanePosition;
+    protected Lane lane;
+    protected Crossing crossing;
+    protected int id;
+    protected VehicleState state;
+    protected int lanePosition;
     
     
     /**

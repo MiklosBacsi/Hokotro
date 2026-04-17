@@ -1,6 +1,8 @@
 package hokotro.roadnetwork;
 
+import hokotro.util.ILogable;
 import hokotro.Prototype;
+import hokotro.util.Logger;
 import hokotro.vehicle.Vehicle;
 
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.Set;
 /**
  * Egy csomópont, tárolja az éppen ott tartózkodó járművek és a  hozzá befutó utakat
  */
-public class Crossing {
+public class Crossing implements ILogable {
     private Set<Road> roads;
     private Set<Vehicle> vehicles;
 
@@ -60,5 +62,24 @@ public class Crossing {
 //        Prototype.decreaseIndentation("Crossing.getRoads()");
 
         return new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "crossing: " + Prototype.getId(this) +
+                " | roads: " + Logger.buildStringFromCollection(roads, '{', '}', ";") +
+                " | vehicles: " + Logger.buildStringFromCollection(vehicles, '{', '}', ";")
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void log(boolean verbose) {
+        Logger.logOK(this.toString());
+        // TODO: Finish the
     }
 }

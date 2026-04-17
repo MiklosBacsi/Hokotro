@@ -3,6 +3,7 @@ package hokotro.vehicle;
 import hokotro.Prototype;
 import hokotro.head.Head;
 import hokotro.player.Cleaner;
+import hokotro.util.Logger;
 
 import java.util.Set;
 
@@ -46,12 +47,19 @@ public class SnowPlower extends Vehicle{
 
     @Override
     public String toString() {
-        return Prototype.getId(this);   // TODO: Finish the simple
+        try {
+            return "snowplower: " + Prototype.getId(this) +
+                " | head: " + Prototype.getId(currentHead)
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void log(boolean verbose) {
-        Prototype.logOK(this.toString());
+        Logger.logOK(this.toString());
         // TODO: Finish the
     }
 }

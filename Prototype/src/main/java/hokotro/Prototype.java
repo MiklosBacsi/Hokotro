@@ -1,4 +1,10 @@
 package hokotro;
+
+import hokotro.roadnetwork.Lane;
+import hokotro.util.Logger;
+
+import java.util.Collection;
+import java.util.stream.Collectors;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -67,22 +73,14 @@ public class Prototype {
         }
     }
 
-    public static void logOK(String log) {
-        System.out.println("OK " + log);
-    }
-
-    public static void logERROR(String message) {
-        System.out.println("ERROR " + message);
-    }
-
-    private static void logExit() {
-        System.out.println("Prototype has exited successfully");
-    }
-
     private static void executeCommand(String command) {
         // TODO
         System.out.println(command);
 
         // TODO: list: object.log()
+    }
+
+    private static void logExit() {
+        System.out.println("Prototype has exited successfully");
     }
 }

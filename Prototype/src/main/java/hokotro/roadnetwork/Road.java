@@ -1,6 +1,8 @@
 package hokotro.roadnetwork;
 
+import hokotro.util.ILogable;
 import hokotro.Prototype;
+import hokotro.util.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  * Csomópontokat köt össze, sávokból áll
  * Továbbítja a havazás mértékét a sávoknak. Visszaadja a szomszédos sávot és a járhatóságot.
  */
-public class Road {
+public class Road implements ILogable {
   private List<Lane> lanes1;
   private List<Lane> lanes2; 
   private int length;
@@ -59,5 +61,24 @@ public class Road {
 //        Prototype.decreaseIndentation("Road.getLanes()");
 
         return new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "road: " + Prototype.getId(this) +
+                " | lanes1: " + Logger.buildStringFromCollection(lanes1, '[', ']', ";") +
+                " | lanes2: " + Logger.buildStringFromCollection(lanes2, '[', ']', ";")
+            ;
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void log(boolean verbose) {
+        Logger.logOK(this.toString());
+        // TODO: Finish the
     }
 }
