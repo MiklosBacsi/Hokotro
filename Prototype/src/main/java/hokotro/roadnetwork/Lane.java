@@ -97,25 +97,20 @@ public class Lane implements ILogable {
 
     @Override
     public void log(boolean verbose) {
-        StringBuilder line;
-
         try {
-            // Standard output
-            line = new StringBuilder(this.toString());
-
-            // Add verbose output
-            if (verbose) {
-                line.append(" | lane-no: ")  // TODO: lane number
-                    .append(" | passable: ").append(isPassable)
-                    .append(" | ").append(condition)
-                    .append(" | vehicles: ").append(Logger.buildStringFromCollection(vehicles, '[', ']', ";"))
-                ;
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    this +
+                    " | passable: " + isPassable +
+                    " | " + condition +
+                    " | vehicles: " + Logger.buildStringFromCollection(vehicles, '[', ']', ";")
+                );
             }
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
         }
-
-        Logger.logOK(line.toString());
     }
 }

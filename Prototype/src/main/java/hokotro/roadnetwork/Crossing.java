@@ -68,8 +68,8 @@ public class Crossing implements ILogable {
     public String toString() {
         try {
             return "crossing: " + Prototype.getId(this) +
-                " | roads: " + Logger.buildStringFromCollection(roads, '{', '}', ";") +
-                " | vehicles: " + Logger.buildStringFromCollection(vehicles, '{', '}', ";")
+                " | roads: " + roads.size() +
+                " | vehicles: " + vehicles.size()
             ;
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
@@ -79,7 +79,19 @@ public class Crossing implements ILogable {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
-        // TODO: Finish the
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    "crossing: " + Prototype.getId(this) +
+                    " | roads: " + Logger.buildStringFromCollection(roads, '{', '}', ";") +
+                    " | vehicles: " + Logger.buildStringFromCollection(vehicles, '{', '}', ";")
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

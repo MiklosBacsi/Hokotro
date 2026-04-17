@@ -35,6 +35,15 @@ public class BusDriver extends Player {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this + " | " + ownBus);
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(this + " | " + ownBus);
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

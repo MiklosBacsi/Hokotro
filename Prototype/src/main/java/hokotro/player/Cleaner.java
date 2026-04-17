@@ -76,10 +76,19 @@ public class Cleaner extends Player {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(
-            "cleaner: " + Prototype.getId(this) +
-            " | money: " + money +
-            " | snowplows: " + Logger.buildStringFromCollection(snowplows, '{', '}', ";")
-        );
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    "cleaner: " + Prototype.getId(this) +
+                    " | money: " + money +
+                    " | snowplows: " + Logger.buildStringFromCollection(snowplows, '{', '}', ";")
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

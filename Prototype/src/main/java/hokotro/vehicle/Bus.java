@@ -63,7 +63,21 @@ public class Bus extends Vehicle {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
-        // TODO: Finish the
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    this +
+                    " | owner: " + owner +
+                    " | origin: " + origin +
+                    " | destination: " + destination +
+                    " | wait-ticks: " + waitTicks
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

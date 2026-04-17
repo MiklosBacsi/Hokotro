@@ -67,8 +67,8 @@ public class Road implements ILogable {
     public String toString() {
         try {
             return "road: " + Prototype.getId(this) +
-                " | lanes1: " + Logger.buildStringFromCollection(lanes1, '[', ']', ";") +
-                " | lanes2: " + Logger.buildStringFromCollection(lanes2, '[', ']', ";")
+                " | lanes1: " + lanes1.size() +
+                " | lanes2: " + lanes2.size()
             ;
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
@@ -78,7 +78,19 @@ public class Road implements ILogable {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
-        // TODO: Finish the
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    "road: " + Prototype.getId(this) +
+                    " | lanes1: " + Logger.buildStringFromCollection(lanes1, '[', ']', ";") +
+                    " | lanes2: " + Logger.buildStringFromCollection(lanes2, '[', ']', ";")
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

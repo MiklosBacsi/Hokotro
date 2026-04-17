@@ -1,6 +1,5 @@
 package hokotro.system;
 
-import hokotro.Prototype;
 import hokotro.head.Blower;
 import hokotro.head.Dragon;
 import hokotro.head.Head;
@@ -46,7 +45,7 @@ public class Economy {
                     snowPlower.increaseSalt(count);
                 break;
                 case ItemType.KEROSINE:
-                    snowPlower.increaseKerosine(count);
+                    snowPlower.increaseKerosene(count);
                 break;
                 default:
                     Head head = null;

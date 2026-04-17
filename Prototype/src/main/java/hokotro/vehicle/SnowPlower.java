@@ -14,7 +14,7 @@ public class SnowPlower extends Vehicle{
     private Set<Head> heads;
     private Head currentHead;
     private int salt;
-    private int kerosin;
+    private int kerosene;
     private int stone;
     private Cleaner owner;
 
@@ -28,7 +28,7 @@ public class SnowPlower extends Vehicle{
 //        Prototype.decreaseIndentation("SnowPlower.changeHead()");
     }
 
-    public void increaseKerosine(int amount){
+    public void increaseKerosene(int amount){
 //        Prototype.increaseIndentation("SnowPlower.increaseKerosine()");
 //        Prototype.print("Kerosine amount increased!");
 //        Prototype.decreaseIndentation("SnowPlower.increaseKerosine()");
@@ -59,7 +59,22 @@ public class SnowPlower extends Vehicle{
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
-        // TODO: Finish the
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    this +
+                    " | salt: " + salt +
+                    " | kerosene: " + kerosene +
+                    " | stone: " + stone +
+                    " | owner: " + owner +
+                    " | heads: " + Logger.buildStringFromCollection(heads, '{', '}', ";")
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

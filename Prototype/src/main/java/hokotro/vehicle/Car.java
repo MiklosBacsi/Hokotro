@@ -67,7 +67,20 @@ public class Car extends Vehicle {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
-        // TODO: Finish the
+        try {
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            } else {
+                Logger.logOK(
+                    this +
+                    " | origin: " + origin +
+                    " | destination: " + destination +
+                    " | current-path: " + Logger.buildStringFromCollection(currentPath, '[', ']', ";")
+                );
+            }
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

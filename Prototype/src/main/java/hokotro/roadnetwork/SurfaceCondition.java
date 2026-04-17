@@ -66,6 +66,5 @@ public class SurfaceCondition implements ILogable {
     @Override
     public void log(boolean verbose) {
         Logger.logOK(this.toString());
-        // TODO: Finish the
     }
 }

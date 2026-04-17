@@ -30,6 +30,11 @@ public class Blower extends Head {
 
     @Override
     public void log(boolean verbose) {
-        Logger.logOK(this.toString());
+        try {
+            Logger.logOK(this.toString());
+        } catch (Exception e) {
+            Logger.logERROR(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }
