@@ -1,0 +1,5 @@
+"ERROR":0
+"Prototype has exited successfully":1
+r/^OK lane: l1.*isPassable:\s*true/:1
+r/^OK car: c1.*state:\s*normal/:1
+r/^OK car: c2.*state:\s*normal/:1

@@ -1,4 +1,8 @@
 "ERROR":0
 "Prototype has exited successfully":1
 "OK lane: l1 | snowThickness: 0":1
-"OK lane: l2 | snowThickness: 30":1
+"OK lane: l2 | snowThickness: 30":0
+"OK lane: l1 | rockHeight: 0":1
+"OK lane: l2 | rockHeight: 5":0
+"OK lane: l1 | isRocky: false":1
+"OK lane: l2 | isRocky: true":0

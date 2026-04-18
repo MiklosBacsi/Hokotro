@@ -1,0 +1,6 @@
+"ERROR":0
+"Prototype has exited successfully":1
+r/^OK lane: l1.*iceThickness:\s*15/:1
+r/^OK lane: l1.*isRocky:\s*true/:0
+r/^OK lane: l1.*isRocky:\s*false/:1
+r/^OK car: c6.*state:\s*sliding/:1

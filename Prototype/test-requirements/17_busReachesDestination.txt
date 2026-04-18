@@ -1,0 +1,5 @@
+"ERROR":0
+"Prototype has exited successfully":1
+r/^OK crossing: cr2.*vehicles:\s*b1/:1
+r/^OK bus: b1.*destination:\s*cr1/:1
+r/^OK busdriver: bd1.*points:\s*5/:1

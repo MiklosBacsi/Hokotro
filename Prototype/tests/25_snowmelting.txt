@@ -1,0 +1,12 @@
+random off 5
+create crossing cr1
+create crossing cr2
+create road r1 5
+create lane l1
+connect cr1 cr2 l1
+set lane l1 r1 cr1 cr2
+set condition l1 snowThickness 10
+set condition l1 iceThickness 10
+set condition l1 isSalty true
+tick 4
+list lane l1

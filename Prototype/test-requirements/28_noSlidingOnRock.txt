@@ -1,0 +1,4 @@
+"ERROR":0
+"Prototype has exited successfully":1
+r/^OK car: c1.*state:\s*sliding/:0
+r/^OK car: c1.*state:\s*normal/:1

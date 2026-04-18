@@ -1,0 +1,14 @@
+random off 5
+create crossing cr1
+create crossing cr2
+create road r1 5
+create tunnel t1 5
+create lane l1
+create lane l2
+connect cr1 cr2 l1
+connect cr1 cr2 l2
+set lane l1 r1 cr1 cr2
+set lane l2 t1 cr1 cr2
+tick
+list lane l1
+list lane l2

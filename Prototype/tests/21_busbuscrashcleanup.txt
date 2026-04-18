@@ -1,0 +1,24 @@
+random off 5
+create crossing cr1
+create crossing cr2
+create road r1 5
+create lane l1
+create busdriver bd1
+create busdriver bd2
+create bus b1
+create bus b2
+connect cr1 cr2 l1
+set lane l1 r1 cr1 cr2
+set position b1 cr1 l1 4
+set position b2 cr1 l1 4
+set route b1 cr1 cr2
+set route b2 cr1 cr2
+set condition l1 iceThickness 3
+set state b1 waiting 3
+set state b2 waiting 4
+set position sp1 cr1
+set condition l1 isPassable false
+tick 4
+list lane l1
+list bus b1
+list bus b2
