@@ -16,6 +16,20 @@ public class Road implements ILogable {
   protected List<Lane> lanes2;
   private int length;
 
+
+    public List<Crossing> getCrossings() {
+        if (lanes1 != null && !lanes1.isEmpty()) {
+            return lanes1.get(0).getRoad().getCrossings();
+        } else if (lanes2 != null && !lanes2.isEmpty()) {
+            return lanes2.get(0).getRoad().getCrossings();
+        }
+        return null;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
     /**
      * Továbbítja a havazást a sávoknak.
      * @param amount a lehulló hó mennyisége
@@ -50,6 +64,12 @@ public class Road implements ILogable {
     public Lane getPassableLane(Road r){
         System.out.println("Road.getPassableLane() called");
         System.out.println("Road.getPassableLane() returned");
+        return null;
+    }
+
+    public RoadNetwork getRoadNetwork() {
+        System.out.println("Road.getRoadNetwork() called");
+        System.out.println("Road.getRoadNetwork() returned");
         return null;
     }
 

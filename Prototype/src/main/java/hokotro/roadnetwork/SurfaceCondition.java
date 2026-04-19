@@ -75,7 +75,7 @@ public class SurfaceCondition implements ILogable {
     public void setSalted(boolean salted) {
         isSalted = salted;
     }
-    public boolean isRocky() {
+    public boolean getIsRocky() {
         return isRocky;
     }
 

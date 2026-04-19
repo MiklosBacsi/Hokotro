@@ -39,10 +39,34 @@ public class SnowPlower extends Vehicle{
 //        Prototype.decreaseIndentation("SnowPlower.increaseSalt()");
     }
 
+    public void increaseStone(int amount){}
+
     public void addHead(Head head){
 //        Prototype.increaseIndentation("SnowPlower.addHead()");
 //        Prototype.print("new Head added!");
 //        Prototype.decreaseIndentation("SnowPlower.addHead()");
+    }
+
+    public int getKerosene() {
+        return kerosene;
+    }
+
+    public int getSalt() {
+        return salt;
+    }
+
+    public int getStone() {
+        return stone;
+    }
+
+    public void decreaseKerosene(int amount){}
+
+    public void decreaseSalt(int amount){}
+
+    public void decreaseStone(int amount){}
+
+    public Cleaner getOwner() {
+        return owner;
     }
 
     @Override

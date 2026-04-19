@@ -22,9 +22,12 @@ public class Crossing implements ILogable {
      * @return true, ha van járható sávja az adott útnak adott irányba
       */
     public boolean isPassable(Road road){
-        System.out.println("isPassable()");
-        System.out.println("return isPassable()");
-        return true;
+        for (Lane lane : road.getLanes(this)) {
+            if (lane.getIsPassable()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -33,8 +36,12 @@ public class Crossing implements ILogable {
      * @return road, az út, ami összeköti a paraméterként kapott csomóponttal, ha nem szomszédosak, az értéke null
       */
     public Road roadToCrossing(Crossing crossing){
-        System.out.println("roadToCrossing()");
-        System.out.println("return roadToCrossing()");
+        for (Road road : roads) {
+            List<Crossing> crossings = road.getCrossings();
+            if (crossings.contains(crossing)) {
+                return road;
+            }
+        }
         return null;
     }
 

@@ -2,6 +2,7 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.SurfaceCondition;
 import hokotro.util.Logger;
 
 /**
@@ -15,8 +16,12 @@ public class Dragon extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("dragon.ApplyEffect()");
-        System.out.println("return dragon.ApplyEffect()");
+        if (lane.getRoad().getLength() <= snowPlower.getKerosene()) {
+            snowPlower.decreaseKerosene(lane.getRoad().getLength());
+            SurfaceCondition surfaceCondition = lane.getSurfaceCondition();
+            surfaceCondition.setSnowThickness(0);
+            surfaceCondition.setIceThickness(0);
+        }
     }
 
     @Override

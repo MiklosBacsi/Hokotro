@@ -64,7 +64,7 @@ public class Lane implements ILogable {
     public SurfaceCondition getSurfaceCondition(){
 //        Prototype.increaseIndentation("Lane.getSurfaceCondition()");
 //
-//        // xd
+//        // xd 
 //
 //        Prototype.decreaseIndentation("Lane.getSurfaceCondition()");
 
@@ -83,6 +83,10 @@ public class Lane implements ILogable {
 
     public Road getRoad(){
         return road;
+    }
+
+    public boolean getIsPassable() {
+        return isPassable;
     }
 
     public void addSnow(int amount) {

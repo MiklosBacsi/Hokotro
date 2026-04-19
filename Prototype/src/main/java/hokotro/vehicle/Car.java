@@ -2,8 +2,10 @@ package hokotro.vehicle;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Crossing;
+import hokotro.roadnetwork.Lane;
 import hokotro.roadnetwork.Road;
 import hokotro.util.Logger;
+import hokotro.vehicle.*;
 
 import java.util.List;
 
@@ -24,24 +26,33 @@ public class Car extends Vehicle {
      * ha lehetséges át is sorol és beállítja az új sávját értékül
      */
     public void checkLaneChange(){
-        System.out.println("checkLaneChange()");
-        System.out.println("return checkLaneChange()");
+        Lane passableNeighbour = lane.getRoad().getPassableNeighbour(lane);
+        if (passableNeighbour == null){
+            state = VehicleState.STUCK;	
+        } else {
+            passableNeighbour.addVehicle(this);
+            lane.removeVehicle(this);
+            lane = passableNeighbour;
+        }
     }
 
     /**
      * Amennyiben beér egy kereszteződésbe és a legrövidebb út nem járható, a hívásával kér új legrövidebb útvonalat a célállomásáig
      */
     public void replanPath(){
-        System.out.println("replanPath()");
-        System.out.println("return replanPath()");
+        currentPath = lane.getRoad().getRoadNetwork().planPath(crossing, destination);
     }
 
     /**
      * Kereszteződésbe érve ellenőrizni, hogy a jármű végállomásba érkezett-e be
      */
     public void checkArrival(){
-        System.out.println("checkArrival()");
-        System.out.println("return checkArrival()");
+        if (crossing == destination){
+            Crossing tmp = origin;
+            origin = destination;
+            destination = tmp;
+            replanPath();
+        }
     }
 
     /**
