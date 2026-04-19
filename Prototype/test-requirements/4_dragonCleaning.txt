@@ -1,7 +1,7 @@
 "ERROR":0
 "Prototype has exited successfully":1
 r/^OK lane: l1.*snowThickness:\s*0/:1
-r/^OK lane: l1.*snowThickness:\s*5/:0
+r/^OK lane: l1.*snowThickness:\s*35/:0
 r/^OK lane: l1.*iceThickness:\s*0/:1
 r/^OK lane: l1.*iceThickness:\s*3/:0
 r/^OK lane: l1.*rockHeight:\s*0/:1
