@@ -23,8 +23,28 @@ public class Economy {
      * @param snowPlower A hókotró, aminek ki kell fizetni a munkát
       */
     public void payForWork(SnowPlower snowPlower){
-        System.out.println("payForWork()");
-        System.out.println("return payForWork()");
+        ItemType headType = snowPlower.getCurrentHeadType();
+        switch (headType) {
+            case HEAD_SWEEPER:
+                snowPlower.getOwner().increaseMoney(snowPlower.getLane().getRoad().getLength());
+                break;
+            case HEAD_BLOWER:
+                snowPlower.getOwner().increaseMoney(2*snowPlower.getLane().getRoad().getLength());
+                break;
+            case HEAD_ICEBREAKER:
+                snowPlower.getOwner().increaseMoney(snowPlower.getLane().getRoad().getLength());
+                break;
+            case HEAD_SALTSPREADER:
+                snowPlower.getOwner().increaseMoney(5*snowPlower.getLane().getRoad().getLength());
+                break;
+            case HEAD_DRAGON:
+                snowPlower.getOwner().increaseMoney(10*snowPlower.getLane().getRoad().getLength());
+                break;
+            case HEAD_STONESPREADER:
+                snowPlower.getOwner().increaseMoney(4*snowPlower.getLane().getRoad().getLength());
+                break;
+            default:
+        }
     }
 
     /**
@@ -34,56 +54,45 @@ public class Economy {
      * @param count amennyit vásárol
      * @return true, ha volt rá fedezete a takarítónak, egyébként false
      */
-    public boolean processPurchase(SnowPlower snowPlower, ItemType item, int count,Cleaner cleaner){
-//        Prototype.increaseIndentation("Economy.processPurchase()");
-
+    public boolean processPurchase(SnowPlower snowPlower, ItemType item, int count){
+        Cleaner cleaner = snowPlower.getOwner();
         int money = cleaner.getMoney();
-        if (money>=5*count) {
-            cleaner.decreaseMoney(5*count);
+        int price = prices.get(item)*count;
+        if (money>=price) {
+            cleaner.decreaseMoney(price);
             switch (item) {
-                case ItemType.SALT:
-                    snowPlower.increaseSalt(count);
-                break;
-                case ItemType.KEROSINE:
-                    snowPlower.increaseKerosene(count);
-                break;
-                default:
-                    Head head = null;
-                    switch (item) {
-                        case HEAD_SWEEPER:
-                            head = new Sweeper();
-                            break;
-
-                        case HEAD_BLOWER:
-                            head = new Blower();
-                            break;
-
-                        case HEAD_ICEBREAKER:
-                            head = new IceBreaker();
-                            break;
-
-                        case HEAD_SALTSPREADER:
-                            head = new SaltSpreader();
-                            break;
-
-                        case HEAD_DRAGON:
-                            head = new Dragon();
-                            break;
-                        default:
-                            break;
-                    }
-                    snowPlower.addHead(head);
+                case HEAD_SWEEPER:
+                    snowPlower.addHead(new Sweeper());
                     break;
+                case HEAD_BLOWER:
+                    snowPlower.addHead(new Blower());
+                    break;
+                case HEAD_ICEBREAKER:
+                    snowPlower.addHead(new IceBreaker());
+                    break;
+                case HEAD_SALTSPREADER:
+                    snowPlower.addHead(new SaltSpreader());
+                    break;
+                case HEAD_DRAGON:
+                    snowPlower.addHead(new Dragon());
+                    break;
+                case HEAD_STONESPREADER:
+                    snowPlower.addHead(new Blower());
+                    break;
+                case KEROSENE:
+                    snowPlower.increaseKerosene(count);
+                    break;
+                case SALT:
+                    snowPlower.increaseSalt(count);
+                    break;
+                case STONE:
+                    snowPlower.increaseStone(count);
+                    break;
+                default:
             }
-//            Prototype.decreaseIndentation("Economy.processPurchase()");
             return true;
-        }else{
-//            Prototype.print("Not enough money");
-//            Prototype.decreaseIndentation("Economy.processPurchase()");
-            return false;
         }
-
-
+        return false;
     }
 
     /**
@@ -92,27 +101,16 @@ public class Economy {
      * @return a hókotró referenciája, ha nem volt rá fedezett akkor null
      */
     public SnowPlower buyNewSnowPlower(Cleaner cleaner){
-//        Prototype.increaseIndentation("Economy.buyNewSnowPlower()");
-
-//        int money = cleaner.getMoney();
-//        if (money>=100) {
-//            int headNumber = Prototype.readNumber("1. Sweeper\n2. IceBreaker\n", 1, 2);
-            cleaner.decreaseMoney(100);
-//            if (headNumber == 1) {
-//                SnowPlower sp = new SnowPlower();
-//                sp.addHead(new Sweeper());
-//                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
-//                return sp;
-//            } else {
-//                SnowPlower sp = new SnowPlower();
-//                sp.addHead(new IceBreaker());
-//                Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
-//                return sp;
-//            }
-//        }
-
-//        Prototype.print("Not enough money");
-//        Prototype.decreaseIndentation("Economy.buyNewSnowPlower()");
+        int money = cleaner.getMoney();
+        int price = prices.get(ItemType.NEW_SNOWPLOWER);
+        if (money >= price) {
+            cleaner.decreaseMoney(price);
+            return new SnowPlower(cleaner, null);
+        }
         return null;
+    }
+
+    public HashMap<ItemType, Integer> getPrices() {
+        return prices;
     }
 }

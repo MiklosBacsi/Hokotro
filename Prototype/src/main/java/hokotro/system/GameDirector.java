@@ -1,6 +1,7 @@
 package hokotro.system;
 
 import hokotro.player.Player;
+import hokotro.roadnetwork.Crossing;
 import hokotro.roadnetwork.RoadNetwork;
 import hokotro.vehicle.Car;
 
@@ -26,8 +27,11 @@ public class GameDirector {
     /**
      * létrehoz új autókat
      */
-    public void createCar(){
-        System.out.println("createCar()");
-        System.out.println("return createAuto()");
+    public void createCar(Crossing origin, Crossing destination){
+        if (origin == null || destination == null) {
+            throw new IllegalArgumentException("Origin and destination crossings cannot be null.");
+        }
+        Car car = new Car(origin, destination);
+        cars.add(car);
     }
 }

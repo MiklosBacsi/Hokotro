@@ -5,7 +5,7 @@ package hokotro.system;
  */
 public enum ItemType {
     SALT,
-    KEROSINE,
+    KEROSENE,
     STONE,
     HEAD_SWEEPER,
     HEAD_BLOWER,

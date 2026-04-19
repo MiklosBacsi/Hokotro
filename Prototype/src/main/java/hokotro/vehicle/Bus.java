@@ -16,6 +16,14 @@ public class Bus extends Vehicle {
     private Crossing destination;
     private BusDriver owner; 
 
+
+    public Bus(Crossing _origin, Crossing destination, BusDriver owner) {
+        super(_origin);
+        origin = _origin;
+        this.destination = destination;
+        this.owner = owner;
+        this.state = VehicleState.NORMAL;
+    }
     /* 
      * Várakozó állapotba teszi magát, amíg le nem jár a várakozási ideje
      */
