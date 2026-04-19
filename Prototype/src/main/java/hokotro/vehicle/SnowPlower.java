@@ -32,9 +32,8 @@ public class SnowPlower extends Vehicle{
      * @param newHead
      */
     public void changeHead(Head newHead){
-//        Prototype.increaseIndentation("SnowPlower.changeHead()");
-//        Prototype.print("The SnowPlower's head changed!");
-//        Prototype.decreaseIndentation("SnowPlower.changeHead()");
+        currentHead = newHead;
+        currentHeadType = newHead.getType();
     }
 
 
@@ -47,32 +46,28 @@ public class SnowPlower extends Vehicle{
      * @param amount az növekedés mértéke
      */
     public void increaseKerosene(int amount){
-//        Prototype.increaseIndentation("SnowPlower.increaseKerosine()");
-//        Prototype.print("Kerosine amount increased!");
-//        Prototype.decreaseIndentation("SnowPlower.increaseKerosine()");
+        kerosene += amount;
     }
     /**
      * Növeli a só mennyiségét.
      * @param amount az növekedés mértéke
      */
     public void increaseSalt(int amount){
-//        Prototype.increaseIndentation("SnowPlower.increaseSalt()");
-//        Prototype.print("Salt amount increased by " + amount);
-//        Prototype.decreaseIndentation("SnowPlower.increaseSalt()");
+        salt += amount;
     }
     /**
      * Növeli a kő mennyiségét.
      * @param amount az növekedés mértéke
      */
-    public void increaseStone(int amount){}
+    public void increaseStone(int amount){
+        stone += amount;
+    }
     /**
      * Hozzáad egy fejet a SnowPlowerhez.
      * @param head a hozzáadni kívánt fej
      */
     public void addHead(Head head){
-//        Prototype.increaseIndentation("SnowPlower.addHead()");
-//        Prototype.print("new Head added!");
-//        Prototype.decreaseIndentation("SnowPlower.addHead()");
+        heads.add(head);
     }
     /**
      * Visszaadja a kerosin mennyiségét.
@@ -104,17 +99,23 @@ public class SnowPlower extends Vehicle{
      * Csökkenti a kerosin mennyiségét.
      * @param amount a csökkenés mértéke
      */
-    public void decreaseKerosene(int amount){}
+    public void decreaseKerosene(int amount){
+        kerosene -= amount;
+    }
     /**
      * Csökkenti a só mennyiségét.
      * @param amount a csökkenés mértéke
      */
-    public void decreaseSalt(int amount){}
+    public void decreaseSalt(int amount){
+        salt -= amount;
+    }
     /**
      * Csökkenti a kő mennyiségét.
      * @param amount a csökkenés mértéke
      */
-    public void decreaseStone(int amount){}
+    public void decreaseStone(int amount){
+        stone -= amount;
+    }
     /**
      * Beállítja a SnowPlower tulajdonosát.
      * @param owner a beállítani kívánt tulajdonos
