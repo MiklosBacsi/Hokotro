@@ -14,6 +14,6 @@ set route c2 cr1 cr2
 set condition l1 iceThickness 3
 set state c1 sliding
 tick 
-list lane l1
+list lane l1 --verbose
 list car c1
 list car c2

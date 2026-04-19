@@ -6,9 +6,9 @@ create lane l1
 create cleaner c1
 create snowplower sp1 sweeper
 set money 50
-buy saltspreader 1
+buy salt-spreader 1
 buy salt 6
-equip sp1 saltspreader
+equip sp1 salt-spreader
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
 set condition l1 snowThickness 5

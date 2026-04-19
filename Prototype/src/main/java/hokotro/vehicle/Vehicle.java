@@ -62,8 +62,20 @@ public abstract class Vehicle implements ILogable {
      * @param lane a sáv, amelyben a mozgás történik
      */
     public void move(Lane lane){
-        System.out.println("Vehicle.move() called");
-        System.out.println("Vehicle.move() returned");
+        if (lane == null) {
+            throw new IllegalArgumentException("Vehicle.move() called with null lane");
+        }
+        if (crossing == null) {
+            throw new IllegalStateException("Vehicle.move() called with vehicle not on crossing");
+        }
+        if (crossing.getLanes().contains(lane)) {
+            setLane(lane);
+            lanePosition = 0;
+            setCrossing(null);
+            lane.addVehicle(this);
+        } else {
+            throw new IllegalArgumentException("Vehicle.move() called with lane not on vehicle's crossing");
+        }
     }
 
     /**

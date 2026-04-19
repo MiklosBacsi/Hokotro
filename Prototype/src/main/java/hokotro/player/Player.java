@@ -27,7 +27,16 @@ public abstract class Player implements ILogable {
      * @param lane a sáv, amelyben a mozgás történik
      */
     public void move(Vehicle vehicle, Lane lane){
-        System.out.println("Player.move() called");
-        System.out.println("Player.move() returned");
+        if (vehicle == null || lane == null) {
+            throw new IllegalArgumentException("Player.move() called with null vehicle or lane");
+        }
+        if (vehicle.getCrossing() == null) {
+            throw new IllegalArgumentException("Player.move() called with vehicle not on crossing");
+        }
+        if (vehicle.getCrossing().getLanes().contains(lane)) {
+            vehicle.move(lane);
+        } else {
+            throw new IllegalArgumentException("Player.move() called with lane not on vehicle's crossing");
+        }
     }
 }

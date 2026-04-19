@@ -1,3 +1,4 @@
 "ERROR":0
 "Prototype has exited successfully":1
-r/^OK lane: l1.*vehicles:\s*sp1/:1
+r/^OK lane: l1.*vehicles:\s\[snowplower:\ssp1.*head:\ssweeper\]/:1
+"OK crossing cr1 | roads: 1 | vehicles: 0":1

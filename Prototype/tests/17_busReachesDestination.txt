@@ -3,7 +3,7 @@ create crossing cr1
 create crossing cr2
 create road r1 5
 create lane l1
-create busdriver bd1
+create bus-driver bd1
 create bus b1
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
@@ -15,5 +15,6 @@ get outgoing-lanes cr1 r1
 choose b1 l1
 tick 5
 list crossing cr2
-list bus b1
-list busdriver bd1
+list bus-driver bd1
+list bus b1 --verbose
+list crossing cr2 --verbose
