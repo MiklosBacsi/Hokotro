@@ -3,6 +3,7 @@ package hokotro.head;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
 import hokotro.roadnetwork.SurfaceCondition;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
@@ -21,6 +22,10 @@ public class SaltSpreader extends Head {
             snowPlower.decreaseSalt(lane.getRoad().getLength());
             lane.getSurfaceCondition().setSalted(true);
         }
+    }
+    @Override
+    public ItemType getType() {
+        return ItemType.HEAD_SALTSPREADER;
     }
 
     @Override

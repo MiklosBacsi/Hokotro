@@ -77,7 +77,7 @@ public class Lane implements ILogable {
         // TODO: Implement
     }
 
-    public void addRock(int amount) {
+    public void addRock() {
         // TODO: Implement
     }
 

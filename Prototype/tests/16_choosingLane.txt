@@ -13,4 +13,5 @@ get outgoing-roads cr1
 get outgoing-lanes cr1 r1
 choose sp1 l1
 tick 
-list lane l1
+list lane l1 --verbose
+list crossing cr1
