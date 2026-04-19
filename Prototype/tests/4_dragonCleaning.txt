@@ -6,11 +6,12 @@ create lane l1
 create cleaner c1
 create snowplower sp1 sweeper
 set money 500
-buy dragonhead 1
+buy dragon
 buy kerosin 5
-equip sp1 dragonhead
+equip sp1 dragon
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
+add rock l1
 set condition l1 snowThickness 5
 set condition l1 iceThickness 3
 set position sp1 cr1
@@ -19,5 +20,5 @@ get outgoing-roads cr1
 get outgoing-lanes cr1 r1
 choose sp1 l1
 tick 5
-list lane l1
-list snowplower sp1
+list lane l1 --verbose
+list snowplower sp1 --verbose

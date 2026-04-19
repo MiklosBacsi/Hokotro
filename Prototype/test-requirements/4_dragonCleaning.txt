@@ -1,2 +1,12 @@
 "ERROR":0
 "Prototype has exited successfully":1
+r/^OK lane: l1.*snowThickness:\s*0/:1
+r/^OK lane: l1.*snowThickness:\s*5/:0
+r/^OK lane: l1.*snowThickness:\s*0/:1
+r/^OK lane: l1.*snowThickness:\s*3/:0
+r/^OK lane: l1.*rockHeight:\s*0/:1
+r/^OK lane: l1.*rockHeight:\s*5/:0
+r/^OK lane: l1.*isRocky:\s*false/:0
+r/^OK lane: l1.*isRocky:\s*true/:1
+"OK snowplower: sp1 | head: dragon":1
+r/^OK snowplower: sp1.*\{(dragon;sweeper|sweeper;dragon)/:1
