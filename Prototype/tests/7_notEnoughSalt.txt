@@ -6,9 +6,9 @@ create lane l1
 create cleaner c1
 create snowplower sp1 sweeper
 set money 50
-buy saltspreader 1
+buy salt-spreader
 buy salt 3
-equip sp1 saltspreader
+equip sp1 salt-spreader
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
 set condition l1 snowThickness 5
@@ -18,5 +18,5 @@ get outgoing-roads cr1
 get outgoing-lanes cr1 r1
 choose sp1 l1
 tick 5
-list lane l1
-list snowplower sp1
+list lane l1 --verbose
+list snowplower sp1 --verbose

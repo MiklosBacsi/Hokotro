@@ -1,4 +1,9 @@
-"ERROR":0
+"ERROR not enough salt in snowplower sp1 (salt: 3, road: 5)":1
 "Prototype has exited successfully":1
-"OK lane: l1 | isSalty":0
-"OK snowplower: sp1 | salt":3
+r/^OK lane: l1.*snowThickness:\s*35/:1
+r/^OK lane: l1.*snowThickness:\s*0/:0
+r/^OK lane: l1.*iceThickness:\s*0/:1
+r/^OK lane: l1.*isSalted:\s*true/:0
+r/^OK lane: l1.*isSalted:\s*false/:1
+"OK snowplower: sp1 | head: dragon":1
+r/^OK snowplower: sp1.*salt:\s3.*heads:\s\{dragon\}/:1
