@@ -1,3 +1,12 @@
 "ERROR":0
 "Prototype has exited successfully":1
-"OK lane: l1 | snowThickness: 30 | iceThickness":0
+r/^OK lane: l1.*snowThickness:\s*30/:1
+r/^OK lane: l1.*snowThickness:\s*0/:0
+r/^OK lane: l1.*iceThickness:\s*0/:1
+r/^OK lane: l1.*iceThickness:\s*30/:0
+r/^OK lane: l1.*rockHeight:\s*0/:1
+r/^OK lane: l1.*rockHeight:\s*30/:0
+r/^OK lane: l1.*isRocky:\s*false/:0
+r/^OK lane: l1.*isRocky:\s*true/:1
+"OK snowplower: sp1 | head: ice-breaker":1
+r/^OK snowplower: sp1.*\{(ice-breaker;sweeper|sweeper;ice-breaker)/:1
