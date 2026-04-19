@@ -66,7 +66,7 @@ public class Cleaner extends Player {
         try {
             return "cleaner: " + Prototype.getId(this) +
                 " | money: " + money +
-                " | snowplows: " + snowplows.size()
+                " | snowplowers: " + snowplows.size()
             ;
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
@@ -83,7 +83,7 @@ public class Cleaner extends Player {
                 Logger.logOK(
                     "cleaner: " + Prototype.getId(this) +
                     " | money: " + money +
-                    " | snowplows: " + Logger.buildStringFromCollection(snowplows, '{', '}', ";")
+                    " | snowplowers: " + Logger.buildStringFromCollection(snowplows, '{', '}', ";")
                 );
             }
         } catch (Exception e) {

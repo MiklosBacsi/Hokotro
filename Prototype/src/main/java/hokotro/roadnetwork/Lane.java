@@ -81,6 +81,26 @@ public class Lane implements ILogable {
         return 0;
     }
 
+    public void addSnow(int amount) {
+        // TODO: Implement
+    }
+
+    public void addSalt(int amount) {
+        // TODO: Implement
+    }
+
+    public void addRock(int amount) {
+        // TODO: Implement
+    }
+
+    public void reduceSnow(int amount) {
+        // TODO: Implement
+    }
+
+    public void reduceIce(int amount) {
+        // TODO: Implement
+    }
+
     @Override
     public String toString() {
         try {
