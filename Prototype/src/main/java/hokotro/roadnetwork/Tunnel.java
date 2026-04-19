@@ -16,8 +16,7 @@ public class Tunnel extends Road {
      */
     @Override
     public void letItSnow(int amount){
-            System.out.println("Tunnel.letItSnow() called");
-            System.out.println("Tunnel.letItSnow() returned");
+        // Nem továbbítja a havazást a sávjai felé, így azok nem lesznek járhatatlanok.
     }
 
     @Override

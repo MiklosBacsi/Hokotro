@@ -22,8 +22,33 @@ public class RoadNetwork {
      * @param amount a lehulló hó mennyisége
      */
     public void letItSnow(int amount){
-        System.out.println("RoadNetwork.letItSnow() called");
-        System.out.println("RoadNetwork.letItSnow() returned");
+        for (Road road : roads) {
+            road.letItSnow(amount);
+        }
+    }
+
+    public void addRoad(Road road) {
+        roads.add(road);
+    }
+
+    public void addCrossing(Crossing crossing) {
+        crossings.add(crossing);
+    }
+
+    public Set<Road> getRoads() {
+        return roads;
+    }
+
+    public Set<Crossing> getCrossings() {
+        return crossings;
+    }
+
+    public void removeRoad(Road road) {
+        roads.remove(road);
+    }
+
+    public void removeCrossing(Crossing crossing) {
+        crossings.remove(crossing);
     }
 
     /**
@@ -33,7 +58,7 @@ public class RoadNetwork {
      * @return a két csomópont közötti legrövidebb út listája
      */
     public List<Road> planPath(Crossing start, Crossing end) {
-        /* Map<Crossing, Double> distance = new HashMap<>();
+/*         Map<Crossing, Double> distance = new HashMap<>();
         Map<Crossing, Road> previous = new HashMap<>();
         Set<Crossing> visited = new HashSet<>();
         List<Map.Entry<Double, Crossing>> queue = new ArrayList<>();
