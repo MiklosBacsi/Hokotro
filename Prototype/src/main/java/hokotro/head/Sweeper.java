@@ -22,7 +22,7 @@ public class Sweeper extends Head {
     @Override
     public String toString() {
         try {
-            return "sweeper: " + Prototype.getId(this);
+            return "sweeper";
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
@@ -32,7 +32,10 @@ public class Sweeper extends Head {
     @Override
     public void log(boolean verbose) {
         try {
-            Logger.logOK(this.toString());
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            }
+            Logger.logOK("sweeper: " + Prototype.getId(this));
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);

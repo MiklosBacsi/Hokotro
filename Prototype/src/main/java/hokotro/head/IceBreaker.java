@@ -21,7 +21,7 @@ public class IceBreaker extends Head {
     @Override
     public String toString() {
         try {
-            return "ice-breaker: " + Prototype.getId(this);
+            return "ice-breaker";
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
@@ -31,7 +31,10 @@ public class IceBreaker extends Head {
     @Override
     public void log(boolean verbose) {
         try {
-            Logger.logOK(this.toString());
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            }
+            Logger.logOK("ice-breaker: " + Prototype.getId(this));
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);

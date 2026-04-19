@@ -22,7 +22,7 @@ public class Dragon extends Head {
     @Override
     public String toString() {
         try {
-            return "dragon: " + Prototype.getId(this);
+            return "dragon";
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
@@ -32,7 +32,10 @@ public class Dragon extends Head {
     @Override
     public void log(boolean verbose) {
         try {
-            Logger.logOK(this.toString());
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            }
+            Logger.logOK("dragon: " + Prototype.getId(this));
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);

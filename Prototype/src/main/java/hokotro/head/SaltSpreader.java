@@ -23,7 +23,7 @@ public class SaltSpreader extends Head {
     @Override
     public String toString() {
         try {
-            return "salt-spreader: " + Prototype.getId(this);
+            return "salt-spreader";
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
@@ -33,7 +33,10 @@ public class SaltSpreader extends Head {
     @Override
     public void log(boolean verbose) {
         try {
-            Logger.logOK(this.toString());
+            if (!verbose) {
+                Logger.logOK(this.toString());
+            }
+            Logger.logOK("salt-spreader: " + Prototype.getId(this));
         } catch (Exception e) {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
