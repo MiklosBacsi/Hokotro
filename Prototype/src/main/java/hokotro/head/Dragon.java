@@ -3,6 +3,7 @@ package hokotro.head;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
 import hokotro.roadnetwork.SurfaceCondition;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
@@ -23,7 +24,10 @@ public class Dragon extends Head {
             surfaceCondition.setIceThickness(0);
         }
     }
-
+    @Override    
+    public ItemType getType() {
+        return ItemType.HEAD_DRAGON;
+    }
     @Override
     public String toString() {
         try {

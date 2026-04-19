@@ -3,6 +3,7 @@ package hokotro.head;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
 import hokotro.roadnetwork.SurfaceCondition;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
@@ -19,7 +20,10 @@ public class IceBreaker extends Head {
         surfaceCondition.addSnowThickness(surfaceCondition.getIceThickness());
         surfaceCondition.setIceThickness(0);
     }
-
+    @Override    
+    public ItemType getType() {
+        return ItemType.HEAD_ICEBREAKER;
+    }
     @Override
     public String toString() {
         try {
