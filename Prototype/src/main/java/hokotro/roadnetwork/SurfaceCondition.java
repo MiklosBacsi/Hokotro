@@ -14,6 +14,7 @@ public class SurfaceCondition implements ILogable {
     private int iceThickness;
     private int rockHeight;
     private boolean isSalted;
+
     private boolean isRocky;
 
     /**
@@ -41,16 +42,53 @@ public class SurfaceCondition implements ILogable {
         System.out.println("SurfaceCondition.compressSnow() returned");
     }
 
-    // TODO: implement
-    public int getTopSnowHeight() {
-        return 0;
+
+    public int getSnowThickness(){
+        return snowThickness;
     }
+    public void setSnowThickness(int snowThickness) {
+        this.snowThickness = snowThickness;
+    }
+    public int getDriveCount() {
+        return driveCount;
+    }
+
+    public void setDriveCount(int driveCount) {
+        this.driveCount = driveCount;
+    }
+
+    public int getIceThickness(){
+        return iceThickness;
+    }
+    public void setIceThickness(int iceThickness) {
+        this.iceThickness = iceThickness;
+    }
+    public int getRockHeight(){
+        return rockHeight;
+    }
+    public void setRockHeight(int rockHeight) {
+        this.rockHeight = rockHeight;
+    }
+    public boolean getIsSalted(){
+        return isSalted;
+    }
+    public void setSalted(boolean salted) {
+        isSalted = salted;
+    }
+    public boolean isRocky() {
+        return isRocky;
+    }
+
+    public void setRocky(boolean rocky) {
+        isRocky = rocky;
+    }
+
 
     @Override
     public String toString() {
         try {
             return "condition: " + Prototype.getId(this) +
-                " | snow: " + getTopSnowHeight() +
+                " | snow: " + snowThickness +
                 " | ice: " + iceThickness +
                 " | salted: " + isSalted +
                 " | rocky: " + isRocky +
