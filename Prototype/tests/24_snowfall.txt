@@ -10,5 +10,5 @@ connect cr1 cr2 l2
 set lane l1 r1 cr1 cr2
 set lane l2 t1 cr1 cr2
 tick
-list lane l1
-list lane l2
+list lane l1 --verbose
+list lane l2 --verbose
