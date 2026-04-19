@@ -1,7 +1,7 @@
 create cleaner c1
 create snowplower sp1 sweeper
 set money c1 100
-buy blower sp1 1
+buy blower sp1
 get heads sp1
-list snowplower sp1
+list snowplower sp1 --verbose
 list cleaner c1
