@@ -2,6 +2,7 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.SurfaceCondition;
 import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
@@ -15,8 +16,10 @@ public class Blower extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("blower.ApplyEffect()");
-        System.out.println("return blower.ApplyEffect()");
+        SurfaceCondition surfaceCondition = lane.getSurfaceCondition();
+        surfaceCondition.setSnowThickness(0);
+        surfaceCondition.setRocky(false);
+        surfaceCondition.setRockHeight(0);
     }
 
     @Override
