@@ -30,19 +30,18 @@ public class RoadNetwork {
         Map<Crossing, Double> distance = new HashMap<>();
         Map<Crossing, Road> previous = new HashMap<>();
         Set<Crossing> visited = new HashSet<>();
-        PriorityQueue<double[], Crossing> priorityQueue =
-            new PriorityQueue<>(Comparator.comparingDouble(pair -> pair[0]));
+        List<Map.Entry<Double, Crossing>> queue = new ArrayList<>();
 
         for (Crossing node : crossings) {
             distance.put(node, Double.MAX_VALUE);
             previous.put(node, null);
         }
         distance.put(start, 0.0);
-        priorityQueue.add(new double[]{0.0}, start); // (távolság, csomópont)
+        queue.add(Map.entry(0.0, start));
 
-        while (!priorityQueue.isEmpty()) {
-            Map.Entry<double[], Crossing> entry = priorityQueue.poll();
-            double currentDistance = entry.getKey()[0];
+        while (!queue.isEmpty()) {
+            queue.sort(Comparator.comparingDouble(Map.Entry::getKey));
+            Map.Entry<Double, Crossing> entry = queue.remove(0);
             Crossing current = entry.getValue();
 
             if (current.equals(end)) break;
@@ -50,14 +49,24 @@ public class RoadNetwork {
             visited.add(current);
 
             for (Road neighborRoad : current.getRoads()) {
+                boolean passable = false;
+                for (Lane lane : neighborRoad.getLanes(current)) {
+                    if (!lane.getIsPassable()) continue;
+                    SurfaceCondition condition = lane.getSurfaceCondition();
+                    if (condition != null && condition.getIceThickness() > 0) continue;
+                    passable = true;
+                    break;
+                }
+                if (!passable) continue;
+
                 Crossing neighbor = neighborRoad.otherEnd(current);
                 if (visited.contains(neighbor)) continue;
 
-                double newDistance = distance.get(current) + neighborRoad.getWeight();
+                double newDistance = distance.get(current) + neighborRoad.getLength();
                 if (newDistance < distance.get(neighbor)) {
                     distance.put(neighbor, newDistance);
                     previous.put(neighbor, neighborRoad);
-                    priorityQueue.add(new double[]{newDistance}, neighbor);
+                    queue.add(Map.entry(newDistance, neighbor));
                 }
             }
         }
@@ -69,7 +78,6 @@ public class RoadNetwork {
             path.add(0, road);
             current = road.otherEnd(current);
         }
-
         return path;
     }
 }
