@@ -1,5 +1,5 @@
 create cleaner c1
 create snowplower sp1 sweeper
 set money c1 1100
-buy snowplower icebreaker c1
+buy snowplower ice-breaker c1
 list cleaner c1 --verbose
