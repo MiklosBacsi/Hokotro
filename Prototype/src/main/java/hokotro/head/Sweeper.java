@@ -16,9 +16,17 @@ public class Sweeper extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("Sweeper.applyEffect() called");
-        System.out.println("Sweeper.applyEffect() returned");
+        Lane rightLane = lane.getRoad().getRightLane(lane);
+        if (rightLane != null) {
+            rightLane.addSnow(lane.getSurfaceCondition().getSnowThickness());
+            rightLane.addRock();
+            rightLane.getSurfaceCondition().setRocky(true);
+        }
+        lane.getSurfaceCondition().setSnowThickness(0);
+        lane.getSurfaceCondition().setRockHeight(0);
+        lane.getSurfaceCondition().setRocky(false);
     }
+    
     @Override
     public ItemType getType() {
         return ItemType.HEAD_SWEEPER;
