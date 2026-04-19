@@ -37,37 +37,61 @@ public class SnowPlower extends Vehicle{
 //        Prototype.decreaseIndentation("SnowPlower.changeHead()");
     }
 
+
     public ItemType getCurrentHeadType() {
         return currentHeadType;
     }
 
+    /**
+     * Növeli a kerosin mennyiségét.
+     * @param amount az növekedés mértéke
+     */
     public void increaseKerosene(int amount){
 //        Prototype.increaseIndentation("SnowPlower.increaseKerosine()");
 //        Prototype.print("Kerosine amount increased!");
 //        Prototype.decreaseIndentation("SnowPlower.increaseKerosine()");
     }
+    /**
+     * Növeli a só mennyiségét.
+     * @param amount az növekedés mértéke
+     */
     public void increaseSalt(int amount){
 //        Prototype.increaseIndentation("SnowPlower.increaseSalt()");
 //        Prototype.print("Salt amount increased by " + amount);
 //        Prototype.decreaseIndentation("SnowPlower.increaseSalt()");
     }
-
+    /**
+     * Növeli a kő mennyiségét.
+     * @param amount az növekedés mértéke
+     */
     public void increaseStone(int amount){}
-
+    /**
+     * Hozzáad egy fejet a SnowPlowerhez.
+     * @param head a hozzáadni kívánt fej
+     */
     public void addHead(Head head){
 //        Prototype.increaseIndentation("SnowPlower.addHead()");
 //        Prototype.print("new Head added!");
 //        Prototype.decreaseIndentation("SnowPlower.addHead()");
     }
-
+    /**
+     * Visszaadja a kerosin mennyiségét.
+     * @return a kerosin mennyisége
+     */
     public int getKerosene() {
         return kerosene;
     }
-
+    /**
+     * Visszaadja a só mennyiségét.
+     * @return a só mennyisége
+     */
     public int getSalt() {
         return salt;
     }
-
+    /**
+     * Visszaadja a kő mennyiségét.
+     * @return a kő mennyisége
+     */
     public int getStone() {
         return stone;
     }
@@ -76,16 +100,35 @@ public class SnowPlower extends Vehicle{
         return currentHead;
     }
 
+    /**
+     * Csökkenti a kerosin mennyiségét.
+     * @param amount a csökkenés mértéke
+     */
     public void decreaseKerosene(int amount){}
-
+    /**
+     * Csökkenti a só mennyiségét.
+     * @param amount a csökkenés mértéke
+     */
     public void decreaseSalt(int amount){}
-
+    /**
+     * Csökkenti a kő mennyiségét.
+     * @param amount a csökkenés mértéke
+     */
     public void decreaseStone(int amount){}
-
+    /**
+     * Beállítja a SnowPlower tulajdonosát.
+     * @param owner a beállítani kívánt tulajdonos
+     */    
+    public void setOwner(Cleaner owner) {
+        this.owner = owner;
+    }
+    /**
+     * Visszaadja a SnowPlower tulajdonosát.
+     * @return a SnowPlower tulajdonosa
+     */
     public Cleaner getOwner() {
         return owner;
     }
-
     @Override
     public String toString() {
         try {
