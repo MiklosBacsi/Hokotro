@@ -2,6 +2,7 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
@@ -39,5 +40,10 @@ public class Blower extends Head {
             Logger.logERROR(e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public ItemType getType() {
+        return ItemType.HEAD_BLOWER;
     }
 }
