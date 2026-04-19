@@ -13,5 +13,5 @@ set position c1 cr1 l1 1
 set route c1 cr1 cr2
 set condition l1 snowThickness 10
 tick 
-list lane l1
-list lane l2
+list lane l1 --verbose
+list lane l2 --verbose
