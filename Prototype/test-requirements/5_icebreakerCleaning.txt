@@ -9,4 +9,4 @@ r/^OK lane: l1.*rockHeight:\s*30/:0
 r/^OK lane: l1.*isRocky:\s*false/:0
 r/^OK lane: l1.*isRocky:\s*true/:1
 "OK snowplower: sp1 | head: ice-breaker":1
-r/^OK snowplower: sp1.*\{(ice-breaker;sweeper|sweeper;ice-breaker)/:1
+r/^OK snowplower: sp1.*\{(ice-breaker;sweeper|sweeper;ice-breaker)\}/:1

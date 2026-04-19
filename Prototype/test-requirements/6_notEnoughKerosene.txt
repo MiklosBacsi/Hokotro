@@ -1,4 +1,8 @@
-"ERROR":0
+"ERROR not enough keronese in snowplower sp1 (kerosene: 3, road: 5)":1
 "Prototype has exited successfully":1
-"OK lane: l1 | snowThickness: 30 | iceThickness":3
-"OK snowplower: sp1 | kerosin":3
+r/^OK lane: l1.*snowThickness:\s*30/:1
+r/^OK lane: l1.*snowThickness:\s*0/:0
+r/^OK lane: l1.*iceThickness:\s*3/:1
+r/^OK lane: l1.*iceThickness:\s*0/:0
+"OK snowplower: sp1 | head: dragon":1
+r/^OK snowplower: sp1.*kerosene:\s3.*\heads:\s{dragon\}/:1
