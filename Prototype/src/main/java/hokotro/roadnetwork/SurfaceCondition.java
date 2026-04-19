@@ -83,6 +83,10 @@ public class SurfaceCondition implements ILogable {
         isRocky = rocky;
     }
 
+    public void addSnowThickness(int amount) {
+        this.snowThickness += amount;
+    }   
+
 
     @Override
     public String toString() {

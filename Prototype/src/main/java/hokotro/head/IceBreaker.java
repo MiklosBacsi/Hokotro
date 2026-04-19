@@ -2,6 +2,7 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.SurfaceCondition;
 import hokotro.util.Logger;
 
 /**
@@ -14,8 +15,9 @@ public class IceBreaker extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("icebreaker.ApplyEffect()");
-        System.out.println("return icebreaker.ApplyEffect()");
+        SurfaceCondition surfaceCondition = lane.getSurfaceCondition();
+        surfaceCondition.addSnowThickness(surfaceCondition.getIceThickness());
+        surfaceCondition.setIceThickness(0);
     }
 
     @Override

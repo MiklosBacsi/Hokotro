@@ -2,6 +2,7 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.SurfaceCondition;
 import hokotro.util.Logger;
 
 /**
@@ -16,8 +17,10 @@ public class SaltSpreader extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("SaltSpreader.applyEffect() called");
-        System.out.println("SaltSpreader.applyEffect() returned");
+        if (lane.getRoad().getLength() <= snowPlower.getSalt()) {
+            snowPlower.decreaseSalt(lane.getRoad().getLength());
+            lane.getSurfaceCondition().setSalted(true);
+        }
     }
 
     @Override

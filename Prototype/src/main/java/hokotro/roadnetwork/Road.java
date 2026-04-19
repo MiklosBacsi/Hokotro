@@ -12,9 +12,15 @@ import java.util.List;
  * Továbbítja a havazás mértékét a sávoknak. Visszaadja a szomszédos sávot és a járhatóságot.
  */
 public class Road implements ILogable {
-  protected List<Lane> lanes1;
+  protected List<Lane> lanes1; // index 0 a legbelső sáv
   protected List<Lane> lanes2;
   private int length;
+  private RoadNetwork roadNetwork;
+
+     /**
+     * Visszaadja a csomópontokat, amiket összeköt.
+     * @return a csomópontok, amiket összeköt
+     */
 
 
     public List<Crossing> getCrossings() {
@@ -35,52 +41,115 @@ public class Road implements ILogable {
      * @param amount a lehulló hó mennyisége
      */
     public void letItSnow(int amount){
-        System.out.println("Road.letItSnow() called");
-        System.out.println("Road.letItSnow() returned");
+        for (Lane lane : lanes1) {
+            lane.letItSnow(amount);
+        }
+        for (Lane lane : lanes2) {
+            lane.letItSnow(amount);
+        }
     }
+
     /**
      * Visszaadja a jobbra lévő sávot.
      * @param lane a sáv, amelyhez képest a jobbra lévő sávot keressük
      * @return a jobbra lévő sáv, vagy null, ha nincs ilyen
      */
     public Lane getRightLane(Lane lane){
-        System.out.println("Road.getRightLane() called");
-        System.out.println("Road.getRightLane() returned");
-        return null;}
+        if (lanes1.contains(lane)) {
+            int index = lanes1.indexOf(lane);
+            if (index < lanes1.size() - 1) {
+                return lanes1.get(index + 1);
+            }
+        } else if (lanes2.contains(lane)) {
+            int index = lanes2.indexOf(lane);
+            if (index < lanes2.size() - 1) {
+                return lanes2.get(index + 1);
+            }
+        }
+        return null;
+    }
+
+    public Lane getLeftLane(Lane lane) {
+        if (lanes1.contains(lane)) {
+            int index = lanes1.indexOf(lane);
+            if (index > 0) {
+                return lanes1.get(index - 1);
+            }
+        } else if (lanes2.contains(lane)) {
+            int index = lanes2.indexOf(lane);
+            if (index > 0) {
+                return lanes2.get(index - 1);
+            }
+        }
+        return null;
+    }
+
     /**
      * Visszaadja a balra lévő sávot.
      * @param lane a sáv, amelyhez képest a balra lévő sávot keressük
      * @return a balra lévő sáv, vagy null, ha nincs ilyen
      */
     public Lane getPassableNeighbour(Lane lane){
-        System.out.println("Road.getPassableNeighbour() called");
-        System.out.println("Road.getPassableNeighbour() returned");
-        return null;}
+        if (getRightLane(lane) != null && getRightLane(lane).getIsPassable()) {
+            return getRightLane(lane);
+        } else if (getLeftLane(lane) != null && getLeftLane(lane).getIsPassable()) {
+            return getLeftLane(lane);
+        }
+        return null;
+    }
+
     /**
      * Visszaadja az első járható sávot a megadott útból, vagy null-t ha nincs ilyen.
-     * @param r a csomópontból kifelé vezető út
+     * @param crossing a csomópont, ahova vezet az ut
      * @return az első járható sáv a megadott csomópontból kifelé, vagy null, ha nincs ilyen
      */
-    public Lane getPassableLane(Road r){
-        System.out.println("Road.getPassableLane() called");
-        System.out.println("Road.getPassableLane() returned");
+    public Lane getPassableLane(Crossing crossing) {
+        if (lanes1 != null && !lanes1.isEmpty()) {
+            Lane lane = lanes1.get(0);
+            if (lane.getCrossings().get(1) == crossing) {
+                for (Lane l : lanes1) {
+                    if (l.getIsPassable()) {
+                        return l;
+                    }
+                }
+            }
+        }
+        if (lanes2 != null && !lanes2.isEmpty()) {
+            Lane lane = lanes2.get(0);
+            if (lane.getCrossings().get(1) == crossing) {
+                for (Lane l : lanes2) {
+                    if (l.getIsPassable()) {
+                        return l;
+                    }
+                }
+            }
+        }
         return null;
     }
 
     public RoadNetwork getRoadNetwork() {
-        System.out.println("Road.getRoadNetwork() called");
-        System.out.println("Road.getRoadNetwork() returned");
-        return null;
+        return roadNetwork;
     }
 
+    /**
+     * Visszaadja a savok listajat
+     * @param crossing a csomópont, ahova vezet az ut
+     * @return a savok listaja
+     */
     public List<Lane> getLanes(Crossing crossing) {
-//        Prototype.increaseIndentation("Road.getLanes()");
-
-        // xd
-
-//        Prototype.decreaseIndentation("Road.getLanes()");
-
-        return new ArrayList<>();
+        if (lanes1 != null && !lanes1.isEmpty()) {
+            Lane lane = lanes1.get(0);
+            if (lane.getCrossings().get(1) == crossing) {
+                return lanes1;
+            }
+        }
+        if (lanes2 != null && !lanes2.isEmpty()) {
+            Lane lane = lanes2.get(0);
+            if (lane.getCrossings().get(1) == crossing) {
+                return lanes2;
+            }
+        }
+        return null;
     }
 
     @Override
