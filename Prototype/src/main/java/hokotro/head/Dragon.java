@@ -3,6 +3,7 @@ package hokotro.head;
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
 import hokotro.roadnetwork.SurfaceCondition;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
