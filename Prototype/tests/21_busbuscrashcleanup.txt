@@ -3,8 +3,8 @@ create crossing cr1
 create crossing cr2
 create road r1 5
 create lane l1
-create busdriver bd1
-create busdriver bd2
+create bus-driver bd1
+create bus-driver bd2
 create bus b1
 create bus b2
 connect cr1 cr2 l1
