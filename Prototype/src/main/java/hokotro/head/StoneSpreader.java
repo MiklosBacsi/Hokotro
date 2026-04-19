@@ -18,6 +18,10 @@ public class StoneSpreader extends Head {
         System.out.println("stoneSpreader.ApplyEffect()");
         System.out.println("return stoneSpreader.ApplyEffect()");
     }
+    @Override
+    public ItemType getType() {
+        return ItemType.HEAD_STONESPREADER;
+    }
 
     @Override
     public String toString() {

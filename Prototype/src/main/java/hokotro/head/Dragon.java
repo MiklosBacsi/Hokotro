@@ -23,7 +23,10 @@ public class Dragon extends Head {
             surfaceCondition.setIceThickness(0);
         }
     }
-
+    @Override    
+    public ItemType getType() {
+        return ItemType.HEAD_DRAGON;
+    }
     @Override
     public String toString() {
         try {

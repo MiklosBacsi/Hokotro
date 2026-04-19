@@ -19,7 +19,10 @@ public class IceBreaker extends Head {
         surfaceCondition.addSnowThickness(surfaceCondition.getIceThickness());
         surfaceCondition.setIceThickness(0);
     }
-
+    @Override    
+    public ItemType getType() {
+        return ItemType.HEAD_ICEBREAKER;
+    }
     @Override
     public String toString() {
         try {
