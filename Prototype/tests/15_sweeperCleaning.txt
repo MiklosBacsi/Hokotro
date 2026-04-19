@@ -13,11 +13,12 @@ set lane l2 r1 cr1 cr2
 set condition l1 snowThickness 5
 set condition l1 rockHeight 5
 set condition l1 isRocky true
+set condition l2 snowThickness 2
 set position sp1 cr1
 tick
 get outgoing-roads cr1
 get outgoing-lanes cr1 r1
 choose sp1 l1
 tick 5
-list lane l1
-list lane l2
+list lane l1 --verbose
+list lane l2 --verbose
