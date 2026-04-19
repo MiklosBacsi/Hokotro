@@ -3,4 +3,4 @@ create snowplower sp1 sweeper
 set money c1 100
 buy blower sp1 1
 equip sp1 blower
-list snowplower sp1
+list snowplower sp1 --verbose

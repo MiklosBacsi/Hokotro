@@ -1,4 +1,4 @@
 "ERROR":0
 "Prototype has exited successfully":1
 "OK snowplower: sp1 | head: blower":1
-r/^OK snowplower: sp1.*heads:\s*\{(sweeper;blower|blower;sweeper)\}:1/
+r/^OK snowplower: sp1.*heads:\s\{(sweeper;blower|blower;sweeper)\}/:1
