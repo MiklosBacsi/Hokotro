@@ -82,4 +82,12 @@ public abstract class Vehicle implements ILogable {
     public Crossing getCrossing() {
         return crossing;
     }
+
+    public void increaseLanePosition(int amount) {
+        lanePosition += amount;
+    }
+
+    public int getLanePosition() {
+        return lanePosition;
+    }
 }

@@ -21,8 +21,15 @@ public class Lane implements ILogable {
      * a sávra érkező járműveket kezeli, lépteti a már rajta lévőket.
      */
     public void handleTraffic(){
-        System.out.println("Lane.handleTraffic() called");
-        System.out.println("Lane.handleTraffic() returned");
+        if (vehicles.size() == 1) {
+            vehicles.get(0).increaseLanePosition(1);
+            if (vehicles.get(0).getLanePosition() >= road.getLength()) {
+                crossings.get(1).addVehicle(vehicles.get(0));
+                vehicles.get(0).setLane(null);
+                vehicles.remove(0);
+            }
+            return;
+        }
     }
 
     /**

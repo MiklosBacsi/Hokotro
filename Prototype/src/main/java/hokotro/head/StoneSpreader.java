@@ -2,6 +2,8 @@ package hokotro.head;
 
 import hokotro.Prototype;
 import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.SurfaceCondition;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 /**
@@ -15,10 +17,14 @@ public class StoneSpreader extends Head {
      */
     @Override
     public void applyEffect(Lane lane){
-        System.out.println("stoneSpreader.ApplyEffect()");
-        System.out.println("return stoneSpreader.ApplyEffect()");
+        if (lane.getRoad().getLength() <= snowPlower.getStone()) {
+            snowPlower.decreaseStone(lane.getRoad().getLength());
+            lane.getSurfaceCondition().setRocky(true);
+            lane.addRock();
+        }
     }
-    @Override
+
+    @Override    
     public ItemType getType() {
         return ItemType.HEAD_STONESPREADER;
     }
