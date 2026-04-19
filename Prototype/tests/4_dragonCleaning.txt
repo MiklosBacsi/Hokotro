@@ -1,4 +1,4 @@
-random off 5
+random off 0
 create crossing cr1
 create crossing cr2
 create road r1 5
