@@ -1,6 +1,12 @@
 package hokotro.roadnetwork;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 /**
@@ -27,7 +33,7 @@ public class RoadNetwork {
      * @return a két csomópont közötti legrövidebb út listája
      */
     public List<Road> planPath(Crossing start, Crossing end) {
-        Map<Crossing, Double> distance = new HashMap<>();
+        /* Map<Crossing, Double> distance = new HashMap<>();
         Map<Crossing, Road> previous = new HashMap<>();
         Set<Crossing> visited = new HashSet<>();
         PriorityQueue<double[], Crossing> priorityQueue =
@@ -70,6 +76,7 @@ public class RoadNetwork {
             current = road.otherEnd(current);
         }
 
-        return path;
+        return path; */
+        return new LinkedList<>();
     }
 }

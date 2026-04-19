@@ -19,6 +19,13 @@ public class Car extends Vehicle {
     private Crossing origin;
     private Crossing destination;
     
+    public Car(Crossing _origin, Crossing destination) {
+        super(_origin);
+        origin = _origin;
+        this.destination = destination;
+        this.state = VehicleState.NORMAL;
+    }
+
 
     /**
      * Ellenőrzi, hogy az autó át tud-e sorolni egy szomszédos sávba, 

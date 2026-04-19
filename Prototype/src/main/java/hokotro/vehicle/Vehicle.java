@@ -12,7 +12,10 @@ public abstract class Vehicle implements ILogable {
     protected VehicleState state;
     protected int lanePosition;
     
-    
+    public Vehicle(Crossing crossing) {
+        this.crossing = crossing;
+        crossing.addVehicle(this);
+    }
     /**
      * Beállítja az autó éppen aktuális sávját, és nullázza az aktuális crossingot.
      *
@@ -32,6 +35,10 @@ public abstract class Vehicle implements ILogable {
 //        Prototype.print("Vehicle state set to " + state.toString());
 //
 //        Prototype.decreaseIndentation("Vehicle.setState()");
+    }
+
+    public Lane getLane() {
+        return lane;
     }
 
     /**

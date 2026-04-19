@@ -3,9 +3,11 @@ package hokotro.vehicle;
 import hokotro.Prototype;
 import hokotro.head.Head;
 import hokotro.player.Cleaner;
+import hokotro.system.ItemType;
 import hokotro.util.Logger;
 
 import java.util.Set;
+import hokotro.roadnetwork.Crossing;
 
 /**
  * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.
@@ -13,10 +15,17 @@ import java.util.Set;
 public class SnowPlower extends Vehicle{
     private Set<Head> heads;
     private Head currentHead;
+    private ItemType currentHeadType;
     private int salt;
     private int kerosene;
     private int stone;
     private Cleaner owner;
+
+
+    public SnowPlower(Cleaner owner, Crossing crossing) {
+        super(crossing);
+        this.owner = owner;
+    }
 
     /**
      * Fejcserét valósítja meg.
@@ -26,6 +35,10 @@ public class SnowPlower extends Vehicle{
 //        Prototype.increaseIndentation("SnowPlower.changeHead()");
 //        Prototype.print("The SnowPlower's head changed!");
 //        Prototype.decreaseIndentation("SnowPlower.changeHead()");
+    }
+
+    public ItemType getCurrentHeadType() {
+        return currentHeadType;
     }
 
     public void increaseKerosene(int amount){
@@ -57,6 +70,10 @@ public class SnowPlower extends Vehicle{
 
     public int getStone() {
         return stone;
+    }
+
+    public Head getHead() {
+        return currentHead;
     }
 
     public void decreaseKerosene(int amount){}
