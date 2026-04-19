@@ -18,6 +18,10 @@ public class Sweeper extends Head {
         System.out.println("Sweeper.applyEffect() called");
         System.out.println("Sweeper.applyEffect() returned");
     }
+    @Override
+    public ItemType getType() {
+        return ItemType.HEAD_SWEEPER;
+    }
 
     @Override
     public String toString() {

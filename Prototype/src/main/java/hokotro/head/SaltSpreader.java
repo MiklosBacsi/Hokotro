@@ -22,6 +22,10 @@ public class SaltSpreader extends Head {
             lane.getSurfaceCondition().setSalted(true);
         }
     }
+    @Override
+    public ItemType getType() {
+        return ItemType.HEAD_SALTSPREADER;
+    }
 
     @Override
     public String toString() {
