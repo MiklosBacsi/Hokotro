@@ -81,6 +81,10 @@ public class Lane implements ILogable {
         return 0;
     }
 
+    public Road getRoad(){
+        return road;
+    }
+
     public void addSnow(int amount) {
         // TODO: Implement
     }
