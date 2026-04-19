@@ -1,8 +1,8 @@
 "ERROR":0
 "Prototype has exited successfully":1
-"OK lane: l1 | snowThickness: 0":1
-"OK lane: l2 | snowThickness: 30":0
-"OK lane: l1 | rockHeight: 0":1
-"OK lane: l2 | rockHeight: 5":0
-"OK lane: l1 | isRocky: false":1
-"OK lane: l2 | isRocky: true":0
+r/^OK lane: l1.*snowThickness:\s0/:1
+r/^OK lane: l2.*snowThickness:\s32/:1
+r/^OK lane: l1.*isRocky:\s*false/:1
+r/^OK lane: l2.*isRocky:\s*true/:1
+r/^OK lane: l1.*rockHeight:\s0/:1
+r/^OK lane: l2.*rockHeight:\s32/:1
