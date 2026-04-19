@@ -2,5 +2,5 @@ create cleaner c1
 create snowplower sp1 sweeper
 set money c1 100
 buy salt sp1 10
-list snowplower sp1
+list snowplower sp1 --verbose
 list cleaner c1

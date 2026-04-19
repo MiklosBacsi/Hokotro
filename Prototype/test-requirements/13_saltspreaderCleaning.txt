@@ -1,4 +1,5 @@
 "ERROR":0
 "Prototype has exited successfully":1
-"OK lane: l1 | isSalty: true":1
-"OK snowplower: sp1 | salt: 0":1
+r/^OK lane: l1.*isSalted:\s*true/:1
+r/^OK lane: l1.*isSalted:\s*false/:0
+r/^OK snowplower sp1.*salt:\s1/:0

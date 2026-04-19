@@ -1,4 +1,7 @@
-"ERROR":0
+"ERROR not enough stone in snowplower sp1 (stone: 3, road: 5)":1
 "Prototype has exited successfully":1
-"OK lane: l1 | isRocky: false":1
+r/^OK lane: l1.*snowThickness:\s*0/:0
+r/^OK lane: l1.*iceThickness:\s*9/:1
+r/^OK lane: l1.*isRocky:\s*true/:0
+r/^OK lane: l1.*isRocky:\s*false/:1
 "OK snowplower: sp1 | stone: 3":1
