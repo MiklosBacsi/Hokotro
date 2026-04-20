@@ -2,4 +2,4 @@
 "Prototype has exited successfully":1
 r/^OK lane: l1.*isRocky:\s*true/:1
 r/^OK lane: l1.*isRocky:\s*false/:0
-r/^OK snowplower sp1.*stone:\s1/:0
+r/^OK snowplower sp1.*stone:\s1/:1
