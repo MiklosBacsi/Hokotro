@@ -1,5 +1,5 @@
 # compression ratio is 4:1
-random off 8
+random off 5
 create crossing cr1
 create crossing cr2
 create road r1 5
@@ -9,9 +9,10 @@ connect cr1 cr2 l1
 connect cr1 cr2 l2
 set lane l1 r1 cr1 cr2
 set lane l2 r1 cr1 cr2
+set condition l1 snowThickness 1
 set condition l1 iceThickness 10
 set condition l2 iceThickness 5
 add rock l2
-tick 
+tick 2
 list lane l1 --verbose
 list lane l2 --verbose
