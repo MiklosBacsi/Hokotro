@@ -1,4 +1,5 @@
-random off 5
+# compression ratio is 4:1
+random off 4
 create crossing cr1
 create crossing cr2
 create road r1 5
