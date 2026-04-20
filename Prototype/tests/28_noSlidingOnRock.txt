@@ -1,4 +1,4 @@
-random off 5
+random off 1
 create crossing cr1
 create crossing cr2
 create road r1 5
@@ -9,7 +9,6 @@ set lane l1 r1 cr1 cr2
 set position c1 cr1
 set route c1 cr1 cr2
 set condition l1 iceThickness 3
-set condition l1 isRocky true
-set condition l1 rockheight 3
+add rock l1
 tick 3
 list car c1
