@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f51cacaf-1806-415f-a7e6-37a4098b4693" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/prototype-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/prototype-tests.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hokotro.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/Prototype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/Prototype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/Blower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/Blower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/Head.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/Head.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/IceBreaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/IceBreaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/SaltSpreader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/SaltSpreader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/StoneSpreader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/StoneSpreader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/head/Sweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/head/Sweeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/player/BusDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/player/BusDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/player/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/player/Cleaner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/Crossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/Crossing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/ICleanable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/ICleanable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/Lane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/Lane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/RoadNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/RoadNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/SurfaceCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/SurfaceCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/roadnetwork/Tunnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/roadnetwork/Tunnel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/system/Economy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/system/Economy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/system/GameDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/system/GameDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/system/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/system/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/system/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/system/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/util/ILogable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/util/ILogable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/vehicle/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/vehicle/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/vehicle/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/vehicle/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/vehicle/SnowPlower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/vehicle/SnowPlower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/vehicle/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/vehicle/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/src/main/java/hokotro/vehicle/VehicleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hokotro/vehicle/VehicleState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/10_processFailed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/10_processFailed.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/11_processHead.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/11_processHead.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/12_processSalt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/12_processSalt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/13_saltspreaderCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/13_saltspreaderCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/14_stonespreaderCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/14_stonespreaderCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/15_sweeperCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/15_sweeperCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/16_choosingLane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/16_choosingLane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/17_busReachesDestination.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/17_busReachesDestination.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/18_carcarcrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/18_carcarcrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/19_carcarcrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/19_carcarcrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/1_blowerCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/1_blowerCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/20_busbuscrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/20_busbuscrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/21_busbuscrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/21_busbuscrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/22_buscarcrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/22_buscarcrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/23_buscarcrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/23_buscarcrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/24_snowfall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/24_snowfall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/25_snowmelting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/25_snowmelting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/26_changingLane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/26_changingLane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/27_cargetsStuck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/27_cargetsStuck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/28_noSlidingOnRock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/28_noSlidingOnRock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/29_snowOnIceVsRock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/29_snowOnIceVsRock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/2_buySnowplower.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/2_buySnowplower.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/30_rockyLaneGetsIcy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/30_rockyLaneGetsIcy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/3_changeHead.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/3_changeHead.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/4_dragonCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/4_dragonCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/5_icebreakerCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/5_icebreakerCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/6_notEnoughKerosene.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/6_notEnoughKerosene.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/7_notEnoughSalt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/7_notEnoughSalt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/8_notEnoughStone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/8_notEnoughStone.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/test-requirements/9_payTheCleaner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test-requirements/9_payTheCleaner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tests.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/10_processFailed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/10_processFailed.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/11_processHead.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/11_processHead.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/12_processSalt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/12_processSalt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/13_saltspreaderCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/13_saltspreaderCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/14_stonespreaderCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/14_stonespreaderCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/15_sweeperCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/15_sweeperCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/16_choosingLane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/16_choosingLane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/17_busReachesDestination.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/17_busReachesDestination.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/18_carcarcrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/18_carcarcrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/19_carcarcrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/19_carcarcrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/1_blowerCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/1_blowerCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/20_busbuscrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/20_busbuscrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/21_busbuscrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/21_busbuscrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/22_buscarcrash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/22_buscarcrash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/23_buscarcrashcleanup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/23_buscarcrashcleanup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/24_snowfall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/24_snowfall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/25_snowmelting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/25_snowmelting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/26_changingLane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/26_changingLane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/27_cargetsStuck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/27_cargetsStuck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/28_noSlidingOnRock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/28_noSlidingOnRock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/29_snowOnIceVsRock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/29_snowOnIceVsRock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/2_buySnowplower.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/2_buySnowplower.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/30_rockyLaneGetsIcy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/30_rockyLaneGetsIcy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/3_changeHead.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/3_changeHead.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/4_dragonCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/4_dragonCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/5_icebreakerCleaning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/5_icebreakerCleaning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/6_notEnoughKerosene.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/6_notEnoughKerosene.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/7_notEnoughSalt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/7_notEnoughSalt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/8_notEnoughStone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/8_notEnoughStone.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype/tests/9_payTheCleaner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/9_payTheCleaner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/Skeleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/Blower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/Dragon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/Head.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/IceBreaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/SaltSpreader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/head/Sweeper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/player/BusDriver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/player/Cleaner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/player/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/Crossing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/ICleanable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/Lane.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/Road.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/RoadNetwork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/SurfaceCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/roadnetwork/Tunnel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/system/Economy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/system/GameDirector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/system/ItemType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/system/Timer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/vehicle/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/vehicle/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/vehicle/SnowPlower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/vehicle/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/skeleton/src/main/java/hokotro/vehicle/VehicleState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/Class diagram.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/Icebreaker.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/Saltspreader.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/addVehicleToCrossing.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/auto-lane-change-after-getting-stuck.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/auto-reach-crossing.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/auto-stuck.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/blower.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/bus-bus-crash-cleanup.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/bus-bus-crash.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/bus-car-crash-cleanup.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/bus-car-crash.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/buyNewSnowPlow.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/car-crash-cleanup.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/car-crash.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/choosingLane.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/create_auto.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/enterLane.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/head-change.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/initialize.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/initializeCleaner.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/initializeDrivel.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/lap-complete.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/melting.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/pay_cleaner.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/processPurchase.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/road_cleaning.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/snowfall.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/state-lane.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/state-surfacecondition.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/state-vehicle2.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/3. beadandó/PUML/sweeper.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Communication diagram/delete me" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Communication diagram/test.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/OLVASDEEEEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/buySnowPlow.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/choosingTheLane.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/enterALane.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/headchange.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/purchase_item.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/5. beadandó/Use-case diagram/requestingPath.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Auto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Blower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/BusDriver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Cleaner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Crossing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Dragon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Economy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/GameDirector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Head.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/IceBreaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Lane.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Road.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/RoadNetwork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/SaltSpreader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/SnowPlower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/SurfaceCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Sweeper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Timer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tunnel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/konzi_1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/UML/3. beadandó/PUML/choosingLane/choosingLane.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/UML/3. beadandó/PUML/enterLane/enterLane.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MiklosBacsi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MiklosBacsi/Hokotro.git",
+    "accountId": "8c09030f-54ca-4fd3-9f9a-3f7ede728a57"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3Ccgkf1Hu0RaVVd1IAPJNV6WWbm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Prototype.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/miklos/Desktop/Projlab/Hokotro",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f51cacaf-1806-415f-a7e6-37a4098b4693" name="Changes" comment="" />
+      <created>1776690416508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776690416508</updated>
+      <workItem from="1776690417656" duration="623000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

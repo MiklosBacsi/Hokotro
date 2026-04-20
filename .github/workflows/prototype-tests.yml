@@ -5,15 +5,10 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    paths:
-      - 'Prototype/**'
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Prototype
 
     steps:
       - uses: actions/checkout@v4
