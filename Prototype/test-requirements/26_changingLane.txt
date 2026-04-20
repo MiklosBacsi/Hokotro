@@ -2,3 +2,4 @@
 "Prototype has exited successfully":1
 r/^OK lane: l1.*vehicles:\s\[c1\]/:0
 r/^OK lane: l2.*vehicles:\s\[c1\]/:1
+"OK car: c1 | state: normal":1
