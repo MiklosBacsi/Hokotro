@@ -1,4 +1,4 @@
 "ERROR":0
 "Prototype has exited successfully":1
-r/^OK cleaner: c1.*money:\s*100.*snowplowers:.*snowplower:\ssp1\s|\shead:\ssweeper/:1
-r/^OK cleaner: c1.*money:\s*100.*snowplowers:.*snowplower:\ssp2\s|\shead:\ice-breaker/:1
+r/^OK cleaner: c1.*money:\s*100.*snowplowers:.*snowplower:\ssp1\s\|\shead:\ssweeper/:1
+r/^OK cleaner: c1.*money:\s*100.*snowplowers:.*snowplower:\ssp2\s\|\shead:\ice-breaker/:1
