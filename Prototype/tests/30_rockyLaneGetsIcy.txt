@@ -22,11 +22,10 @@ set route c5 cr1 cr2
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
 set condition l1 iceThickness 5
-set condition l1 isRocky true
-set condition l1 rockHeight 10
+add rock l1
 tick 5
 set position c6 cr1
 set route c6 cr1 cr2
 tick
-list lane l1
+list lane l1 --verbose
 list car c6
