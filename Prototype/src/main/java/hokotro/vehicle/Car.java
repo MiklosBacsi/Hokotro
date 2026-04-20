@@ -71,6 +71,16 @@ public class Car extends Vehicle {
         System.out.println("return setCurrentPath()");
     }
 
+    @Override
+    public void crash(int ticks){
+        state = VehicleState.CRASHED;
+    }
+
+    @Override
+    public void stuck(){
+        state = VehicleState.STUCK;
+    }
+
     private void moveInLane(){
         lanePosition++;
         if (lanePosition >= lane.getRoadLength()) {
@@ -111,7 +121,11 @@ public class Car extends Vehicle {
                     moveInLane();
                     break;
                 case STUCK:
-                    checkLaneChange();
+                    if (lane.getIsPassable()) {
+                        state = VehicleState.NORMAL;
+                    } else {
+                        checkLaneChange();
+                    }
                     break;
                 case CRASHED:
                     if (lane.getIsPassable()) {

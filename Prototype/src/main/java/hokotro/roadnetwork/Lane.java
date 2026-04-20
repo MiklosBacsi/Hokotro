@@ -1,5 +1,6 @@
 package hokotro.roadnetwork;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hokotro.util.ILogable;
@@ -7,6 +8,7 @@ import hokotro.Prototype;
 import hokotro.head.Head;
 import hokotro.util.Logger;
 import hokotro.vehicle.Vehicle;
+import hokotro.vehicle.VehicleState;
 
 /**
  * Kezeli az összecsúszásokat és utóhatásaikat.
@@ -22,14 +24,39 @@ public class Lane implements ILogable, ICleanable {
      * a sávra érkező járműveket kezeli, lépteti a már rajta lévőket.
      */
     public void handleTraffic(){
-        if (vehicles.size() == 1) {
-            vehicles.get(0).increaseLanePosition(1);
-            if (vehicles.get(0).getLanePosition() >= road.getLength()) {
-                crossings.get(1).addVehicle(vehicles.get(0));
-                vehicles.get(0).setLane(null);
-                vehicles.remove(0);
+        if (condition.getSnowThickness() > 40) {
+            for (Vehicle vehicle : vehicles) {
+                vehicle.stuck();
             }
-            return;
+        }
+
+        if (condition.getIceThickness() > condition.getRockHeight()) {
+            for (Vehicle vehicle : vehicles) {
+                if (vehicle.getState() != VehicleState.CANTSLIDE) {
+                    vehicle.setState(VehicleState.SLIDE);
+                }
+            }
+        } else {
+            for (Vehicle vehicle : vehicles) {
+                if (vehicle.getState() != VehicleState.CANTSLIDE) {
+                    vehicle.setState(VehicleState.NORMAL);
+                }
+            }
+        }
+
+        int slidingCounter = 0;
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getState() == VehicleState.SLIDE) {
+                slidingCounter++;
+            }
+        }
+
+        if (slidingCounter > 1) {
+            for (Vehicle vehicle : vehicles) {
+                if (vehicle.getState() == VehicleState.SLIDE) {
+                    vehicle.crash(road.getLength() - vehicle.getLanePosition());
+                }
+            }
         }
     }
 
@@ -42,6 +69,7 @@ public class Lane implements ILogable, ICleanable {
      * @param vehicle a hozzáadandó jármű
      */
     public void addVehicle(Vehicle vehicle){
+        condition.increaseDriveCount();
         vehicles.add(vehicle);
     }
 

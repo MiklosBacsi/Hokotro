@@ -56,6 +56,19 @@ public abstract class Vehicle implements ILogable {
         return lane;
     }
 
+    public VehicleState getState() {
+        return state;
+    }   
+
+    public abstract void crash(int ticks);
+    public abstract void stuck();
+
+     /**
+     * Beállítja az autó éppen aktuális útvonalát.
+     *
+     * @param currentPath az aktuális útvonal
+     */
+
     /**
      * A mozgás megvalósítása.
      *
