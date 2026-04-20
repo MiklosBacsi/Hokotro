@@ -1,31 +1,17 @@
-random off 5
+# ice >= rock+10 --> icy
+# default compression ratio is 4:1
+random off 8
 create crossing cr1
 create crossing cr2
 create road r1 5
 create lane l1
 create car c1
-create car c2
-create car c3
-create car c4
-create car c5
-create car c6
 set position c1 cr1
 set route c1 cr1 cr2
-set position c2 cr1
-set route c2 cr1 cr2
-set position c3 cr1
-set route c3 cr1 cr2
-set position c4 cr1
-set route c4 cr1 cr2
-set position c5 cr1
-set route c5 cr1 cr2
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
 set condition l1 iceThickness 5
 add rock l1
-tick 5
-set position c6 cr1
-set route c6 cr1 cr2
-tick
+tick 3
 list lane l1 --verbose
-list car c6
+list car c2
