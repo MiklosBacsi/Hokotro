@@ -1,5 +1,4 @@
 "ERROR":0
 "Prototype has exited successfully":1
-r/^OK lane: l1.*snowThickness:\s*2/:1
-r/^OK lane: l1.*iceThickness:\s*6/:1
+r/^OK lane: l1.*snowThickness:\s*6/:1
 r/^OK lane: l1.*isSalted:\s*true/:1

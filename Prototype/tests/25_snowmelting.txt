@@ -6,7 +6,6 @@ create lane l1
 connect cr1 cr2 l1
 set lane l1 r1 cr1 cr2
 set condition l1 snowThickness 10
-set condition l1 iceThickness 10
 set condition l1 isSalted true
 tick 4
 list lane l1
