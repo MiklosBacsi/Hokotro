@@ -81,6 +81,13 @@ public class Bus extends Vehicle {
         state=VehicleState.NORMAL;
         lane.handleTraffic();
     }
+    /**
+     * Visszaadja, hogy mennyi ideig kell várakoznia ütközés esetén
+     * @return a várakozás mértéke
+     */
+    public int getWaitTicks() {
+        return waitTicks;
+    }
 
     /**
      * Kereszteződésbe érve ellenőrizni, hogy a jármű végállomásba érkezett-e be
