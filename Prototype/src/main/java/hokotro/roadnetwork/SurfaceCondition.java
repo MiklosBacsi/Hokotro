@@ -14,7 +14,6 @@ public class SurfaceCondition implements ILogable {
     private int iceThickness;
     private int rockHeight;
     private boolean isSalted;
-
     private boolean isRocky;
 
     /**
@@ -32,6 +31,11 @@ public class SurfaceCondition implements ILogable {
     public void meltSnow(){
         System.out.println("SurfaceCondition.meltSnow() called");
         System.out.println("SurfaceCondition.meltSnow() returned");
+    }
+
+    public void increaseDriveCount() {
+        driveCount++;
+        compressSnow();
     }
 
     /**
