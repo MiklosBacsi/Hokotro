@@ -4,13 +4,14 @@ import java.util.List;
 
 import hokotro.util.ILogable;
 import hokotro.Prototype;
+import hokotro.head.Head;
 import hokotro.util.Logger;
 import hokotro.vehicle.Vehicle;
 
 /**
  * Kezeli az összecsúszásokat és utóhatásaikat.
  */
-public class Lane implements ILogable {
+public class Lane implements ILogable, ICleanable {
     private Road road;
     private List<Crossing> crossings; // index 0 a origin, index 1 a end
     private List<Vehicle> vehicles;
@@ -30,6 +31,10 @@ public class Lane implements ILogable {
             }
             return;
         }
+    }
+
+    public void clean(Head head){
+        head.applyEffect(this);
     }
 
     /**

@@ -8,6 +8,8 @@ import hokotro.util.Logger;
 
 import java.util.Set;
 import hokotro.roadnetwork.Crossing;
+import hokotro.roadnetwork.Lane;
+import hokotro.roadnetwork.Road;
 
 /**
  * Jelzi a sávnak, hogy ráment és takarítja, vásárolni képes.
@@ -130,6 +132,38 @@ public class SnowPlower extends Vehicle{
     public Cleaner getOwner() {
         return owner;
     }
+
+    private void moveInLane(){
+        lanePosition++;
+        if (lanePosition >= lane.getRoadLength()) {
+            lane.removeVehicle(this);
+            lane.getCrossings().get(1).addVehicle(this);
+            lane.clean(currentHead);
+            crossing = lane.getCrossings().get(1);
+            lane = null;
+            return;
+        }
+        lane.handleTraffic();
+    }
+
+    @Override
+    public void move(Lane nextLane){
+        if (crossing != null){
+            lane = nextLane;
+            crossing.removeVehicle(this);
+            crossing = null;
+            lane.addVehicle(this);
+            lanePosition = 0;
+            lane.handleTraffic(); 
+        } else {
+            moveInLane();
+        }
+    }
+
+
+
+
+
     @Override
     public String toString() {
         try {

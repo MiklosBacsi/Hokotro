@@ -76,8 +76,8 @@ public class Car extends Vehicle {
         if (lanePosition >= lane.getRoadLength()) {
             lane.removeVehicle(this);
             lane.getCrossings().get(1).addVehicle(this);
-            lane = null;
             crossing = lane.getCrossings().get(1);
+            lane = null;
             checkArrival();
             return;
         }
@@ -85,7 +85,7 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public void move() {
+    public void move(Lane lane) {
         if (crossing != null){
             for (Road road : currentPath) {
                 Crossing origin = road.getCrossings().get(0);
@@ -126,17 +126,6 @@ public class Car extends Vehicle {
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
