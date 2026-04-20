@@ -71,6 +71,81 @@ public class Car extends Vehicle {
         System.out.println("return setCurrentPath()");
     }
 
+    private void moveInLane(){
+        lanePosition++;
+        if (lanePosition >= lane.getRoadLength()) {
+            lane.removeVehicle(this);
+            lane.getCrossings().get(1).addVehicle(this);
+            lane = null;
+            crossing = lane.getCrossings().get(1);
+            checkArrival();
+            return;
+        }
+        lane.handleTraffic();
+    }
+
+    @Override
+    public void move() {
+        if (crossing != null){
+            for (Road road : currentPath) {
+                Crossing origin = road.getCrossings().get(0);
+                Crossing destination = road.getCrossings().get(1);
+                if (origin == crossing) {
+                    Lane nextLane = road.getPassableLane(destination);
+                    if (nextLane != null) {
+                        nextLane.addVehicle(this);
+                        crossing.removeVehicle(this);
+                        lane = nextLane;
+                        crossing = null;
+                        lanePosition = 0;
+                        lane.handleTraffic();
+                    } else {
+                        replanPath();
+                    }
+                    break;
+                }
+            }
+        } else {
+            switch (state) {
+                case NORMAL:
+                    moveInLane();
+                    break;
+                case STUCK:
+                    checkLaneChange();
+                    break;
+                case CRASHED:
+                    if (lane.getIsPassable()) {
+                        state = VehicleState.NORMAL;
+                    }
+                    break;
+                case SLIDE:
+                    moveInLane();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+
+
+        lanePosition++;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Override
     public String toString() {
         try {
