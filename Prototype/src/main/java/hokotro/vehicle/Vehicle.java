@@ -61,7 +61,7 @@ public abstract class Vehicle implements ILogable {
      *
      * @param lane a sáv, amelyben a mozgás történik
      */
-    public abstract void move();
+    public abstract void move(Lane lane);
 
     /**
      * Beállítja az autó éppen aktuális csomópontját, és nullázza az aktuális sávot.
