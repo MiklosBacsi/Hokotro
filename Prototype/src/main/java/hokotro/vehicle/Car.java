@@ -72,7 +72,7 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public void crash(){
+    public void crash(int ticks){
         state = VehicleState.CRASHED;
     }
 

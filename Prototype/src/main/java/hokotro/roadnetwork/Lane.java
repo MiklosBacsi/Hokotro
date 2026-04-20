@@ -1,5 +1,6 @@
 package hokotro.roadnetwork;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hokotro.util.ILogable;
@@ -53,7 +54,7 @@ public class Lane implements ILogable, ICleanable {
         if (slidingCounter > 1) {
             for (Vehicle vehicle : vehicles) {
                 if (vehicle.getState() == VehicleState.SLIDE) {
-                    vehicle.crash();
+                    vehicle.crash(road.getLength() - vehicle.getLanePosition());
                 }
             }
         }

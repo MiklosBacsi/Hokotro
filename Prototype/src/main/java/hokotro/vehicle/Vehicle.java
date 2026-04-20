@@ -60,7 +60,7 @@ public abstract class Vehicle implements ILogable {
         return state;
     }   
 
-    public abstract void crash();
+    public abstract void crash(int ticks);
     public abstract void stuck();
 
      /**

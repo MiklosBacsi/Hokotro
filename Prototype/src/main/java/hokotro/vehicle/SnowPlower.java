@@ -161,7 +161,7 @@ public class SnowPlower extends Vehicle{
     }
 
     @Override
-    public void crash() {}
+    public void crash(int ticks) {}
 
     @Override
     public void stuck() {}

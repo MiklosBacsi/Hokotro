@@ -7,6 +7,7 @@ package hokotro.vehicle;
 import hokotro.Prototype;
 import hokotro.player.BusDriver;
 import hokotro.roadnetwork.Crossing;
+import hokotro.roadnetwork.Lane;
 import hokotro.util.Logger;
 
 public class Bus extends Vehicle {
@@ -39,14 +40,12 @@ public class Bus extends Vehicle {
                 lanePosition = 0;
                 lane.handleTraffic();
             }
-            break;
-
-        }else {
+        } else {
             switch (state) {
                 case NORMAL:
                     moveInLane();
                     break;
-                case WAITING:
+                case WAIT:
                     waitTicks--;
                     if (waitTicks <= 0){
                         resumeRoute();
@@ -58,6 +57,16 @@ public class Bus extends Vehicle {
             
         }
     }
+
+    @Override
+    public void crash(int ticks) {
+        state = VehicleState.WAIT;
+        waitTicks = ticks + 5;
+    }
+
+    @Override
+    public void stuck() {}
+
     /** 
      * Mozgatja a busszal a járművet a megadott sávon
      */
