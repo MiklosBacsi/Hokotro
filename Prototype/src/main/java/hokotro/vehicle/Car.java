@@ -125,11 +125,6 @@ public class Car extends Vehicle {
                     break;
             }
         }
-
-
-
-
-        lanePosition++;
     }
 
 
